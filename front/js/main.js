@@ -17,16 +17,16 @@ textBtn.addEventListener('click', () => {
 
 
 //code
-function pauseRandomly(element) {
-    setTimeout(function () {
-        element.classList.add('pause');
-        setTimeout(function () {
-            element.classList.remove('pause');
-        }, Math.random() * 8000);
-    }, Math.random() * 5000);
-}
-
-const prizes = document.querySelectorAll('.prize__item-img img');
-
-prizes.forEach(pauseRandomly);
+// function pauseRandomly(element) {
+//     setTimeout(function () {
+//         element.classList.add('pause');
+//         setTimeout(function () {
+//             element.classList.remove('pause');
+//         }, Math.random() * 8000);
+//     }, Math.random() * 5000);
+// }
+//
+// const prizes = document.querySelectorAll('.prize__item-img img');
+//
+// prizes.forEach(pauseRandomly);
 
