@@ -1,143 +1,249 @@
 button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') light
 .fav__page.overflow
+  .popup._hidden
+    .quest.quest-one(data-index='0')
+      .quest__container
+        .quest__wrap
+          .quest__top
+            .quest-close
+            .quest__top-wrap
+              .quest__image
+                picture
+                  source(media="(min-width: 1025px) " srcset="img/route/quest1-img-desc.png")
+                  source(media="(max-width: 1024px)" srcset="img/route/quest1-img-mob.png")
+                  img(src="img/route/quest1-img-desc.png" alt="Favbet")
+              .quest__info
+                .quest__title Початок квест пригод
+                .quest__time
+                  .quest__time-text Завершиться через:
+                  .quest__time-num 1 д. 2 г. 34 хв.
+            .quest__des
+              .quest__des-title Квест № 1
+              .quest__des-text Роби виграшні ставки від 200 грн на спортивні події у розділах Спорт, LIVE та Киберспорт та отримай на рахунок до 300 грн та до 20 балів в основну турнірну таблицю
+          .quest__bottom
+            .quest__list
+              .quest__item
+                .quest__item-wrap
+                  .quest__item-title Перший етап
+                  .quest__item-img
+                    picture
+                      source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
+                      source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
+                      img(src="img/route/free-spin-desc.png" alt="Favbet")
+                  .quest__item-subtitle Приз: #[span 50 фріспінів + 10 балів]
 
-  .result
-    .result__bg
-    .result__container
-      .result__title(data-translate='result-title') Tabel rezultate
-      .result__row
-        .result__item
-          .result__item-title(data-translate='resul-table1-title') Lista lui Moș Crăciun
-          .tableResults
-            .tableResults__container
-              .tableResults__wrap#results-table-one
-                .tableResults__head
-                  .tableResults__head-list
-                    .tableResults__head-col(data-translate="tableResults1_head-place") Loc
-                    .tableResults__head-col(data-translate="tableResults1_head-id") User_id
-                    .tableResults__head-col(data-translate="tableResults1_head-points") Premii
-                .tableResults__body
-                  .tableResults__row.place1
-                    .tableResults__body-col 1
-                    .tableResults__body-col 3647489
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row.place2
-                    .tableResults__body-col 2
-                    .tableResults__body-col 3647489
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row.place3
-                    .tableResults__body-col 3
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row._yourPlace
-                    .tableResults__body-col 4
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 5
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 6
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 7
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 8
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 8888
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iShaurma 17 Max 258 mushrooms
+                .quest__item-info
+                  .quest__item-info-text Зроби 100 обертів від мінімальної ставки та отримай 50 фріспінів та 10 балів в основну турнірну таблицю.
+                  .quest__item-info-progress(data-progress='20%')
+                    span 1/3
+                    .progress
+                a(href='#').quest__item-btn.custom-btn Пройти квест
+              .quest__item
+                .quest__item-wrap
+                  .quest__item-title Другий етап
+                  .quest__item-img
+                    picture
+                      source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
+                      source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
+                      img(src="img/route/free-spin-desc.png" alt="Favbet")
+                  .quest__item-subtitle Приз: #[span 70 фріспінів + 20 балів]
+                .quest__item-info
+                  .quest__item-info-text Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
+                  .quest__item-info-progress(data-progress='50%')
+                    span 2/3
+                    .progress
+                a(href='#').quest__item-btn.custom-btn._disabled
+                  img(src='img/route/block.svg' alt='block')
+              .quest__item
+                .quest__item-wrap
+                  .quest__item-title Третій етап
+                  .quest__item-img
+                    picture
+                      source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
+                      source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
+                      img(src="img/route/free-spin-desc.png" alt="Favbet")
+                  .quest__item-subtitle Приз: #[span 100 фріспінів + 30 балів]
 
-                  .tableResults__row
-                    .tableResults__body-col 6
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 7
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 8
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 8888
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iShaurma 17 Max 258 mushrooms
+                .quest__item-info
+                  .quest__item-info-text Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
+                  .quest__item-info-progress(data-progress='100%')
+                    span 3/3
+                    .progress
+                a(href='#').quest__item-btn.custom-btn._disabled
+                  img(src='img/route/block.svg' alt='block')
+    .quest.quest-two(data-index='1')
+      .quest__container
+        .quest__wrap
+          .quest__top
+            .quest-close
+            .quest__top-wrap
+              .quest__image
+                picture
+                  source(media="(min-width: 1025px) " srcset="img/route/quest1-img-desc.png")
+                  source(media="(max-width: 1024px)" srcset="img/route/quest1-img-mob.png")
+                  img(src="img/route/quest1-img-desc.png" alt="Favbet")
+              .quest__info
+                .quest__title Найди шавуху
+                .quest__time
+                  .quest__time-text Завершиться через:
+                  .quest__time-num 1 д. 2 г. 34 хв.
+            .quest__des
+              .quest__des-title Квест № 2
+              .quest__des-text Роби виграшні ставки від 200 грн на спортивні події у розділах Спорт, LIVE та Киберспорт та отримай на рахунок до 300 грн та до 20 балів в основну турнірну таблицю
+          .quest__bottom
+            .quest__list
+              .quest__item
+                .quest__item-wrap
+                  .quest__item-title Перший етап
+                  .quest__item-img
+                    picture
+                      source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
+                      source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
+                      img(src="img/route/free-spin-desc.png" alt="Favbet")
+                  .quest__item-subtitle Приз: #[span 50 фріспінів + 10 балів]
 
-        .result__item
-          .result__item-title(data-translate='resul-table2-title') Solicitanți pe listă
-          .tableResults
-            .tableResults__container
-              .tableResults__wrap#results-table-two
-                .tableResults__head
-                  .tableResults__head-list
-                    .tableResults__head-col(data-translate="tableResults2_head-place") Loc
-                    .tableResults__head-col(data-translate="tableResults2_head-id") User_id
-                    .tableResults__head-col(data-translate="tableResults2_head-points") Premii
-                .tableResults__body
-                  .tableResults__row.place1
-                    .tableResults__body-col 1
-                    .tableResults__body-col 3647489
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row.place2
-                    .tableResults__body-col 2
-                    .tableResults__body-col 3647489
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row.place3
-                    .tableResults__body-col 3
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row._yourPlace
-                    .tableResults__body-col 4
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 5
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 6
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 7
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 8
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 8888
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iShaurma 17 Max 258 mushrooms
-                  .tableResults__row
-                    .tableResults__body-col 6
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 7
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 8
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iPhone 15 Pro Max 256
-                  .tableResults__row
-                    .tableResults__body-col 8888
-                    .tableResults__body-col 8454929
-                    .tableResults__body-col iShaurma 17 Max 258 mushrooms
+                .quest__item-info
+                  .quest__item-info-text Зроби 100 обертів від мінімальної ставки та отримай 50 фріспінів та 10 балів в основну турнірну таблицю.
+                  .quest__item-info-progress(data-progress='20%')
+                    span 1/3
+                    .progress
+                a(href='#').quest__item-btn.custom-btn Пройти квест
+              .quest__item
+                .quest__item-wrap
+                  .quest__item-title Другий етап
+                  .quest__item-img
+                    picture
+                      source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
+                      source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
+                      img(src="img/route/free-spin-desc.png" alt="Favbet")
+                  .quest__item-subtitle Приз: #[span 70 фріспінів + 20 балів]
+                .quest__item-info
+                  .quest__item-info-text Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
+                  .quest__item-info-progress(data-progress='50%')
+                    span 2/3
+                    .progress
+                a(href='#').quest__item-btn.custom-btn._disabled
+                  img(src='img/route/block.svg' alt='block')
+              .quest__item
+                .quest__item-wrap
+                  .quest__item-title Третій етап
+                  .quest__item-img
+                    picture
+                      source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
+                      source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
+                      img(src="img/route/free-spin-desc.png" alt="Favbet")
+                  .quest__item-subtitle Приз: #[span 100 фріспінів + 30 балів]
+
+                .quest__item-info
+                  .quest__item-info-text Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
+                  .quest__item-info-progress(data-progress='100%')
+                    span 3/3
+                    .progress
+                a(href='#').quest__item-btn.custom-btn._disabled
+                  img(src='img/route/block.svg' alt='block')
+  .welcome
+    .welcome__container
+      .welcome__title
+        .welcome__title-top Сем рятує
+        .welcome__title-bottom
+          picture
+            source(media="(min-width: 1025px) " srcset="img/welcome/welcome-title-desc.png")
+            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="img/welcome/welcome-title-tab.png")
+            source(media="(max-width: 550px)" srcset="img/welcome/welcome-title-mob.png")
+            img(src="img/welcome/welcome-title-desc.png" alt="Favbet")
+      .welcome__wrap
+        .welcome__ball
+          .welcome__ball-img
+            picture
+              source(media="(min-width: 1025px) " srcset="img/welcome/ball-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="img/welcome/ball-tab.png")
+              source(media="(max-width: 550px)" srcset="img/welcome/ball-mob.png")
+              img(src="img/welcome/ball-desc.png" alt="Favbet")
 
 
-      details.custom-drop.result__drop
-        summary.custom-drop-title(data-translate="resultDropTitle") Termeni și condiții:
+
+
+
+
+          .salut.salut-one
+          .salut.salut-two
+          .salut.salut-three
+          .salut.salut-fourth
+        .welcome__sam
+          .welcome__sam-img
+            picture
+              source(media="(min-width: 1025px) " srcset="img/welcome/sam-welcome-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="img/welcome/sam-welcome-tab.png")
+              source(media="(max-width: 550px)" srcset="img/welcome/sam-welcome-mob.png")
+              img(src="img/welcome/sam-welcome-desc.png" alt="Favbet")
+          .welcome__sam-text
+            .welcome__sam-text-wrap Погнали заряджатися святковим настроєм?
+      .welcome__info
+        a(href='#').welcome__btn.custom-btn Погнали
+        a(href='#').welcome__btn.custom-btn.hidden Погнали
+        a(href='#').welcome__btn.custom-btn.hidden Погнали
+        .welcome__date з 11.12.2023 по 24.12.2023
+        .welcome__text FAVBET City — унікальне місце, де вічне літо, свято і подарунки. З 12 по 24 грудня 2023 року відвідуй разом із Семом свої улюблені святкові місця, долай квести, відчуй дух справжнього свята.
+
+
+  .rules
+    .rules__container
+      .rules__title
+        .rules__title-top Бери участь в Акції та змагайся за
+        .rules__title-bottom
+          picture
+            source(media="(min-width: 1025px) " srcset="img/rules/rules-title-desc.png")
+            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="img/rules/rules-title-tab.png")
+            source(media="(max-width: 550px)" srcset="img/rules/rules-title-mob.png")
+            img(src="img/rules/rules-title-desc.png" alt="Favbet" class='rules-img')
+          span.valut UAH*
+          span.bonus + <img src='img/rules/sum.svg' alt='sum'> фріспінів.*
+
+      .rules__subtitle Як взяти участь?
+      .rules__text Вирушай на пошуки духу Різдва разом із Семом. На тебе чекають квести, які не тільки занурять у святкову атмосферу, а й принесуть призи.
+      .rules__list
+        .rules__item
+          .rules__item-wrap
+            .rules__item-img
+              picture
+                source(media="(min-width: 1025px) " srcset="img/rules/rules-ball1-desc.png")
+                source(media="(max-width: 1024px)" srcset="img/rules/rules-ball1-mob.png")
+                img(src="img/rules/rules-ball1-desc.png" alt="Favbet")
+            .rules__item-title Бери участь
+          .rules__item-text Натисни кнопку “Взяти участь”
+        .rules__item
+          .rules__item-wrap
+            .rules__item-img
+              picture
+                source(media="(min-width: 1025px) " srcset="img/rules/rules-ball2-desc.png")
+                source(media="(max-width: 1024px)" srcset="img/rules/rules-ball2-mob.png")
+                img(src="img/rules/rules-ball2-desc.png" alt="Favbet")
+            .rules__item-title Роби ставки
+          .rules__item-text Роби ставки в акційних іграх в розділі “Казино”, став на спортивні події у розділах “Спорт” Кіберспорт” та “LIVE”
+        .rules__item
+          .rules__item-wrap
+            .rules__item-img
+              picture
+                source(media="(min-width: 1025px) " srcset="img/rules/rules-ball3-desc.png")
+                source(media="(max-width: 1024px)" srcset="img/rules/rules-ball3-mob.png")
+                img(src="img/rules/rules-ball3-desc.png" alt="Favbet")
+            .rules__item-title Набирай бали
+          .rules__item-text Заробляй бали та просувайся в турнірній таблиці
+        .rules__item
+          .rules__item-wrap
+            .rules__item-img
+              picture
+                source(media="(min-width: 1025px) " srcset="img/rules/rules-ball4-desc.png")
+                source(media="(max-width: 1024px)" srcset="img/rules/rules-ball4-mob.png")
+                img(src="img/rules/rules-ball4-desc.png" alt="Favbet")
+            .rules__item-title Вигравай призи
+          .rules__item-text Грай у квести, вигравай призи та додаткові бали в турнірну таблицю
+
+      a(href='#').rules__btn.custom-btn Взяти участь
+      a(href='#').rules__btn.custom-btn.hidden Взяти участь
+      a(href='#').rules__btn.custom-btn.hidden Взяти участь
+      details.custom-drop.rules__drop
+        summary.custom-drop-title(data-translate="resultDropTitle") Детальніше: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
         .custom-drop-txt(data-translate="resultDropTxt")
           .custom-drop-txt-wrap
             p 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -153,12 +259,270 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
               span 2.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
 
+  .info
+    .info__container
+      .info__row.info__row-one
+        .info__image
+          picture
+            source(media="(min-width: 1025px) " srcset="img/info/sam-one-info-desc.png")
+            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="img/info/sam-one-info-tab.png")
+            source(media="(max-width: 550px)" srcset="img/info/sam-one-info-mob.png")
+            img(src="img/info/sam-one-info-desc.png" alt="Favbet")
+        .info__wrap
+          .info__title Грай в казино
+          .info__text Додай святкового настрою — грай в акційних іграх, накопичуй бали, змагайся за головний приз.
+          .info__list
+            .info__item Мінімальна ставка - 10 грн
+            .info__item Набір балів у турнірну таблицю: враховуються ставки в акційних іграх, де за кожен виграшний множник (сума виграшу, поділена на суму ставки) учасник отримує 1 бал.
+            .info__item Наприклад: при ставці сумою 60 грн та виграшем 3000 грн множник дорівнюватиме 50 (3000 грн / 60 грн = 50 - множник / 50 балів). 
+          .info__subtext Чим більше балів — тим краще приз.
+          a(href='#').info__btn.custom-btn Грати
+      .info__row.info__row-two
+        .info__wrap
+          .info__title Став на cпорт
+          .info__text Став на спорт, накопичуй бали, отримай шанс позмагатися за головний приз.
+          .info__list
+            .info__item Мінімальна ставка - від 200 грн
+            .info__item Набір балів у турнірну таблицю: за кожні виграні 200 грн гравець отримує 1 бал
+            .info__item Наприклад: при ставці сумою в 200 грн та виграшем у 400 грн, гравець отримує 2 бали 
+          a(href='#').info__btn.custom-btn Грати
+        .info__image
+          picture
+            source(media="(min-width: 1025px) " srcset="img/info/sam-two-info-desc.png")
+            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="img/info/sam-two-info-tab.png")
+            source(media="(max-width: 550px)" srcset="img/info/sam-two-info-mob.png")
+            img(src="img/info/sam-two-info-desc.png" alt="Favbet")
 
-//picture
-//  source(media="(min-width: 1025px) " srcset="img/welcome/pers-desc.png")
-//  source(media="(min-width: 771px) and (max-width: 1024px) " srcset="img/welcome/pers-tab.png")
-//  source(media="(max-width: 700px)" srcset="img/welcome/present-mob.png")
-//  img(src="img/welcome/pers-desc.png" alt="Favbet")
-//
-//
-//
+  .route
+    .route__container
+      .route__title
+        .route__title-top Маршрут до свята
+        .route__title-bottom Різдвяний квест
+      .route__list
+        .route__item._done
+          .route__item-img
+            picture
+              source(media="(min-width: 1025px) " srcset="img/route/quest1-img-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/route/quest1-img-mob.png")
+              img(src="img/route/quest1-img-desc.png" alt="Favbet")
+          .route__item-wrap
+            .route__item-title Початок квест пригод
+            .route__item-subtitle Квест № 1
+            .route__item-text Завершився
+            .route__item-star
+              .star._done
+              .star._done
+              .star
+
+        .route__item._time
+          .route__item-img
+            picture
+              source(media="(min-width: 1025px) " srcset="img/route/quest1-img-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/route/quest1-img-mob.png")
+              img(src="img/route/quest1-img-desc.png" alt="Favbet")
+          .route__item-wrap
+            .route__item-title Святкова метушня
+            .route__item-subtitle Квест № 2
+            .route__item-text Завершиться через: <span>1 д. 2 г. 34 хв.</span>
+            .route__item-star
+              .star
+              .star
+              .star
+
+        .route__item._block
+          .route__item-img
+            picture
+              source(media="(min-width: 1025px) " srcset="img/route/quest1-img-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/route/quest1-img-mob.png")
+              img(src="img/route/quest1-img-desc.png" alt="Favbet")
+          .route__item-wrap
+            .route__item-title Різдвяний множник
+            .route__item-subtitle Квест № 3
+            .route__item-text Заблоковано
+            .route__item-star
+              .star
+              .star
+              .star
+
+        .route__item._block
+          .route__item-img
+            picture
+              source(media="(min-width: 1025px) " srcset="img/route/quest1-img-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/route/quest1-img-mob.png")
+              img(src="img/route/quest1-img-desc.png" alt="Favbet")
+          .route__item-wrap
+            .route__item-title Святкове розмаїття
+            .route__item-subtitle Квест № 4
+            .route__item-text Заблоковано
+            .route__item-star
+              .star
+              .star
+              .star
+
+      a(href='#').route__btn.custom-btn Пройти квест
+      a(href='#').route__btn.custom-btn.hidden Пройти квест
+      a(href='#').route__btn.custom-btn.hidden Пройти квест
+  .result
+    .result__bg
+    .result__container
+      .result__title(data-translate='result-title') Турнірна таблиця
+      .result__text Встигни потрапити в топ турнірної таблиці — ставай ближче до головного призу.
+      .result__subtext Призовий фонд
+      .tableResults
+        .tableResults__container
+          .tableResults__wrap#results-table
+            .tableResults__head
+              .tableResults__head-list
+                .tableResults__head-col(data-translate="tableResults_head-place") Рівень
+                .tableResults__head-col(data-translate="tableResults_head-id") ID
+                .tableResults__head-col(data-translate="tableResults_head-points") Бали
+                .tableResults__head-col(data-translate="tableResults_head-prize") Приз
+            .tableResults__body
+              .tableResults__row.place1
+                .tableResults__body-col 1
+                .tableResults__body-col 3647489
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row.place2
+                .tableResults__body-col 2
+                .tableResults__body-col 3647489
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row.place3
+                .tableResults__body-col 3
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row._yourPlace
+                .tableResults__body-col 4
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row
+                .tableResults__body-col 5
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row
+                .tableResults__body-col 6
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row
+                .tableResults__body-col 7
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row
+                .tableResults__body-col 8
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row
+                .tableResults__body-col 9
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row
+                .tableResults__body-col 10
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row
+                .tableResults__body-col 11
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row
+                .tableResults__body-col 12
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+            .tableResults__body-other
+              .tableResults__row
+                .tableResults__body-col 9998
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+              .tableResults__row._yourPlace
+                .tableResults__body-col 8888
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col Shaurma tebe
+              .tableResults__row
+                .tableResults__body-col 11111
+                .tableResults__body-col 8454929
+                .tableResults__body-col 1892
+                .tableResults__body-col 50 000 UAH
+      a(href='#').result__btn.custom-btn Пройти квест
+  .game
+    .game__container
+      .game__title
+        picture
+          source(media="(min-width: 1025px) " srcset="img/games/games-title-desc.png")
+          source(media="(min-width: 551px) and (max-width: 1024px) " srcset="img/games/games-title-tab.png")
+          source(media="(max-width: 550px)" srcset="img/games/games-title-mob.png")
+          img(src="img/games/games-title-desc.png" alt="Favbet")
+      .game__house
+        .game__list
+          a(href='#').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="img/games/game1-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/games/game1-mob.png")
+              img(src="img/games/game1-desc.png" alt="Favbet")
+          a(href='#').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="img/games/game2-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/games/game2-mob.png")
+              img(src="img/games/game2-desc.png" alt="Favbet")
+          a(href='#').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="img/games/game3-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/games/game3-mob.png")
+              img(src="img/games/game3-desc.png" alt="Favbet")
+          a(href='#').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="img/games/game3-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/games/game3-mob.png")
+              img(src="img/games/game3-desc.png" alt="Favbet")
+          a(href='#').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="img/games/game1-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/games/game1-mob.png")
+              img(src="img/games/game1-desc.png" alt="Favbet")
+          a(href='#').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="img/games/game2-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/games/game2-mob.png")
+              img(src="img/games/game2-desc.png" alt="Favbet")
+          a(href='#').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="img/games/game3-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/games/game3-mob.png")
+              img(src="img/games/game3-desc.png" alt="Favbet")
+          a(href='#').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="img/games/game3-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/games/game3-mob.png")
+              img(src="img/games/game3-desc.png" alt="Favbet")
+        a(href='#').game__btn.custom-btn Пройти квест
+        a(href='#').game__btn.custom-btn.hidden Пройти квест
+        a(href='#').game__btn.custom-btn.hidden Пройти квест
+        details.custom-drop.rules__drop
+          summary.custom-drop-title(data-translate="resultDropTitle") Детальні правила акції: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
+          .custom-drop-txt(data-translate="resultDropTxt")
+            .custom-drop-txt-wrap
+              p 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                span 1.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              p 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                span 2.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              p 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                span 2.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              p 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                span 2.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+
+

@@ -17,6 +17,55 @@ textBtn.addEventListener('click', () => {
 
 
 //code
+
+
+//progress
+const progressBars = document.querySelectorAll('.quest__item-info-progress')
+progressBars.forEach(item => {
+    let progress = item.querySelector('.progress')
+    let widthValue = item.getAttribute('data-progress')
+    progress.style.width = `calc(${widthValue} - 6px)`
+})
+
+//show popupchik
+const itemsSlider = document.querySelectorAll('.route__item');
+const popupWrap = document.querySelector('.popup');
+
+function showPopup(index) {
+    popupWrap.classList.remove('_hidden');
+    body.style.overflow = 'hidden'
+    const popup = document.querySelector(`.quest[data-index="${index}"]`);
+    if (popup) {
+        popup.style.display = 'block';
+    }
+}
+
+function hiddenPopup(index) {
+    popupWrap.classList.add('_hidden');
+    body.style.overflow = 'auto'
+    const popup = document.querySelector(`.quest[data-index="${index}"]`);
+    if (popup) {
+        popup.style.display = 'none';
+    }
+}
+
+popupWrap.addEventListener('click', (event) => {
+    const closeBtn = event.target.closest('.quest-close');
+    if (closeBtn) {
+        const index = parseInt(closeBtn.closest('.quest').getAttribute('data-index'));
+        hiddenPopup(index);
+    }
+});
+
+
+itemsSlider.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        showPopup(index);
+    });
+});
+
+
+
 // function pauseRandomly(element) {
 //     setTimeout(function () {
 //         element.classList.add('pause');
@@ -26,7 +75,7 @@ textBtn.addEventListener('click', () => {
 //     }, Math.random() * 5000);
 // }
 //
-// const prizes = document.querySelectorAll('.prize__item-img img');
+// const prizes = document.querySelectorAll('.rules__item-img');
 //
 // prizes.forEach(pauseRandomly);
 
