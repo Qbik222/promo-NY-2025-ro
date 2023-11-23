@@ -64,18 +64,19 @@ itemsSlider.forEach((item, index) => {
     });
 });
 
+//show rules- details
+const rulesItems = document.querySelectorAll('.rules__item')
+rulesItems.forEach(item => {
+    item.addEventListener('click', () => {
+        item.classList.toggle('_open')
+    })
+})
 
-
-// function pauseRandomly(element) {
-//     setTimeout(function () {
-//         element.classList.add('pause');
-//         setTimeout(function () {
-//             element.classList.remove('pause');
-//         }, Math.random() * 8000);
-//     }, Math.random() * 5000);
-// }
-//
-// const prizes = document.querySelectorAll('.rules__item-img');
-//
-// prizes.forEach(pauseRandomly);
-
+//show popup- details
+const questItems = document.querySelectorAll('.quest__item')
+questItems.forEach(item => {
+    item.addEventListener('click', () => {
+        console.log('click')
+        item.classList.toggle('_open')
+    })
+})

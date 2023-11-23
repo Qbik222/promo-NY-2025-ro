@@ -1,0 +1,557 @@
+//welcome
+@media screen and (max-width: 1400px)
+  .welcome
+    &__ball
+      margin: 0 0 0 -150px
+    &__title
+      z-index: 5
+
+@media screen and (max-width: 960px)
+  .welcome
+    &__wrap
+      transform: scale(.7)
+      margin: -310px 0 -80px
+
+@media screen and (max-width: 550px)
+  .welcome
+    transform: scale(1)
+    padding: 30px 0
+    &__wrap
+      transform: scale(1)
+      margin: -63vw 0 0 0
+    &__ball
+      min-width: 121vw
+      height: 30vw
+      margin: 0
+      .salut-one
+        width: 11vw
+        height: 11vw
+        top: 34vw
+        left: 39vw
+      .salut-two
+        width: 13vw
+        height: 13vw
+        top: 28vw
+        left: 51vw
+      .salut-three
+        width: 12vw
+        height: 12vw
+        top: 36vw
+        left: 60vw
+      .salut-fourth
+        width: 9vw
+        height: 9vw
+        top: 43vw
+        left: 70vw
+    &__sam
+      min-width: 99vw
+      max-width: 90vw
+      margin: 16vw 0 0 -45vw
+      &-text
+        top: 34vw
+        right: 25vw
+        padding: 12vw 2vw 10vw 12.5vw
+        width: 44vw
+        height: 35vw
+        &-wrap
+          font-size: 3.5vw
+          line-height: 2.8vw
+          max-width: 17vw
+    &__ball
+      min-width: 111vw
+      height: 30vw
+      margin: 40vw 0 0 -11vw
+    &__info
+      margin: -30px 0 0 0
+    &__date
+      margin: 0 0 15px
+    &__text
+      font-size: 14px
+      line-height: 22px
+
+//RULES
+@media screen and (max-width: 960px)
+  .rules
+    &__btn
+      margin: 0 0 20px
+    &__title
+      margin: 0 auto 50px
+      &-top
+        font-size: 36px
+        line-height: 42px
+        margin: 0 0 -10px
+      &-bottom
+        padding: 0 40px 0 0
+        .valut
+          right: 10px
+          font-size: 18px
+          line-height: 20px
+        .bonus
+          bottom: 30px
+    &__subtitle
+      font-size: 56px
+      line-height: 58px
+    &__list
+      gap: 10px
+      margin: 0 0 20px
+      flex-wrap: wrap
+    &__item
+      max-width: 172px
+      min-width: 172px
+      &:first-child
+        margin: 0
+      &:nth-child(2)
+        margin: 0
+      &:nth-child(3)
+        margin: 0
+      &-title
+        font-size: 22px
+        line-height: 22px
+      &-text
+        font-size: 14px
+        line-height: 20px
+
+@media screen and (max-width: 760px)
+  .rules
+    &__title
+      &-top
+        text-align: center
+        max-width: 470px
+      &-bottom
+        .bonus
+          bottom: 2vw
+          right: 8vw
+        .valut
+          right: 1vw
+          bottom: 9vw
+
+@media screen and (max-width: 650px)
+  .rules
+    &__title
+      &-bottom
+        .bonus
+          transform: rotate(-6.677deg) scale(.8)
+          right: 5vw
+
+@media screen and (max-width: 550px)
+  .rules
+
+    &__title
+      margin: 0 auto 50px
+      &-top
+        font-size: 26px
+        line-height: 30px
+        max-width: 340px
+      &-bottom
+        padding: 0 20px 0 0
+        max-width: 370px
+        .valut
+          right: 0
+          bottom: 37px
+          font-size: 12px
+          line-height: 12px
+        .bonus
+          bottom: -30px
+          right: 20px
+          white-space: nowrap
+          transform: rotate(-6.677deg) scale(.6)
+    &__subtitle
+      font-size: 36px
+      line-height: 40px
+    &__text
+      font-size: 14px
+      line-height: 22px
+    &__list
+      flex-direction: column
+      flex-wrap: nowrap
+    &__item
+      padding: 15px 55px 15px 0
+      border-radius: 20px
+      max-width: 100%
+      width: 100%
+      flex-direction: column
+      background: var(--promo-gradient-detail)
+      position: relative
+      &._open
+        &::before
+          transform: rotate(0deg)
+        .rules__item-text
+          display: block
+      &::before
+        content: ''
+        position: absolute
+        right: 22px
+        top: 21px
+        width: 24px
+        height: 24px
+        transform: rotate(180deg)
+        background: url("../img/arrow.svg") no-repeat 0 0/contain
+      &-text
+        display: none
+        align-self: flex-start
+        padding: 10px 0 0 63px
+        text-align: start
+        max-width: 100%
+        //&._open
+        //  display: block
+      &-wrap
+        margin: 0
+        flex-direction: row
+        width: 100%
+        min-width: 100%
+      &-img
+        width: 48px
+        margin: 0 10px 0
+      &-title
+        font-size: 20px
+        line-height: 22px
+        margin: 0
+      &-text
+        font-size: 14px
+        line-height: 22px
+
+@media screen and (max-width: 370px)
+  .rules
+    &__title
+      &-top
+        margin: 0 0 0
+      &-bottom
+        max-width: 280px
+        .valut
+          bottom: 27px
+          font-size: 10px
+          line-height: 11px
+        .bonus
+          bottom: -40px
+          right: 20px
+          white-space: nowrap
+          transform: rotate(-6.677deg) scale(.5)
+
+//INFO
+@media screen and (max-width: 1400px)
+  .info
+    &__container
+      max-width: 1060px
+    &__row
+      &-one
+        margin: 0 0 80px
+        .info__image
+          min-width: 840px
+          max-width: 1140px
+          margin: 0px -150px 0 -170px
+      &-two
+        justify-content: flex-end
+        .info__image
+          min-width: 650px
+
+@media screen and (max-width: 1024px)
+  .info
+    margin: -110px 0 0 0
+    &::after,
+    &::before
+      height: 600px
+    &::before
+      top: 190px
+    &::after
+      bottom: 470px
+
+    &__container
+      max-width: 1060px
+    &__btn
+      margin: 0 auto
+      left: 0
+    &__row
+      &-one
+        margin: 0 0 230px
+        flex-direction: column
+        .info__image
+          min-width: auto
+          max-width: 1140px
+          margin: 0 -90px 20px
+      &-two
+        flex-direction: column-reverse
+        justify-content: flex-end
+        .info__image
+          min-width: auto
+          margin: 0 -90px 20px
+
+@media screen and (max-width: 550px)
+  .info
+    &::after,
+    &::before
+      height: 400px
+    &::before
+      top: 130px
+    &::after
+      bottom: 370px
+    margin: -40px 0 0 0
+    &__title
+      font-size: 36px
+      line-height: 38px
+      margin: 0 0 15px
+    &__wrap
+      font-size: 14px
+      line-height: 22px
+
+//ROUTE
+@media screen and (max-width: 1024px)
+  .route
+    padding: 130px 0 50px
+    &__title
+      margin: 0px 0 10px
+    &__list
+      width: calc(100% + 30px)
+      position: relative
+      left: -15px
+      padding: 230px 0 30px 0
+      overflow-x: scroll
+      overflow-y: hidden
+      &::-webkit-scrollbar
+        display: none
+    &__item
+      min-width: 270px
+
+@media screen and (max-width: 960px)
+  .route
+    padding: 100px 0 50px
+    &__title
+      margin: 0px 0 -10px
+      &-top
+        font-size: 56px
+        line-height: 56px
+
+@media screen and (max-width: 550px)
+  .route
+    padding: 100px 0 50px
+    &__container
+      &::before
+        top: 20px
+    &__list
+      margin: 0
+    &__title
+      margin: 0px 0 -10px
+      &-top
+        font-size: 36px
+        line-height: 36px
+      &-bottom
+        margin-top: -5px
+        width: 240px
+        height: 60px
+        font-size: 26px
+        line-height: 26px
+
+//RESULT
+@media screen and (max-width: 960px)
+  .result
+    padding: 10px 0 70px
+    &::after
+      top: -50px
+    &__title
+      font-size: 56px
+      line-height: 56px
+
+@media screen and (max-width: 550px)
+  .result
+    padding: 10px 0 12vw
+    &::after
+      top: -50px
+    &__title
+      font-size: 36px
+      line-height: 36px
+    &__text
+      max-width: 399px
+      font-size: 14px
+      line-height: 22px
+    &__btn
+      margin: -219px 4px 0px 0
+  .tableResults
+    margin: -150px -40px 0 0
+    &__wrap
+      width: 899px
+      height: 952px
+      padding: 277px 294px 40px 272px
+    &__head
+      &-col
+        margin: 0 15px 0 0
+        font-size: 21px
+        line-height: 21px
+    &__body
+      max-height: 293px
+      &-other
+        position: relative
+        left: -5px
+      &-col
+        padding: 8px 0
+        margin: 0 15px 0 0
+        font-size: 12px
+        line-height: 12px
+
+@media screen and (max-width: 360px)
+  .result
+    &__btn
+      margin: -249px 4px 0px 0
+  .tableResults
+    margin: -170px -40px 0 0
+    transform: scale(.85)
+
+//GAME
+@media screen and (max-width: 1200px)
+  .game
+    &__list
+      gap: 4.5vw 4.6vw
+      grid-template-columns: repeat(4, 15.5vw)
+    &__house
+      left: 6vw
+      padding: 37vw 10vw 0 32.5vw
+      min-width: 154vw
+      height: 104vw
+    &__btn
+      margin: -26vw 0 50px 0
+
+@media screen and (max-width: 960px)
+  .game
+    &__title
+      max-width: 70vw
+
+@media screen and (max-width: 550px)
+  .game
+    padding: 0 0 40px
+    &::after
+      top: -50px
+    &__btn
+      margin: -26vw 0 20px 0
+    &__title
+      margin: 0 auto -1vw
+    &__house
+      margin: 0
+      transform: scale(1.1)
+
+//POPUP
+@media screen and (max-width: 730px)
+  .popup
+    padding: 80px 0
+  .quest
+    .quest-close
+      top: -50px
+      right: 0
+      width: 37px
+      height: 37px
+    &__image
+      min-width: 120px
+      max-width: 120px
+      margin: -10px 5px 0 0
+    &__top
+      flex-direction: column
+      align-items: stretch
+      padding: 25px 15px 15px
+      margin: 0 0 10px
+      &-wrap
+        justify-content: center
+        margin: 0 0 15px
+        max-width: 100%
+        width: 100%
+    &__title
+      font-size: 29px
+      line-height: 34px
+      max-width: 100%
+      min-width: auto
+    &__des
+      max-width: 100%
+    &__list
+      flex-direction: column
+      gap: 10px
+    &__item
+      padding: 15px 45px 15px 15px
+      position: relative
+      &._open
+        margin: 0 0 60px
+        &::before
+          transform: rotate(0deg)
+        .quest__item-info
+          display: block
+      &._block
+        pointer-events: none
+        &::after
+          display: block
+      &::before
+        content: ''
+        position: absolute
+        right: 14px
+        top: 31px
+        width: 24px
+        height: 24px
+        transform: rotate(180deg)
+        background: url("../img/arrow.svg") no-repeat 0 0/contain
+      &::after
+        content: ''
+        display: none
+        position: absolute
+        left: -16px
+        z-index: 2
+        top: 29px
+        width: 32px
+        height: 32px
+        background: url("../img/block.svg") no-repeat 0 0/contain
+      &-wrap
+        display: grid
+        grid-template-columns: 60px 1fr
+        justify-items: start
+        align-items: center
+        column-gap: 25px
+        margin: 0
+      &-img
+        grid-column: 1/2
+        grid-row: 1/3
+        width: 60px
+        height: 60px
+        margin: 0
+        &::before
+          width: 70px
+          height: 70px
+      &-info
+        display: none
+        margin: 15px 0 0
+        padding: 0 0 0 75px
+        &-progress
+          margin: 0 0 40px
+        &-text
+          text-align: start
+      &-title
+        font-size: 23px
+        line-height: 25px
+        margin: 5px 0 0
+      &-subtitle
+        font-size: 10px
+        line-height: 10px
+        flex-direction: row
+        margin: 0px 0 0
+        span
+          font-size: 10px
+          line-height: 10px
+          max-width: 100%
+
+@media screen and (max-width: 360px)
+  .quest
+    &__title
+      font-size: 24px
+      line-height: 28px
+    &__time
+      font-size: 13px
+      line-height: 15px
+    &__image
+      min-width: 90px
+      max-width: 90px
+      margin: -10px 5px 0 0
+    &__item
+      &-wrap
+        grid-template-columns: 40px 1fr
+      &-img
+        width: 40px
+        height: 40px
+      &-subtitle
+        font-size: 8px
+        line-height: 8px
+
+        span
+          font-size: 8px
+          line-height: 8px

@@ -61,6 +61,7 @@ body
   position: relative
   display: flex
   flex-direction: column
+  overflow: hidden
   &::after
     pointer-events: none
     content: ''
@@ -88,6 +89,11 @@ body
   background: url("../img/btn-bg.svg") no-repeat 0 0/contain
   font-size: 45px
   line-height: 45px
+  @media screen and (max-width: 550px)
+    width: 270px
+    height: 105px
+    font-size: 35px
+    line-height: 35px
   &::after
     content: ''
     position: absolute
@@ -127,11 +133,7 @@ body
     letter-spacing: .48px
     padding: 27px 76px 25px 30px
     position: relative
-    @media screen and (max-width: 1300px)
-      padding: 20px 76px 15px 20px
-      border-radius: 8px
-      font-size: 24px
-      line-height: 24px
+
     svg
       content: ""
       position: absolute
@@ -152,8 +154,6 @@ body
     border-radius: 20px
     margin-top: 10px
     padding: 30px
-    @media screen and (max-width: 1300px)
-      border-radius: 8px
     @media screen and (max-width: 550px)
       padding: 20px 20px
     &-wrap
@@ -332,7 +332,7 @@ body
 
 .rules
   position: relative
-  z-index: 10
+  z-index: 20
   &__container
     max-width: 1430px
     padding: 0 15px
@@ -355,20 +355,21 @@ body
     &-bottom
       position: relative
       max-width: 1070px
+      padding: 0 50px 0 0
       .rules-img
         animation: 2s shadowMagenta ease infinite
       .valut
         position: absolute
-        right: -80px
-        bottom: 110px
+        right: -10px
+        bottom: 90px
         font-family: $font-suisse-reg
-        font-size: 38px
+        font-size: 32px
         line-height: 40px
         color: var(--promo-color-white)
       .bonus
         transform: rotate(-6.677deg)
         position: absolute
-        right: 10px
+        right: 90px
         bottom: 60px
         font-family: $font-adley-reg
         font-size: 38px
@@ -451,6 +452,7 @@ body
     content: ''
     position: absolute
     left: 0
+    z-index: -1
     top: 90px
     height: 800px
     width: 1400px
@@ -459,6 +461,7 @@ body
     content: ''
     position: absolute
     right: 0
+    z-index: -1
     bottom: -50px
     height: 800px
     width: 1400px
@@ -475,25 +478,27 @@ body
       .info__image
         min-width: 1140px
         max-width: 1140px
-        margin: 0 -130px 0 0
+        margin: 0 -130px 0 -180px
         position: relative
         img
           animation: 2s shadowMagenta2 ease infinite
           position: relative
           z-index: 5
       .info__wrap
+        z-index: 10
         margin: 0 0 -250px 0
     &-two
       justify-content: flex-end
       .info__image
         min-width: 1050px
         max-width: 1050px
-        margin: 0 -110px 0 -130px
+        margin: 0px -140px 0 -190px
         img
           animation: 2s shadowBlue ease infinite
           position: relative
           z-index: 5
       .info__wrap
+        z-index: 10
         margin: 0 0 -50px 0
   &__wrap
     max-width: 575px
@@ -718,7 +723,7 @@ body
     align-self: center
 
 .result
-  padding: 10px 0 190px
+  padding: 10px 0 100px
   position: relative
   z-index: 10
   &::after
@@ -773,13 +778,14 @@ body
   &__btn
     z-index: 10
     align-self: center
-    margin: -330px 30px 0px 0
+    margin: -330px 4px 0px 0
 
 .tableResults
+  align-self: center
   text-align: center
   position: relative
   z-index: 3
-  margin: -230px 0 0 0
+  margin: -230px -40px 0 0
   &__wrap
     margin: 0 auto
     width: 1500px
@@ -865,6 +871,48 @@ body
     word-break: break-all
     display: flex
     position: relative
+    &.place1,
+    &.place2,
+    &.place3
+      .tableResults__body-col:first-child
+        &::after
+          content: ''
+          width: 16px
+          height: 16px
+          display: inline-block
+          margin: 0 -21px 0 7px
+          @media screen and (max-width: 550px)
+            width: 10px
+            height: 10px
+    &.place1
+      .tableResults__body-col:first-child
+        &::after
+          background: url("../img/result/star1.svg") no-repeat 0 0/contain
+    &.place2
+      .tableResults__body-col:first-child
+        &::after
+          background: url("../img/result/star2.svg") no-repeat 0 0/contain
+    &.place3
+      .tableResults__body-col:first-child
+        &::after
+          background: url("../img/result/star3.svg") no-repeat 0 0/contain
+    &._yourPlace
+      position: relative
+      .tableResults__body-col:first-child
+        &::after
+          content: ''
+          position: absolute
+          left: -15px
+          bottom: 15px
+          width: 24px
+          height: 20px
+          display: inline-block
+          background: url("../img/result/you.svg") no-repeat 0 0/contain
+          @media screen and (max-width: 550px)
+            width: 20px
+            height: 17px
+            bottom: 7px
+
     &::before
       content: ''
       position: absolute
@@ -954,8 +1002,8 @@ body
 
   &__container
     margin: auto
-    max-width: 770px
-    padding: 0 15px
+    max-width: 790px
+    padding: 0 25px
 
   .quest-close
     position: absolute
@@ -986,6 +1034,7 @@ body
   &__info
     margin: 0 0 -10px 0
   &__image
+    min-width: 155px
     max-width: 155px
     margin: -10px 25px 0 0
   &__title
@@ -993,6 +1042,7 @@ body
     font-size: 36px
     line-height: 40px
     max-width: 200px
+    min-width: 200px
     text-align: center
     color: var(--promo-color-white)
     text-shadow: var(--promo-shadow-text-blue)

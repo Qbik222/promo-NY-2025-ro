@@ -37,8 +37,8 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                   .quest__item-info-progress(data-progress='20%')
                     span 1/3
                     .progress
-                a(href='#').quest__item-btn.custom-btn Пройти квест
-              .quest__item
+                  a(href='#').quest__item-btn.custom-btn Пройти квест
+              .quest__item._block
                 .quest__item-wrap
                   .quest__item-title Другий етап
                   .quest__item-img
@@ -52,9 +52,9 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                   .quest__item-info-progress(data-progress='50%')
                     span 2/3
                     .progress
-                a(href='#').quest__item-btn.custom-btn._disabled
-                  img(src='img/route/block.svg' alt='block')
-              .quest__item
+                  a(href='#').quest__item-btn.custom-btn._disabled
+                    img(src='img/route/block.svg' alt='block')
+              .quest__item._block
                 .quest__item-wrap
                   .quest__item-title Третій етап
                   .quest__item-img
@@ -69,8 +69,8 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                   .quest__item-info-progress(data-progress='100%')
                     span 3/3
                     .progress
-                a(href='#').quest__item-btn.custom-btn._disabled
-                  img(src='img/route/block.svg' alt='block')
+                  a(href='#').quest__item-btn.custom-btn._disabled
+                    img(src='img/route/block.svg' alt='block')
     .quest.quest-two(data-index='1')
       .quest__container
         .quest__wrap
@@ -107,7 +107,7 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                   .quest__item-info-progress(data-progress='20%')
                     span 1/3
                     .progress
-                a(href='#').quest__item-btn.custom-btn Пройти квест
+                  a(href='#').quest__item-btn.custom-btn Пройти квест
               .quest__item
                 .quest__item-wrap
                   .quest__item-title Другий етап
@@ -122,8 +122,8 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                   .quest__item-info-progress(data-progress='50%')
                     span 2/3
                     .progress
-                a(href='#').quest__item-btn.custom-btn._disabled
-                  img(src='img/route/block.svg' alt='block')
+                  a(href='#').quest__item-btn.custom-btn._disabled
+                    img(src='img/route/block.svg' alt='block')
               .quest__item
                 .quest__item-wrap
                   .quest__item-title Третій етап
@@ -139,8 +139,8 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                   .quest__item-info-progress(data-progress='100%')
                     span 3/3
                     .progress
-                a(href='#').quest__item-btn.custom-btn._disabled
-                  img(src='img/route/block.svg' alt='block')
+                  a(href='#').quest__item-btn.custom-btn._disabled
+                    img(src='img/route/block.svg' alt='block')
   .welcome
     .welcome__container
       .welcome__title
@@ -363,7 +363,6 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
       a(href='#').route__btn.custom-btn.hidden Пройти квест
       a(href='#').route__btn.custom-btn.hidden Пройти квест
   .result
-    .result__bg
     .result__container
       .result__title(data-translate='result-title') Турнірна таблиця
       .result__text Встигни потрапити в топ турнірної таблиці — ставай ближче до головного призу.
@@ -393,7 +392,7 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                 .tableResults__body-col 8454929
                 .tableResults__body-col 1892
                 .tableResults__body-col 50 000 UAH
-              .tableResults__row._yourPlace
+              .tableResults__row
                 .tableResults__body-col 4
                 .tableResults__body-col 8454929
                 .tableResults__body-col 1892
@@ -505,24 +504,24 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
               source(media="(min-width: 1025px) " srcset="img/games/game3-desc.png")
               source(media="(max-width: 1024px)" srcset="img/games/game3-mob.png")
               img(src="img/games/game3-desc.png" alt="Favbet")
-        a(href='#').game__btn.custom-btn Пройти квест
-        a(href='#').game__btn.custom-btn.hidden Пройти квест
-        a(href='#').game__btn.custom-btn.hidden Пройти квест
-        details.custom-drop.rules__drop
-          summary.custom-drop-title(data-translate="resultDropTitle") Детальні правила акції: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
-          .custom-drop-txt(data-translate="resultDropTxt")
-            .custom-drop-txt-wrap
-              p 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                span 1.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              p 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                span 2.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              p 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                span 2.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              p 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                span 2.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      a(href='#').game__btn.custom-btn Пройти квест
+      a(href='#').game__btn.custom-btn.hidden Пройти квест
+      a(href='#').game__btn.custom-btn.hidden Пройти квест
+      details.custom-drop.rules__drop
+        summary.custom-drop-title(data-translate="resultDropTitle") Детальні правила акції: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
+        .custom-drop-txt(data-translate="resultDropTxt")
+          .custom-drop-txt-wrap
+            p 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              span 1.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            p 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              span 2.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            p 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              span 2.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            p 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              span 2.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
 
 
