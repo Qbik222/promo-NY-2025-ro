@@ -38,7 +38,11 @@ body
     .info
       &::before,
       &::after
-        background: url("../img/info/bg-info-img-dark.svg") no-repeat 0 0/contain
+        background: url("../img/info/bg-info-img-desc-dark.png") no-repeat 0 0/contain
+        @media screen and (max-width: 1024px)
+          background: url("../img/info/bg-info-img-tab-dark.png") no-repeat 0 0/contain
+        @media screen and (max-width: 550px)
+          background: url("../img/info/bg-info-img-mob-dark.png") no-repeat 0 0/contain
     .route
       &__container
         &::before
@@ -456,7 +460,11 @@ body
     top: 90px
     height: 800px
     width: 1400px
-    background: url("../img/info/bg-info-img.svg") no-repeat 0 0/contain
+    background: url("../img/info/bg-info-img-desc.png") no-repeat 0 0/contain
+    @media screen and (max-width: 1024px)
+      background: url("../img/info/bg-info-img-tab.png") no-repeat 0 0/contain
+    @media screen and (max-width: 550px)
+      background: url("../img/info/bg-info-img-mob.png") no-repeat 0 0/contain
   &::after
     content: ''
     position: absolute
@@ -466,7 +474,11 @@ body
     height: 800px
     width: 1400px
     transform: scale(-1, 1)
-    background: url("../img/info/bg-info-img.svg") no-repeat 0 0/contain
+    background: url("../img/info/bg-info-img-desc.png") no-repeat 0 0/contain
+    @media screen and (max-width: 1024px)
+      background: url("../img/info/bg-info-img-tab.png") no-repeat 0 0/contain
+    @media screen and (max-width: 550px)
+      background: url("../img/info/bg-info-img-mob.png") no-repeat 0 0/contain
   &__container
     max-width: 1630px
     padding: 0 15px
