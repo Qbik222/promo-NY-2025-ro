@@ -30,6 +30,10 @@ progressBars.forEach(item => {
 //show popupchik
 const itemsSlider = document.querySelectorAll('.route__item');
 const popupWrap = document.querySelector('.popup');
+const btnTableShow = document.querySelector('.result__subtext');
+const tablePopup = document.querySelector('.prize-fund');
+const tablePopupBtnClose = document.querySelector('.prize-fund-close');
+
 
 function showPopup(index) {
     popupWrap.classList.remove('_hidden');
@@ -63,6 +67,20 @@ itemsSlider.forEach((item, index) => {
         showPopup(index);
     });
 });
+
+btnTableShow.addEventListener('click', () =>{
+    popupWrap.classList.remove('_hidden');
+    body.style.overflow = 'hidden'
+    tablePopup.style.display = 'block';
+})
+
+tablePopupBtnClose.addEventListener('click', () => {
+    popupWrap.classList.add('_hidden');
+    body.style.overflow = 'auto'
+    tablePopup.style.display = 'none';
+})
+
+
 
 //show rules- details
 const rulesItems = document.querySelectorAll('.rules__item')

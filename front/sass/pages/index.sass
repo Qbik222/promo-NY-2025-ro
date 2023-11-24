@@ -14,6 +14,7 @@
   --promo-shadow-btn-color: 4px 4px 5px rgba(0, 0, 0, 0.25)
   --promo-gradient-detail: linear-gradient(180deg, rgba(1, 1, 90, 0.70) 0%, rgba(62, 1, 90, 0.65) 100%)
   --promo-gradient-route: linear-gradient(180deg, #5622C0 0%, #B26AF5 100%), linear-gradient(180deg, #E4457D 0%, #D042A7 100%)
+  --promo-gradient-hover-btn: linear-gradient(180deg, rgba(36, 36, 162, 0.70) 0%, rgba(125, 34, 168, 0.65) 100%)
   --promo-shadow-route: 0px 2px 0px 0px #5226A2
   --promo-bg-color: #00012B
 
@@ -774,6 +775,8 @@ body
     text-align: center
     color: var(--promo-color-gray)
   &__subtext
+    overflow: hidden
+    cursor: pointer
     position: relative
     z-index: 5
     align-self: center
@@ -787,6 +790,21 @@ body
     border: 3px solid var(--promo-color-white)
     background: var(--promo-gradient-detail)
     margin: 0 auto
+    &::before
+      content: ''
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      z-index: -1
+      opacity: 0
+      background: var(--promo-gradient-hover-btn)
+      transition: opacity .3s ease
+    &:hover
+      &::before
+        opacity: 1
+
   &__btn
     z-index: 10
     align-self: center
@@ -1207,6 +1225,93 @@ body
         pointer-events: none
         img
           width: 23px
+
+//PRIZE-FUND
+.prize-fund
+  display: none
+  margin: auto
+  position: relative
+  &__container
+    margin: 20px auto 0
+    max-width: 350px
+    padding: 0 25px
+    @media screen and (max-width: 550px)
+      margin: 0 auto
+    @media screen and (max-width: 360px)
+      padding: 0 5px
+  .prize-fund-close
+    position: absolute
+    top: -23px
+    right: -23px
+    width: 48px
+    height: 48px
+    background: url("../img/route/close.svg") no-repeat 0 0/contain
+    cursor: pointer
+    transition: .3s ease
+    @media screen and (max-width: 550px)
+      top: -67px
+      right: -20px
+      width: 37px
+      height: 37px
+    @media screen and (max-width: 360px)
+      top: -69px
+      right: -11px
+    &:hover
+      transform: scale(1.05)
+  &__title
+    position: absolute
+    white-space: nowrap
+    left: 49%
+    top: -26px
+    z-index: 5
+    transform: translateX(-50%) rotate(-3deg)
+    font-family: $font-adley-reg
+    font-size: 36px
+    line-height: 36px
+    color: var(--promo-color-white)
+    text-shadow: var(--promo-shadow-text-blue)
+    text-align: center
+    margin: 0 0 20px
+  &__wrap
+    width: 300px
+    padding: 25px 30px
+    background: var(--promo-gradient-detail)
+    backdrop-filter: blur(10px)
+    border: 3px solid var(--promo-color-white)
+    border-radius: 20px
+    @media screen and (max-width: 360px)
+      width: 280px
+  &__table
+    &-head
+      &-col
+        font-family: $font-adley-block
+        color: var(--promo-color-white)
+        font-size: 31px
+        line-height: 31px
+      &-list
+        display: grid
+        grid-template-columns: calc(35% - 7.5px) calc(65% - 7.5px)
+        gap: 15px
+        justify-items: center
+    &-row
+      display: grid
+      grid-template-columns: calc(35% - 7.5px) calc(65% - 7.5px)
+      gap: 15px
+      justify-items: center
+      &:not(:last-child)
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+    &-body
+      &-col
+        padding: 15px 0
+        font-family: $font-suisse-reg
+        color: var(--promo-color-white)
+        font-size: 17px
+        line-height: 17px
+        @media screen and (max-width: 360px)
+          font-size: 15px
+          line-height: 15px
+
+
 
 
 @keyframes shadowMagenta
