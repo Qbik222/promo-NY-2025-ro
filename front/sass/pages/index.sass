@@ -77,6 +77,27 @@ body
     width: 100%
     height: 90%
     background: url("../img/bg-fav-desc.svg") no-repeat 50% 0/cover
+  &.en
+    .welcome
+      &__title
+        &-bottom
+          max-width: 860px
+          img
+            content: url("../img/welcome/welcome-title-desc-en.png")
+            @media screen and (max-width: 1024px)
+              content: url("../img/welcome/welcome-title-tab-en.png")
+            @media screen and (max-width: 550px)
+              content: url("../img/welcome/welcome-title-mob-en.png")
+    .game
+      &__title
+        img
+          content: url("../img/games/game-title-desc-en.png")
+          @media screen and (max-width: 1024px)
+            content: url("../img/games/game-title-tab-en.png")
+          @media screen and (max-width: 550px)
+            content: url("../img/games/game-title-mob-en.png")
+    .tableResults__row._yourPlace .tableResults__body-col:first-child::after
+        background: url("../img/result/you-en.svg") no-repeat 0 0/contain
 
 
 .custom-btn
