@@ -1,63 +1,63 @@
-button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') light
-.fav__page.overflow
+.fav__page#newYear2024
   .popup._hidden
     .prize-fund
       .prize-fund__container
         .prize-fund__wrap
           .prize-fund-close
-          .prize-fund__title Призовий фонд
+          .prize-fund__title(data-translate='prizeTitle') Призовий фонд
           .prize-fund__table
             .prize-fund__table-head
               .prize-fund__table-head-list
-                .prize-fund__table-head-col Місце
-                .prize-fund__table-head-col Приз
+                .prize-fund__table-head-col(data-translate='tableHeadPlace') Місце
+                .prize-fund__table-head-col(data-translate='tableHeadPrize') Приз
             .prize-fund__table-body
               .prize-fund__table-row
                 .prize-fund__table-body-col 1
-                .prize-fund__table-body-col 402 024 UAH
+                .prize-fund__table-body-col(data-translate='prize_1') 402 024 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 2
-                .prize-fund__table-body-col 300 000 UAH
+                .prize-fund__table-body-col(data-translate='prize_2') 300 000 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 3
-                .prize-fund__table-body-col 200 000 UAH
+                .prize-fund__table-body-col(data-translate='prize_3') 200 000 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 4
-                .prize-fund__table-body-col 150 000 UAH
+                .prize-fund__table-body-col(data-translate='prize_4') 150 000 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 5
-                .prize-fund__table-body-col 100 000 UAH
+                .prize-fund__table-body-col(data-translate='prize_5') 100 000 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 6-10
-                .prize-fund__table-body-col 50 000 UAH
+                .prize-fund__table-body-col(data-translate='prize_6-10') 50 000 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 11-50
-                .prize-fund__table-body-col 20 000 UAH
+                .prize-fund__table-body-col(data-translate='prize_11-50') 20 000 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 51-100
-                .prize-fund__table-body-col 6 000 UAH
+                .prize-fund__table-body-col(data-translate='prize_51-100') 6 000 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 101-200
-                .prize-fund__table-body-col 3 000 UAH
+                .prize-fund__table-body-col(data-translate='prize_101-200') 3 000 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 201-300
-                .prize-fund__table-body-col 1 000 UAH
+                .prize-fund__table-body-col(data-translate='prize_201-300') 1 000 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 301-400
-                .prize-fund__table-body-col 700 UAH
+                .prize-fund__table-body-col(data-translate='prize_301-400') 700 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 401-500
-                .prize-fund__table-body-col 300 UAH
+                .prize-fund__table-body-col(data-translate='prize_401-500') 300 UAH
               .prize-fund__table-row
                 .prize-fund__table-body-col 501-600
-                .prize-fund__table-body-col 35 фріспінів
+                .prize-fund__table-body-col(data-translate='prize_501-600') 35 фріспінів
               .prize-fund__table-row
                 .prize-fund__table-body-col 601-650
-                .prize-fund__table-body-col 30 фріспінів
+                .prize-fund__table-body-col(data-translate='prize_601-650') 30 фріспінів
               .prize-fund__table-row
                 .prize-fund__table-body-col 651-700
-                .prize-fund__table-body-col 20 фріспінів
-    .quest.quest-one(data-index='0')
+                .prize-fund__table-body-col(data-translate='prize_651-700') 20 фріспінів
+    //POP-UP QUESTS
+    .quest.sport.quest-one(data-index='0')
       .quest__container
         .quest__wrap
           .quest__top
@@ -69,65 +69,70 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                   source(media="(max-width: 1024px)" srcset="img/route/quest1-img-mob.png")
                   img(src="img/route/quest1-img-desc.png" alt="Favbet")
               .quest__info
-                .quest__title Початок квест пригод
+                .quest__title(data-translate="nameQuest-1") Початок квест пригод
                 .quest__time
-                  .quest__time-text Завершиться через:
-                  .quest__time-num 1 д. 2 г. 34 хв.
+                  .quest__time-text(data-translate="endQuest") Завершиться через:
+                  .quest__time-num.timer 1 д. 2 г. 34 хв.
             .quest__des
-              .quest__des-title Квест № 1
-              .quest__des-text Роби виграшні ставки від 200 грн на спортивні події у розділах Спорт, LIVE та Киберспорт та отримай на рахунок до 300 грн та до 20 балів в основну турнірну таблицю
+              .quest__des-title(data-translate="quest-1") Квест № 1
+              .quest__des-text(data-translate="descrQuest-1") Роби виграшні ставки від 200 грн на спортивні події у розділах Спорт, LIVE та Киберспорт та отримай на рахунок до 300 грн та до 20 балів в основну турнірну таблицю
           .quest__bottom
             .quest__list
               .quest__item
                 .quest__item-wrap
-                  .quest__item-title Перший етап
+                  .quest__item-title(data-translate="firstStep") Перший етап
                   .quest__item-img
                     picture
                       source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
                       source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
                       img(src="img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle Приз: #[span 50 фріспінів + 10 балів]
+                  .quest__item-subtitle(data-translate="prizeQuest-1_1") Приз: #[span 50 фріспінів + 10 балів]
 
                 .quest__item-info
-                  .quest__item-info-text Зроби 100 обертів від мінімальної ставки та отримай 50 фріспінів та 10 балів в основну турнірну таблицю.
+                  .quest__item-info-text(data-translate="stepQuest-1_1") Зроби 100 обертів від мінімальної ставки та отримай 50 фріспінів та 10 балів в основну турнірну таблицю.
                   .quest__item-info-progress(data-progress='20%')
-                    span 1/3
+                    span 0/100
                     .progress
-                  a(href='#').quest__item-btn.custom-btn Пройти квест
-              .quest__item._block
+                  a(href="/login/" target="_blank" role="button" data-translate="loginBtn").quest__item-btn.custom-btn.unauth-msg Авторизуйся
+                  .quest__item-btn.custom-btn.questBtn.hide(role="button" data-translate="questBtn") Пройти квест
+                  a(href="/casino/" role="button" data-translate="playBtn").quest__item-btn.custom-btn.took-part.firstPlay.hide Грати
+              .quest__item
                 .quest__item-wrap
-                  .quest__item-title Другий етап
+                  .quest__item-title(data-translate="secondStep") Другий етап
                   .quest__item-img
                     picture
                       source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
                       source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
                       img(src="img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle Приз: #[span 70 фріспінів + 20 балів]
+                  .quest__item-subtitle(data-translate="prizeQuest-1_2") Приз: #[span 70 фріспінів + 20 балів]
                 .quest__item-info
-                  .quest__item-info-text Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
-                  .quest__item-info-progress(data-progress='50%')
-                    span 2/3
+                  .quest__item-info-text(data-translate="stepQuest-1_2") Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
+                  .quest__item-info-progress(data-progress='40%')
+                    span 100/250
                     .progress
-                  a(href='#').quest__item-btn.custom-btn._disabled
+                  a(href='#').quest__item-btn.custom-btn.secondBlockBtn._disabled
                     img(src='img/route/block.svg' alt='block')
-              .quest__item._block
+                  a(href="/casino/" role="button" data-translate="playBtn").quest__item-btn.custom-btn.took-part.secondPlay.hide Грати
+              .quest__item
                 .quest__item-wrap
-                  .quest__item-title Третій етап
+                  .quest__item-title(data-translate="thirdStep") Третій етап
                   .quest__item-img
                     picture
                       source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
                       source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
                       img(src="img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle Приз: #[span 100 фріспінів + 30 балів]
+                  .quest__item-subtitle(data-translate="prizeQuest-1_3") Приз: #[span 100 фріспінів + 30 балів]
 
                 .quest__item-info
-                  .quest__item-info-text Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
-                  .quest__item-info-progress(data-progress='100%')
-                    span 3/3
+                  .quest__item-info-text(data-translate="stepQuest-1_3") Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
+                  .quest__item-info-progress(data-progress='70%')
+                    span 250/400
                     .progress
-                  a(href='#').quest__item-btn.custom-btn._disabled
+                  a(href='#').quest__item-btn.custom-btn.thirdBlockBtn._disabled
                     img(src='img/route/block.svg' alt='block')
-    .quest.quest-two(data-index='1')
+                  a(href="/casino/" role="button" data-translate="playBtn").quest__item-btn.custom-btn.took-part.thirdPlay.hide Грати
+
+    .quest.casino.quest-two(data-index='1')
       .quest__container
         .quest__wrap
           .quest__top
@@ -139,68 +144,72 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                   source(media="(max-width: 1024px)" srcset="img/route/quest2-img-mob.png")
                   img(src="img/route/quest1-img-desc.png" alt="Favbet")
               .quest__info
-                .quest__title Найди шавуху
+                .quest__title(data-translate="nameQuest-2") Найди шавуху
                 .quest__time
-                  .quest__time-text Завершиться через:
-                  .quest__time-num 1 д. 2 г. 34 хв.
+                  .quest__time-text(data-translate="endQuest") Завершиться через:
+                  .quest__time-num.timer 1 д. 2 г. 34 хв.
             .quest__des
-              .quest__des-title Квест № 2
-              .quest__des-text Роби виграшні ставки від 200 грн на спортивні події у розділах Спорт, LIVE та Киберспорт та отримай на рахунок до 300 грн та до 20 балів в основну турнірну таблицю
+              .quest__des-title(data-translate="quest-2") Квест № 2
+              .quest__des-text(data-translate="descrQuest-2") Роби виграшні ставки від 200 грн на спортивні події у розділах Спорт, LIVE та Киберспорт та отримай на рахунок до 300 грн та до 20 балів в основну турнірну таблицю
           .quest__bottom
             .quest__list
               .quest__item
                 .quest__item-wrap
-                  .quest__item-title Перший етап
+                  .quest__item-title(data-translate="firstStep") Перший етап
                   .quest__item-img
                     picture
                       source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
                       source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
                       img(src="img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle Приз: #[span 50 фріспінів + 10 балів]
+                  .quest__item-subtitle(data-translate="prizeQuest-2_1") Приз: #[span 50 фріспінів + 10 балів]
 
                 .quest__item-info
-                  .quest__item-info-text Зроби 100 обертів від мінімальної ставки та отримай 50 фріспінів та 10 балів в основну турнірну таблицю.
+                  .quest__item-info-text(data-translate="stepQuest-2_1") Зроби 100 обертів від мінімальної ставки та отримай 50 фріспінів та 10 балів в основну турнірну таблицю.
                   .quest__item-info-progress(data-progress='20%')
-                    span 1/3
+                    span 0/100
                     .progress
-                  a(href='#').quest__item-btn.custom-btn Пройти квест
+                  a(href="/login/" target="_blank" role="button" data-translate="loginBtn").quest__item-btn.custom-btn.unauth-msg Авторизуйся
+                  .quest__item-btn.custom-btn.questBtn.hide(role="button" data-translate="questBtn") Пройти квест
+                  a(href="/casino/" role="button" data-translate="playBtn").quest__item-btn.custom-btn.took-part.firstPlay.hide Грати
               .quest__item
                 .quest__item-wrap
-                  .quest__item-title Другий етап
+                  .quest__item-title(data-translate="secondStep") Другий етап
                   .quest__item-img
                     picture
                       source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
                       source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
                       img(src="img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle Приз: #[span 70 фріспінів + 20 балів]
+                  .quest__item-subtitle(data-translate="prizeQuest-2_2") Приз: #[span 70 фріспінів + 20 балів]
                 .quest__item-info
-                  .quest__item-info-text Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
+                  .quest__item-info-text(data-translate="stepQuest-2_2") Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
                   .quest__item-info-progress(data-progress='50%')
-                    span 2/3
+                    span 100/250
                     .progress
-                  a(href='#').quest__item-btn.custom-btn._disabled
+                  a(href='#').quest__item-btn.custom-btn.secondBlockBtn._disabled
                     img(src='img/route/block.svg' alt='block')
+                  a(href="/casino/" role="button" data-translate="playBtn").quest__item-btn.custom-btn.took-part.secondPlay.hide Грати
               .quest__item
                 .quest__item-wrap
-                  .quest__item-title Третій етап
+                  .quest__item-title(data-translate="thirdStep") Третій етап
                   .quest__item-img
                     picture
                       source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
                       source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
                       img(src="img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle Приз: #[span 100 фріспінів + 30 балів]
+                  .quest__item-subtitle(data-translate="prizeQuest-2_3") Приз: #[span 100 фріспінів + 30 балів]
 
                 .quest__item-info
-                  .quest__item-info-text Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
+                  .quest__item-info-text(data-translate="stepQuest-2_3") Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
                   .quest__item-info-progress(data-progress='100%')
-                    span 3/3
+                    span 250/400
                     .progress
-                  a(href='#').quest__item-btn.custom-btn._disabled
+                  a(href='#').quest__item-btn.custom-btn.thirdBlockBtn._disabled
                     img(src='img/route/block.svg' alt='block')
+                  a(href="/casino/" role="button" data-translate="playBtn").quest__item-btn.custom-btn.took-part.thirdPlay.hide Грати
   .welcome
     .welcome__container
       .welcome__title
-        .welcome__title-top Сем рятує
+        .welcome__title-top(data-translate='welcomeTitle') Сем рятує
         .welcome__title-bottom
           picture
             source(media="(min-width: 1025px) " srcset="img/welcome/welcome-title-desc.png")
@@ -215,12 +224,6 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
               source(media="(min-width: 551px) and (max-width: 1024px) " srcset="img/welcome/ball-tab.png")
               source(media="(max-width: 550px)" srcset="img/welcome/ball-mob.png")
               img(src="img/welcome/ball-desc.png" alt="Favbet")
-
-
-
-
-
-
           .salut.salut-one
           .salut.salut-two
           .salut.salut-three
@@ -233,30 +236,30 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
               source(media="(max-width: 550px)" srcset="img/welcome/sam-welcome-mob.png")
               img(src="img/welcome/sam-welcome-desc.png" alt="Favbet")
           .welcome__sam-text
-            .welcome__sam-text-wrap Погнали заряджатися святковим настроєм?
+            .welcome__sam-text-wrap(data-translate='welcomeSamTxt') Погнали заряджатися святковим настроєм?
       .welcome__info
-        a(href='#').welcome__btn.custom-btn Погнали
-        a(href='#').welcome__btn.custom-btn.hidden Погнали
-        a(href='#').welcome__btn.custom-btn.hidden Погнали
-        .welcome__date з 11.12.2023 по 24.12.2023
-        .welcome__text FAVBET City — унікальне місце, де вічне літо, свято і подарунки. З 11 по 24 грудня 2023 року відвідуй разом із Семом свої улюблені святкові місця, долай квести, відчуй дух справжнього свята.
+        a(href="/login/" target="_blank" role="button" data-translate="loginBtn").welcome__btn.custom-btn.unauth-msg Авторизуйся
+        .welcome__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Взяти участь
+        a(href="/casino/" role="button" data-translate="playBtn").welcome__btn.custom-btn.took-part.hide Грати
+        .welcome__date(data-translate='promoDate') з 11.12.2023 по 24.12.2023
+        .welcome__text(data-translate='welcomeTxt')  FAVBET City — унікальне місце, де вічне літо, свято і подарунки. З 11 по 24 грудня 2023 року відвідуй разом із Семом свої улюблені святкові місця, долай квести, відчуй дух справжнього свята.
 
 
   .rules
     .rules__container
       .rules__title
-        .rules__title-top Змагайся за
+        .rules__title-top(data-translate='rulesTitle') Змагайся за
         .rules__title-bottom
           picture
             source(media="(min-width: 1025px) " srcset="img/rules/rules-title-desc.png")
             source(media="(min-width: 551px) and (max-width: 1024px) " srcset="img/rules/rules-title-tab.png")
             source(media="(max-width: 550px)" srcset="img/rules/rules-title-mob.png")
             img(src="img/rules/rules-title-desc.png" alt="Favbet" class='rules-img')
-          span.valut UAH
-          span.bonus + <img src='img/rules/sum.svg' alt='sum'> фріспінів.
+          span.valut(data-translate='prizeValut') UAH
+          span.bonus + <img src='img/rules/sum.svg' alt='sum'> #[span(data-translate='freeSpins') фріспінів.]
 
-      .rules__subtitle Як взяти участь?
-      .rules__text Вирушай на пошуки духу Різдва разом із Семом. На тебе чекають квести, які не тільки занурять у святкову атмосферу, а й принесуть додаткові призи.
+      .rules__subtitle(data-translate='rulesSub') Як взяти участь?
+      .rules__text(data-translate='rulesTxt') Вирушай на пошуки духу Різдва разом із Семом. На тебе чекають квести, які не тільки занурять у святкову атмосферу, а й принесуть додаткові призи.
       .rules__list
         .rules__item
           .rules__item-wrap
@@ -265,8 +268,8 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                 source(media="(min-width: 1025px) " srcset="img/rules/rules-ball1-desc.png")
                 source(media="(max-width: 1024px)" srcset="img/rules/rules-ball1-mob.png")
                 img(src="img/rules/rules-ball1-desc.png" alt="Favbet")
-            .rules__item-title Бери участь
-          .rules__item-text Натисни кнопку “Взяти участь”
+            .rules__item-title(data-translate='rulesTitle-1') Бери участь
+          .rules__item-text(data-translate='rulesTxt-1') Натисни кнопку “Взяти участь”
         .rules__item
           .rules__item-wrap
             .rules__item-img
@@ -274,8 +277,8 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                 source(media="(min-width: 1025px) " srcset="img/rules/rules-ball2-desc.png")
                 source(media="(max-width: 1024px)" srcset="img/rules/rules-ball2-mob.png")
                 img(src="img/rules/rules-ball2-desc.png" alt="Favbet")
-            .rules__item-title Роби ставки
-          .rules__item-text Роби ставки в акційних іграх в розділі “Казино”, став на спортивні події у розділах “Спорт” Кіберспорт” та “LIVE”
+            .rules__item-title(data-translate='rulesTitle-2') Роби ставки
+          .rules__item-text(data-translate='rulesTxt-2') Роби ставки в акційних іграх в розділі “Казино”, став на спортивні події у розділах “Спорт” Кіберспорт” та “LIVE”
         .rules__item
           .rules__item-wrap
             .rules__item-img
@@ -283,8 +286,8 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                 source(media="(min-width: 1025px) " srcset="img/rules/rules-ball3-desc.png")
                 source(media="(max-width: 1024px)" srcset="img/rules/rules-ball3-mob.png")
                 img(src="img/rules/rules-ball3-desc.png" alt="Favbet")
-            .rules__item-title Набирай бали
-          .rules__item-text Заробляй бали та просувайся в турнірній таблиці
+            .rules__item-title(data-translate='rulesTitle-3') Набирай бали
+          .rules__item-text(data-translate='rulesTxt-3') Заробляй бали та просувайся в турнірній таблиці
         .rules__item
           .rules__item-wrap
             .rules__item-img
@@ -292,16 +295,15 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
                 source(media="(min-width: 1025px) " srcset="img/rules/rules-ball4-desc.png")
                 source(media="(max-width: 1024px)" srcset="img/rules/rules-ball4-mob.png")
                 img(src="img/rules/rules-ball4-desc.png" alt="Favbet")
-            .rules__item-title Вигравай призи
-          .rules__item-text Грай у квести, змагайся за додаткові призи та ігрові бали в турнірну таблицю
-
-      a(href='#').rules__btn.custom-btn Взяти участь
-      a(href='#').rules__btn.custom-btn.hidden Взяти участь
-      a(href='#').rules__btn.custom-btn.hidden Взяти участь
+            .rules__item-title(data-translate='rulesTitle-4') Вигравай призи
+          .rules__item-text(data-translate='rulesTxt-4') Грай у квести, змагайся за додаткові призи та ігрові бали в турнірну таблицю
+      a(href="/login/" target="_blank" role="button" data-translate="loginBtn").rules__btn.custom-btn.unauth-msg Авторизуйся
+      .rules__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Взяти участь
+      a(href="/casino/" role="button" data-translate="playBtn").rules__btn.custom-btn.took-part.hide Грати
       details.custom-drop.rules__drop
-        summary.custom-drop-title(data-translate="resultDropTitle") Детальніше: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
-        .custom-drop-txt(data-translate="resultDropTxt")
-          .custom-drop-txt-wrap
+        summary.custom-drop-title #[span(data-translate="rulesDropTitle") Детальніше:] <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
+        .custom-drop-txt
+          .custom-drop-txt-wrap(data-translate="rulesDropTxt")
             p 1. Натисни кнопку «Взяти участь».
               span Авторизуйся на акційній сторінці, натиснувши кнопку «Авторизуйся», або зареєструйся як користувач. Натисни кнопку «Взяти участь» на сторінці акції.
             p 2. Роби ставки на спортивні події та казино.
@@ -320,23 +322,27 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
             source(media="(max-width: 550px)" srcset="img/info/sam-one-info-mob.png")
             img(src="img/info/sam-one-info-desc.png" alt="Favbet")
         .info__wrap
-          .info__title Грай в казино
-          .info__text в акційних іграх розділу "Казино", накопичуй бали, змагайся за головний приз.
+          .info__title(data-translate="casinoTitle") Грай в казино
+          .info__text(data-translate="casinoTxt-1") в акційних іграх розділу "Казино", накопичуй бали, змагайся за головний приз.
           .info__list
-            .info__item Мінімальна ставка - 10 грн
-            .info__item Набір балів у турнірну таблицю: враховуються ставки в акційних іграх, де за кожен виграшний множник (сума виграшу, поділена на суму ставки) учасник отримує 1 бал.
-            .info__item Наприклад: при ставці сумою 60 грн та виграшем 3000 грн множник дорівнюватиме 50 (3000 грн / 60 грн = 50 - множник / 50 балів). 
-          .info__subtext Чим більше балів — тим краще приз.
-          a(href='#').info__btn.custom-btn Грати
+            .info__item(data-translate="casinoTxt-2") Мінімальна ставка - 10 грн
+            .info__item(data-translate="casinoTxt-3") Набір балів у турнірну таблицю: враховуються ставки в акційних іграх, де за кожен виграшний множник (сума виграшу, поділена на суму ставки) учасник отримує 1 бал.
+            .info__item(data-translate="casinoTxt-4") Наприклад: при ставці сумою 60 грн та виграшем 3000 грн множник дорівнюватиме 50 (3000 грн / 60 грн = 50 - множник / 50 балів). 
+          .info__subtext(data-translate="casinoTxt-5") Чим більше балів — тим краще приз.
+          a(href="/login/" target="_blank" role="button" data-translate="loginBtn").info__btn.custom-btn.unauth-msg Авторизуйся
+          .info__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Взяти участь
+          a(href="/casino/" role="button" data-translate="playBtn").info__btn.custom-btn.took-part.hide Грати
       .info__row.info__row-two
         .info__wrap
-          .info__title Став на cпорт
-          .info__text Став на актуальні спортивні події.
+          .info__title(data-translate="sportTitle") Став на cпорт
+          .info__text(data-translate="sportTxt-1") Став на актуальні спортивні події.
           .info__list
-            .info__item Мінімальна ставка - від 200 грн
-            .info__item Набір балів у турнірну таблицю: за кожні виграні 200 грн гравець отримує 1 бал
-            .info__item Наприклад: при ставці сумою в 200 грн та виграшем у 400 грн, гравець отримує 2 бали 
-          a(href='#').info__btn.custom-btn Грати
+            .info__item(data-translate="sportTxt-2") Мінімальна ставка - від 200 грн
+            .info__item(data-translate="sportTxt-3") Набір балів у турнірну таблицю: за кожні виграні 200 грн гравець отримує 1 бал
+            .info__item(data-translate="sportTxt-4") Наприклад: при ставці сумою в 200 грн та виграшем у 400 грн, гравець отримує 2 бали 
+          a(href="/login/" target="_blank" role="button" data-translate="loginBtn").info__btn.custom-btn.unauth-msg Авторизуйся
+          .info__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Взяти участь
+          a(href="/sports/sport/soccer/" role="button" data-translate="playBtn").info__btn.custom-btn.took-part.hide Грати
         .info__image
           picture
             source(media="(min-width: 1025px) " srcset="img/info/sam-two-info-desc.png")
@@ -344,167 +350,103 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
             source(media="(max-width: 550px)" srcset="img/info/sam-two-info-mob.png")
             img(src="img/info/sam-two-info-desc.png" alt="Favbet")
 
+  //QUESTS
   .route
     .route__container
       .route__title
-        .route__title-top Маршрут до свята
-        .route__title-bottom Різдвяний квест
+        //.route__title-top Маршрут до свята
+        .route__title-bottom(data-translate="questTitle") Різдвяний квест
       .route__list
-        .route__item._done
+
+        .route__item.inactive
           .route__item-img
             picture
               source(media="(min-width: 1025px) " srcset="img/route/quest1-img-desc.png")
               source(media="(max-width: 1024px)" srcset="img/route/quest1-img-mob.png")
               img(src="img/route/quest1-img-desc.png" alt="Favbet")
           .route__item-wrap
-            .route__item-title Початок квест пригод
-            .route__item-subtitle Квест № 1
-            .route__item-text Завершився
+            .route__item-title(data-translate="nameQuest-1") Початок квест пригод
+            .route__item-subtitle(data-translate="quest-1") Квест № 1
+            .route__item-text.timerTxt(data-translate="finishedTimer")  Завершиться через: <span class="timer">1 д. 2 г. 34 хв.</span>
+            .route__item-text.blockTxt(data-translate="blocked") Заблоковано
+            .route__item-text.finishedTxt(data-translate="finished") Завершився
             .route__item-star
               .star._done
               .star._done
               .star
 
-        .route__item._time
+        .route__item.active
           .route__item-img
             picture
               source(media="(min-width: 1025px) " srcset="img/route/quest2-img-desc.png")
               source(media="(max-width: 1024px)" srcset="img/route/quest2-img-mob.png")
               img(src="img/route/quest1-img-desc.png" alt="Favbet")
           .route__item-wrap
-            .route__item-title Святкова метушня
-            .route__item-subtitle Квест № 2
-            .route__item-text Завершиться через: <span>1 д. 2 г. 34 хв.</span>
+            .route__item-title(data-translate="nameQuest-2") Святкова метушня
+            .route__item-subtitle(data-translate="quest-2") Квест № 2
+            .route__item-text.timerTxt(data-translate="finishedTimer") Завершиться через: <span class="timer">1 д. 2 г. 34 хв.</span>
+            .route__item-text.blockTxt(data-translate="blocked") Заблоковано
+            .route__item-text.finishedTxt(data-translate="finished") Завершився
             .route__item-star
               .star
               .star
               .star
 
-        .route__item._block
+        .route__item.soon
           .route__item-img
             picture
               source(media="(min-width: 1025px) " srcset="img/route/quest4-img-desc.png")
               source(media="(max-width: 1024px)" srcset="img/route/quest4-img-mob.png")
               img(src="img/route/quest1-img-desc.png" alt="Favbet")
           .route__item-wrap
-            .route__item-title Різдвяний множник
-            .route__item-subtitle Квест № 3
-            .route__item-text Заблоковано
+            .route__item-title(data-translate="nameQuest-3") Різдвяний множник
+            .route__item-subtitle(data-translate="quest-3") Квест № 3
+            .route__item-text.timerTxt(data-translate="finishedTimer") Завершиться через: <span class="timer">1 д. 2 г. 34 хв.</span>
+            .route__item-text.blockTxt(data-translate="blocked") Заблоковано
+            .route__item-text.finishedTxt(data-translate="finished") Завершився
             .route__item-star
               .star
               .star
               .star
 
-        .route__item._block
+        .route__item.soon
           .route__item-img
             picture
               source(media="(min-width: 1025px) " srcset="img/route/quest4-img-desc.png")
               source(media="(max-width: 1024px)" srcset="img/route/quest4-img-mob.png")
               img(src="img/route/quest1-img-desc.png" alt="Favbet")
           .route__item-wrap
-            .route__item-title Святкове розмаїття
-            .route__item-subtitle Квест № 4
-            .route__item-text Заблоковано
+            .route__item-title(data-translate="nameQuest-4") Святкове розмаїття
+            .route__item-subtitle(data-translate="quest-4") Квест № 4
+            .route__item-text.timerTxt(data-translate="finishedTimer") Завершиться через: <span class="timer">1 д. 2 г. 34 хв.</span>
+            .route__item-text.blockTxt(data-translate="blocked") Заблоковано
+            .route__item-text.finishedTxt(data-translate="finished") Завершився
             .route__item-star
               .star
               .star
               .star
-
-      a(href='#').route__btn.custom-btn Пройти квест
-      a(href='#').route__btn.custom-btn.hidden Авторизуватись
-      a(href='#').route__btn.custom-btn.hidden Грати
+      a(href="/login/" target="_blank" role="button" data-translate="loginBtn").route__btn.custom-btn.unauth-msg Авторизуйся
+      .route__btn.custom-btn.questBtn.hide(role="button" data-translate="questBtn") Пройти квест
+      a(href="/casino/" role="button" data-translate="playBtn").route__btn.custom-btn.took-part.hide Грати
   .result
     .result__container
-      .result__title(data-translate='result-title') Турнірна таблиця
-      .result__text Встигни потрапити в топ турнірної таблиці — ставай ближче до головного призу.
-      .result__subtext Призовий фонд
+      .result__title(data-translate='resultTitle') Турнірна таблиця
+      .result__text(data-translate='resultTxt') Встигни потрапити в топ турнірної таблиці — ставай ближче до головного призу.
+      .result__subtext(data-translate='prizeTitle') Призовий фонд
       .tableResults
         .tableResults__container
           .tableResults__wrap#results-table
             .tableResults__head
               .tableResults__head-list
-                .tableResults__head-col(data-translate="tableResults_head-place") Місце
-                .tableResults__head-col(data-translate="tableResults_head-id") ID
-                .tableResults__head-col(data-translate="tableResults_head-points") Бали
-                .tableResults__head-col(data-translate="tableResults_head-prize") Приз
-            .tableResults__body
-              .tableResults__row.place1
-                .tableResults__body-col 1
-                .tableResults__body-col 3647489
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row.place2
-                .tableResults__body-col 2
-                .tableResults__body-col 3647489
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row.place3
-                .tableResults__body-col 3
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row
-                .tableResults__body-col 4
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row
-                .tableResults__body-col 5
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row
-                .tableResults__body-col 6
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row
-                .tableResults__body-col 7
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row
-                .tableResults__body-col 8
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row
-                .tableResults__body-col 9
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row
-                .tableResults__body-col 10
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row
-                .tableResults__body-col 11
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row
-                .tableResults__body-col 12
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
+                .tableResults__head-col(data-translate='tableHeadPlace') Місце
+                .tableResults__head-col(data-translate='tableHeadID') ID
+                .tableResults__head-col(data-translate='tableHeadPoints') Бали
+                .tableResults__head-col(data-translate='tableHeadPrize') Приз
+            .tableResults__body#top-users
             .tableResults__body-other
-              .tableResults__row
-                .tableResults__body-col 9998
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-              .tableResults__row._yourPlace
-                .tableResults__body-col 8888
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col Shaurma tebe
-              .tableResults__row
-                .tableResults__body-col 11111
-                .tableResults__body-col 8454929
-                .tableResults__body-col 1892
-                .tableResults__body-col 50 000 UAH
-      a(href='#').result__btn.custom-btn Взяти участь
+      a(href="/login/" target="_blank" role="button" data-translate="loginBtn").result__btn.custom-btn.unauth-msg Авторизуйся
+      .result__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Взяти участь
+      a(href="/casino/" role="button" data-translate="playBtn").result__btn.custom-btn.took-part.hide Грати
   .game
     .game__container
       .game__title
@@ -515,53 +457,53 @@ button.test-btn(style='position: absolute; top:0; right: 0; z-index: 100;') ligh
           img(src="img/games/games-title-desc.png" alt="Favbet")
       .game__house
         .game__list
-          a(href='#').game__link
+          a(href='/casino/show-game/pragmatic-play/gates-of-olympus/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="img/games/game1-desc.png")
               source(media="(max-width: 1024px)" srcset="img/games/game1-mob.png")
               img(src="img/games/game1-desc.png" alt="Favbet")
-          a(href='#').game__link
+          a(href='/casino/show-game/endorphina/royal-xmass-2/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="img/games/game2-desc.png")
               source(media="(max-width: 1024px)" srcset="img/games/game2-mob.png")
               img(src="img/games/game2-desc.png" alt="Favbet")
-          a(href='#').game__link
+          a(href='/casino/show-game/3-oaks/sun-of-egypt-3/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="img/games/game3-desc.png")
               source(media="(max-width: 1024px)" srcset="img/games/game3-mob.png")
               img(src="img/games/game3-desc.png" alt="Favbet")
-          a(href='#').game__link
+          a(href='/casino/show-game/barbara-bang/christmas-fruit-cocktails/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="img/games/game4-desc.png")
               source(media="(max-width: 1024px)" srcset="img/games/game4-mob.png")
               img(src="img/games/game4-desc.png" alt="Favbet")
-          a(href='#').game__link
+          a(href='/casino/show-game/playson/royal-coins-2-hold-and-win/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="img/games/game5-desc.png")
               source(media="(max-width: 1024px)" srcset="img/games/game5-mob.png")
               img(src="img/games/game5-desc.png" alt="Favbet")
-          a(href='#').game__link
+          a(href='/casino/show-game/spinomenal/1-reel-elves/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="img/games/game6-desc.png")
               source(media="(max-width: 1024px)" srcset="img/games/game6-mob.png")
               img(src="img/games/game6-desc.png" alt="Favbet")
-          a(href='#').game__link
+          a(href='/casino/show-game/amusnet-interactive/supreme-hot/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="img/games/game7-desc.png")
               source(media="(max-width: 1024px)" srcset="img/games/game7-mob.png")
               img(src="img/games/game7-desc.png" alt="Favbet")
-          a(href='#').game__link
+          a(href='/casino/show-game/greentube/diamond-link-mighty-santa/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="img/games/game8-desc.png")
               source(media="(max-width: 1024px)" srcset="img/games/game8-mob.png")
               img(src="img/games/game8-desc.png" alt="Favbet")
-      a(href='#').game__btn.custom-btn Взяти участь
-      a(href='#').game__btn.custom-btn.hidden Авторизуватись
-      a(href='#').game__btn.custom-btn.hidden Грати
+      a(href="/login/" target="_blank" role="button" data-translate="loginBtn").game__btn.custom-btn.unauth-msg Авторизуйся
+      .game__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Взяти участь
+      a(href="/casino/" role="button" data-translate="playBtn").game__btn.custom-btn.took-part.hide Грати
       details.custom-drop.rules__drop
-        summary.custom-drop-title(data-translate="resultDropTitle") Детальні правила акції: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
-        .custom-drop-txt(data-translate="resultDropTxt")
-          .custom-drop-txt-wrap
+        summary.custom-drop-title #[span(data-translate="resultDropTitle") Детальні правила акції:] <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
+        .custom-drop-txt
+          .custom-drop-txt-wrap(data-translate="resultDropTxt")
             p 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit   Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
               span 1.1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               span.retreat1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit

@@ -53,12 +53,67 @@ body
 .overflow
   overflow-x: hidden !important
 
+.hide
+  display: none!important
+
 body
   background: var(--promo-bg-color)
   img
     max-width: 100%
     height: auto
 
+.sport
+
+.casino
+
+.active
+  .route__item-text
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 4px
+    span
+      &::before
+        content: ''
+        display: inline-block
+        margin: 0 5px -4px 0
+        width: 19px
+        height: 18px
+        background: url("../img/route/time.svg") no-repeat 0 0/contain
+  .timerTxt
+    display: flex
+  .blockTxt,.finishedTxt
+    display: none
+
+.inactive
+  .route__item-text
+    &::before
+      content: ''
+      display: inline-block
+      margin: 0 5px 0 0
+      width: 19px
+      height: 20px
+      background: url("../img/route/arrow-done.svg") no-repeat 0 0/contain
+  .finishedTxt
+    display: flex
+  .timerTxt,.blockTxt
+    display: none
+
+.soon
+  pointer-events: none
+  .route__item-text
+    color: var(--promo-color-orange)
+    &::before
+      content: ''
+      display: inline-block
+      margin: 0 5px 0 0
+      width: 13px
+      height: 18px
+      background: url("../img/route/block.svg") no-repeat 0 0/contain
+  .timerTxt,.finishedTxt
+    display: none
+  .blockTxt
+    display: flex
 
 .fav__page
   background: var(--promo-bg-color)
@@ -104,7 +159,7 @@ body
   position: relative
   width: 350px
   padding: 0 0 6px 0
-  z-index: 2
+  z-index: 3
   height: 135px
   display: flex
   align-items: center
@@ -115,6 +170,7 @@ body
   background: url("../img/btn-bg.svg") no-repeat 0 0/contain
   font-size: 45px
   line-height: 45px
+  cursor: pointer
   @media screen and (max-width: 550px)
     width: 270px
     height: 105px
@@ -131,8 +187,6 @@ body
     opacity: 0
     background: url("../img/btn-bg-hover.svg") no-repeat 0 0/contain
     transition: opacity .3s ease
-  &.hidden
-    display: none
   &:hover::after
     opacity: 1
 
@@ -159,7 +213,8 @@ body
     letter-spacing: .48px
     padding: 27px 76px 25px 30px
     position: relative
-
+    span
+      font-family: $font-suisse-reg
     svg
       content: ""
       position: absolute
@@ -215,7 +270,16 @@ body
       .title
         font-family:  $font-suisse-semb
         color: var(--promo-color-white)
-
+      .circle
+        padding-left: 35px
+        &:before
+          content: ''
+          width: 5px
+          height: 5px
+          background: var(--promo-color-white)
+          border-radius: 50%
+          display: inline-block
+          margin: 0 4px 2px 0
 
 .welcome
   padding: 50px 0
@@ -405,6 +469,8 @@ body
         img
           display: inline-block
           margin: 0 -60px -67px
+        span
+          font-family: $font-adley-reg
   &__subtitle
     transform: rotate(-3deg)
     font-family: $font-adley-reg
@@ -651,40 +717,6 @@ body
     &:last-child
       &::before
         content: none
-    &._done
-      .route__item-text
-        &::before
-          content: ''
-          display: inline-block
-          margin: 0 5px 0 0
-          width: 19px
-          height: 20px
-          background: url("../img/route/arrow-done.svg") no-repeat 0 0/contain
-    &._block
-      pointer-events: none
-      .route__item-text
-        color: var(--promo-color-orange)
-        &::before
-          content: ''
-          display: inline-block
-          margin: 0 5px 0 0
-          width: 13px
-          height: 18px
-          background: url("../img/route/block.svg") no-repeat 0 0/contain
-    &._time
-      .route__item-text
-        display: flex
-        flex-direction: column
-        align-items: center
-        gap: 4px
-        span
-          &::before
-            content: ''
-            display: inline-block
-            margin: 0 5px -4px 0
-            width: 19px
-            height: 18px
-            background: url("../img/route/time.svg") no-repeat 0 0/contain
     &-img
       position: relative
       img
