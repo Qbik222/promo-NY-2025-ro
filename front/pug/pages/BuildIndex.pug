@@ -57,7 +57,7 @@
                 .prize-fund__table-body-col 651-700
                 .prize-fund__table-body-col(data-translate='prize_651-700') 20 фріспінів
     //POP-UP QUESTS
-    .quest.sport.quest-one(data-index='0')
+    .quest.sport.quest-popup1
       .quest__container
         .quest__wrap
           .quest__top
@@ -132,80 +132,6 @@
                     img(src='img/route/block.svg' alt='block')
                   a(href="/casino/" role="button" data-translate="playBtn").quest__item-btn.custom-btn.took-part.thirdPlay.hide Грати
 
-    .quest.casino.quest-two(data-index='1')
-      .quest__container
-        .quest__wrap
-          .quest__top
-            .quest-close
-            .quest__top-wrap
-              .quest__image
-                picture
-                  source(media="(min-width: 1025px) " srcset="img/route/quest2-img-desc.png")
-                  source(media="(max-width: 1024px)" srcset="img/route/quest2-img-mob.png")
-                  img(src="img/route/quest1-img-desc.png" alt="Favbet")
-              .quest__info
-                .quest__title(data-translate="nameQuest-2") Найди шавуху
-                .quest__time
-                  .quest__time-text(data-translate="endQuest") Завершиться через:
-                  .quest__time-num.timer 1 д. 2 г. 34 хв.
-            .quest__des
-              .quest__des-title(data-translate="quest-2") Квест № 2
-              .quest__des-text(data-translate="descrQuest-2") Роби виграшні ставки від 200 грн на спортивні події у розділах Спорт, LIVE та Киберспорт та отримай на рахунок до 300 грн та до 20 балів в основну турнірну таблицю
-          .quest__bottom
-            .quest__list
-              .quest__item
-                .quest__item-wrap
-                  .quest__item-title(data-translate="firstStep") Перший етап
-                  .quest__item-img
-                    picture
-                      source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
-                      source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
-                      img(src="img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle(data-translate="prizeQuest-2_1") Приз: #[span 50 фріспінів + 10 балів]
-
-                .quest__item-info
-                  .quest__item-info-text(data-translate="stepQuest-2_1") Зроби 100 обертів від мінімальної ставки та отримай 50 фріспінів та 10 балів в основну турнірну таблицю.
-                  .quest__item-info-progress(data-progress='20%')
-                    span 0/100
-                    .progress
-                  a(href="/login/" target="_blank" role="button" data-translate="loginBtn").quest__item-btn.custom-btn.unauth-msg Авторизуйся
-                  .quest__item-btn.custom-btn.questBtn.hide(role="button" data-translate="questBtn") Пройти квест
-                  a(href="/casino/" role="button" data-translate="playBtn").quest__item-btn.custom-btn.took-part.firstPlay.hide Грати
-              .quest__item
-                .quest__item-wrap
-                  .quest__item-title(data-translate="secondStep") Другий етап
-                  .quest__item-img
-                    picture
-                      source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
-                      source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
-                      img(src="img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle(data-translate="prizeQuest-2_2") Приз: #[span 70 фріспінів + 20 балів]
-                .quest__item-info
-                  .quest__item-info-text(data-translate="stepQuest-2_2") Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
-                  .quest__item-info-progress(data-progress='50%')
-                    span 100/250
-                    .progress
-                  a(href='#').quest__item-btn.custom-btn.secondBlockBtn._disabled
-                    img(src='img/route/block.svg' alt='block')
-                  a(href="/casino/" role="button" data-translate="playBtn").quest__item-btn.custom-btn.took-part.secondPlay.hide Грати
-              .quest__item
-                .quest__item-wrap
-                  .quest__item-title(data-translate="thirdStep") Третій етап
-                  .quest__item-img
-                    picture
-                      source(media="(min-width: 1025px) " srcset="img/route/free-spin-desc.png")
-                      source(media="(max-width: 1024px)" srcset="img/route/free-spin-mob.png")
-                      img(src="img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle(data-translate="prizeQuest-2_3") Приз: #[span 100 фріспінів + 30 балів]
-
-                .quest__item-info
-                  .quest__item-info-text(data-translate="stepQuest-2_3") Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
-                  .quest__item-info-progress(data-progress='100%')
-                    span 250/400
-                    .progress
-                  a(href='#').quest__item-btn.custom-btn.thirdBlockBtn._disabled
-                    img(src='img/route/block.svg' alt='block')
-                  a(href="/casino/" role="button" data-translate="playBtn").quest__item-btn.custom-btn.took-part.thirdPlay.hide Грати
   .welcome
     .welcome__container
       .welcome__title
@@ -375,7 +301,7 @@
               .star._done
               .star
 
-        .route__item.active
+        .route__item.soon
           .route__item-img
             picture
               source(media="(min-width: 1025px) " srcset="img/route/quest2-img-desc.png")
@@ -395,9 +321,9 @@
         .route__item.soon
           .route__item-img
             picture
-              source(media="(min-width: 1025px) " srcset="img/route/quest4-img-desc.png")
-              source(media="(max-width: 1024px)" srcset="img/route/quest4-img-mob.png")
-              img(src="img/route/quest1-img-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="img/route/quest3-img-desc.png")
+              source(media="(max-width: 1024px)" srcset="img/route/quest3-img-mob.png")
+              img(src="img/route/quest3-img-desc.png" alt="Favbet")
           .route__item-wrap
             .route__item-title(data-translate="nameQuest-3") Різдвяний множник
             .route__item-subtitle(data-translate="quest-3") Квест № 3

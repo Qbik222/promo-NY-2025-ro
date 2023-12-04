@@ -301,19 +301,19 @@
     const tablePopupBtnClose = document.querySelector('.prize-fund-close');
 
 
-    function showPopup(index) {
+    function showPopup() {
         popupWrap.classList.remove('_hidden');
         body.style.overflow = 'hidden'
-        const popup = document.querySelector(`.quest[data-index="${index}"]`);
+        const popup = document.querySelector(`.quest`);
         if (popup) {
             popup.style.display = 'block';
         }
     }
 
-    function hiddenPopup(index) {
+    function hiddenPopup() {
         popupWrap.classList.add('_hidden');
         body.style.overflow = 'auto'
-        const popup = document.querySelector(`.quest[data-index="${index}"]`);
+        const popup = document.querySelector(`.quest`);
         if (popup) {
             popup.style.display = 'none';
         }
@@ -322,15 +322,14 @@
     popupWrap.addEventListener('click', (event) => {
         const closeBtn = event.target.closest('.quest-close');
         if (closeBtn) {
-            const index = parseInt(closeBtn.closest('.quest').getAttribute('data-index'));
-            hiddenPopup(index);
+            hiddenPopup();
         }
     });
 
 
-    itemsSlider.forEach((item, index) => {
+    itemsSlider.forEach((item) => {
         item.addEventListener('click', () => {
-            showPopup(index);
+            showPopup();
         });
     });
 

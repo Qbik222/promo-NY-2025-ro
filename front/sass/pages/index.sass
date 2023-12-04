@@ -62,9 +62,9 @@ body
     max-width: 100%
     height: auto
 
-.sport
-
-.casino
+//.sport
+//
+//.casino
 
 .active
   .route__item-text
@@ -153,6 +153,7 @@ body
             content: url("../img/games/game-title-mob-en.png")
     .tableResults__row._yourPlace .tableResults__body-col:first-child::after
         background: url("../img/result/you-en.svg") no-repeat 0 0/contain
+
 
 
 .custom-btn
@@ -692,6 +693,7 @@ body
     align-items: center
     max-width: 270px
     position: relative
+
     &:nth-child(odd)
       margin: -150px 0 0 0
       &::before
@@ -714,6 +716,10 @@ body
         background: url("../img/route/line-one.svg") no-repeat 0 0/contain
         bottom: 146px
         right: -130px
+    &:nth-child(3)
+      margin: -130px 0 0 30px
+      .route__item-img
+        margin-bottom: -25px
     &:last-child
       &::before
         content: none
@@ -909,7 +915,7 @@ body
         margin: 0
   &__body
     max-width: 500px
-    overflow-y: scroll
+
     padding-right: 15px
     z-index: 20
     max-height: 500px
@@ -1084,6 +1090,42 @@ body
 .quest
   margin: auto
   display: none
+  &.quest-popup1
+    .quest__image
+      img
+        content: url("../img/route/quest1-img-desc.png")
+        @media screen and (max-width: 1024px)
+          content: url("../img/route/quest1-img-mob.png")
+  &.quest-popup2
+    .quest__image
+      img
+        content: url("../img/route/quest2-img-desc.png")
+        @media screen and (max-width: 1024px)
+          content: url("../img/route/quest2-img-mob.png")
+  &.quest-popup3
+    .quest__image
+      img
+        content: url("../img/route/quest3-img-desc.png")
+        @media screen and (max-width: 1024px)
+          content: url("../img/route/quest3-img-mob.png")
+  &.quest-popup4
+    .quest__image
+      img
+        content: url("../img/route/quest4-img-desc.png")
+        @media screen and (max-width: 1024px)
+          content: url("../img/route/quest4-img-mob.png")
+  &.casino
+    .quest__item-img
+      img
+        content: url("../img/route/free-spin-desc.png")
+        @media screen and (max-width: 1024px)
+          content: url("../img/route/free-spin-mob.png")
+  &.sport
+    .quest__item-img
+      img
+        content: url("../img/route/cash-desc.png")
+        @media screen and (max-width: 1024px)
+          content: url("../img/route/cash-mob.png")
 
   &__container
     margin: auto
