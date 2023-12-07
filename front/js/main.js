@@ -29,7 +29,7 @@
     const ukLeng = document.querySelector('#ukLeng');
     const enLeng = document.querySelector('#enLeng');
 
-    let locale = 'en';
+    let locale = 'uk';
 
     if (ukLeng) locale = 'uk';
     if (enLeng) locale = 'en';
@@ -37,7 +37,8 @@
     const PRIZES_CSS = ['place1', 'place2', 'place3'];
 
     let i18nData = {};
-    let userId = 777777;
+    let userId;
+    // let userId = 666666;
 
     function loadTranslations() {
         return fetch(`${apiURL}/translates/${locale}`).then(res => res.json())
@@ -148,6 +149,7 @@
         }
 
         const questNum = quest.qNumber;
+        //const questPoints = {points: 300};
         const questPoints = currentUser && currentUser.quests && currentUser.quests.find(q => q.questNum === questNum);
 
         // update translations
@@ -186,9 +188,9 @@
         const srcDesc = container.querySelector('.src__desc');
         const srcMob = container.querySelector('.src__mob');
         const srcDefault = container.querySelector('.src__default');
-        srcDesc.srcset = `img/route/quest${questNum}-img-desc.png`;
-        srcMob.srcset = `img/route/quest${questNum}-img-mob.png`;
-        srcDefault.src = `img/route/quest${questNum}-img-desc.png`;
+        srcDesc.srcset = `https://fav-prom.com/html/ny-ua/img/route/quest${questNum}-img-desc.png`;
+        srcMob.srcset = `https://fav-prom.com/html/ny-ua/img/route/quest${questNum}-img-mob.png`;
+        srcDefault.src = `https://fav-prom.com/html/ny-ua/img/route/quest${questNum}-img-desc.png`;
 
         // update buttons
         if (questType == ACTIVE_QUEST_TYPE && userId && !questPoints) {
@@ -230,6 +232,7 @@
                 const normalized = Math.min(Math.max(Math.floor(progressValue), 0), 100);
                 const progressElement = levelDiv.querySelector('.quest__item-info-progress');
                 progressElement.value = normalized;
+                progressElement.dataset.progress = `${normalized}%`;
                 const statusDiv = levelDiv.querySelector('.status');
                 statusDiv.innerHTML = `${progressPoints}/${levelPoints}`;
                 if (userPointsForQuest < levelStartPoints || !userId) {
@@ -238,6 +241,7 @@
                 }
             }
         }
+        refreshProgress();
     }
 
     function countdownTimer(targetDateString, timerElement, popupTimer) {
@@ -488,12 +492,14 @@
 
 
     //progress
-    const progressBars = document.querySelectorAll('.quest__item-info-progress')
-    progressBars.forEach(item => {
-        let progress = item.querySelector('.progress')
-        let widthValue = item.getAttribute('data-progress')
-        progress.style.width = `calc(${widthValue} - 6px)`
-    })
+    function refreshProgress() {
+        const progressBars = document.querySelectorAll('.quest__item-info-progress')
+        progressBars.forEach(item => {
+            let progress = item.querySelector('.progress')
+            let widthValue = item.getAttribute('data-progress')
+            progress.style.width = `calc(${widthValue} - 6px)`
+        })
+    }
 
     //show popupchik
     const body = document.querySelector('body');
@@ -550,7 +556,7 @@
 
 
 
-    //show rules-details
+    //show rules- details
     const rulesItems = document.querySelectorAll('.rules__item')
     rulesItems.forEach(item => {
         item.addEventListener('click', () => {
