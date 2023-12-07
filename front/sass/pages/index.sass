@@ -62,11 +62,8 @@ body
     max-width: 100%
     height: auto
 
-//.sport
-//
-//.casino
-
 .active
+  animation: 4s prizeItem ease infinite
   .route__item-text
     display: flex
     flex-direction: column
@@ -86,6 +83,7 @@ body
     display: none
 
 .inactive
+  pointer-events: none
   .route__item-text
     &::before
       content: ''
@@ -266,10 +264,14 @@ body
         font-family: $font-suisse-reg
         display: block
         padding-left: 15px
+      tr,td
+        font-family: $font-suisse-reg
+      td
+        padding-left: 5px
       .retreat1
         padding-left: 30px
-      .title
-        font-family:  $font-suisse-semb
+      strong
+        font-family: $font-suisse-semb
         color: var(--promo-color-white)
       .circle
         padding-left: 35px

@@ -3,20 +3,33 @@
     const urlParams = new URLSearchParams(window.location.search);
     const participateParam = 'reg';
 
+    const FUTURE_QUEST_TYPE = 'future',
+        OLD_QUEST_TYPE = 'old',
+        ACTIVE_QUEST_TYPE = 'active';
+
     const
         resultsTableOther = document.querySelector('.tableResults__body-other'),
         topResultsTable = document.getElementById('top-users'),
         unauthMsgs = document.querySelectorAll('.unauth-msg'),
         participateBtns = document.querySelectorAll('.btn-join'),
         resultsTableWrapper = document.getElementById('results-table'),
-        redirectBtns = document.querySelectorAll('.took-part');
+        redirectBtns = document.querySelectorAll('.took-part'),
+        questDivs = document.querySelectorAll('.route__item'),
+        playBtn = document.querySelector('.quest-play'),
+        questStartBtns = document.querySelectorAll('.questBtn'),
+        questPopup = document.querySelector('.quest'),
+        questLevelDivs = document.querySelectorAll('.quest__item'),
+        popupPlayBtn = document.querySelector('.firstPlay');
 
+    const currentDate = new Date(); //new Date("2023-12-14T21:00:00.000Z");
     let users;
+    let quests;
+    let userInfo;
 
     const ukLeng = document.querySelector('#ukLeng');
     const enLeng = document.querySelector('#enLeng');
 
-    let locale = 'uk';
+    let locale = 'en';
 
     if (ukLeng) locale = 'uk';
     if (enLeng) locale = 'en';
@@ -24,8 +37,7 @@
     const PRIZES_CSS = ['place1', 'place2', 'place3'];
 
     let i18nData = {};
-    let userId;
-    userId = 567567;
+    let userId = 777777;
 
     function loadTranslations() {
         return fetch(`${apiURL}/translates/${locale}`).then(res => res.json())
@@ -45,7 +57,7 @@
     }
 
     function translate() {
-        const elems = document.querySelectorAll('[data-translates]')
+        const elems = document.querySelectorAll('[data-translate]')
         if (elems && elems.length) {
             elems.forEach(elem => {
                 const key = elem.getAttribute('data-translate');
@@ -79,7 +91,8 @@
     function getData() {
         return Promise.all([
             request('/users?nocache=1'),
-        ])
+            request('/quests')
+        ]);
     }
 
     function initDrop() {
@@ -101,11 +114,184 @@
 
     const InitPage = () => {
         initDrop();
+        questStartBtns.forEach(questStartBtn => questStartBtn.addEventListener('click', (e) => { registerInQuest(); }));
+
         getData().then(res => {
-            users = res[0].sort((a, b) => b.points - a.points);
+            users = res[0];
+            quests = (res[1] || []);
+            console.log(quests);
             renderUsers(users);
+            refreshQuests(quests, userInfo)
             translate();
         })
+    }
+
+    function refreshQuests(quests, currentUser) {
+        if (!quests) {
+            return;
+        }
+
+        const shift = isSecondWeek(quests) ? 4 : 0;
+        for (let i = 0; i < questDivs.length; i++) {
+            renderQuest(quests[i + shift], questDivs[i], currentUser);
+        }
+    }
+
+    function isSecondWeek(quests) {
+        const fourthQuest = quests[3];
+        return fourthQuest && currentDate > new Date(fourthQuest.dateEnd);
+    }
+
+    function renderQuest(quest, container, currentUser) {
+        if (!quest || !container) {
+            return;
+        }
+
+        const questNum = quest.qNumber;
+        const questPoints = currentUser && currentUser.quests && currentUser.quests.find(q => q.questNum === questNum);
+
+        // update translations
+        const questTitleDiv = container.querySelector('.route__item-title');
+        questTitleDiv.innerHTML = translateKey(`nameQuest-${questNum}`);
+        const questSubTitleDiv = container.querySelector('.route__item-subtitle');
+        questSubTitleDiv.innerHTML = translateKey(`quest-${questNum}`);
+
+        // update type of quest
+        const questType = getQuestType(quest);
+        container.classList.remove('soon');
+
+        if (questType === OLD_QUEST_TYPE) {
+            container.classList.add('inactive');
+        } else if (questType === FUTURE_QUEST_TYPE) {
+            container.classList.add('soon');
+        } else {
+            const timerElement = container.querySelector('.timerTxt');
+            const popupTimer = document.querySelector('.quest__time-num');
+            countdownTimer(quest.dateEnd, timerElement, popupTimer);
+            container.classList.add(`active`)
+            updatePopup(quest, questPoints);
+        }
+
+        // update stars
+        if (questPoints) {
+            const starDivs = container.querySelectorAll('.star');
+            const questLevel = getQuestLevel(quest, questPoints.points || 0);
+            for (let i = 0; i < questLevel; i++) {
+                const star = starDivs[i];
+                star.classList.add('_done');
+            }
+        }
+
+        // updates images
+        const srcDesc = container.querySelector('.src__desc');
+        const srcMob = container.querySelector('.src__mob');
+        const srcDefault = container.querySelector('.src__default');
+        srcDesc.srcset = `img/route/quest${questNum}-img-desc.png`;
+        srcMob.srcset = `img/route/quest${questNum}-img-mob.png`;
+        srcDefault.src = `img/route/quest${questNum}-img-desc.png`;
+
+        // update buttons
+        if (questType == ACTIVE_QUEST_TYPE && userId && !questPoints) {
+            playBtn.classList.add('hide');
+            popupPlayBtn.classList.add('hide');
+            questStartBtns.forEach(questStartBtn => questStartBtn.classList.remove('hide'));
+        }
+    }
+
+    function updatePopup(quest, questPoints) {
+        const questNum = quest.qNumber;
+        const title = document.querySelector('.quest__des-title');
+        title.innerHTML = translateKey(`quest-${questNum}`);
+        const description = document.querySelector('.quest__des-text');
+        description.innerHTML = translateKey(`descrQuest-${questNum}`);
+        const questName = document.querySelector('.quest__title');
+        questName.innerHTML = translateKey(`nameQuest-${questNum}`);
+
+        const cssClass = questNum % 2 == 0 ? 'sport' : 'casino';
+        questPopup.classList.add(cssClass);
+        questPopup.classList.add(`quest-popup${questNum}`);
+
+        const userPointsForQuest = questPoints ? questPoints.points : 0;
+        for (let i = 0; i < questLevelDivs.length; i++) {
+            const levelDiv = questLevelDivs[i];
+            const levelInfo = quest.levels[i];
+            if (levelDiv && levelInfo) {
+                const subtitle = levelDiv.querySelector('.quest__item-subtitle');
+                subtitle.innerHTML = translateKey(`prizeQuest-${questNum}_${i + 1}`);
+                const infoText = levelDiv.querySelector('.quest__item-info-text');
+                infoText.innerHTML = translateKey(`stepQuest-${questNum}_${i + 1}`);
+
+                // progress bar
+                const levelStartPoints = i === 0 ? 0 : quest.levels[i - 1].points;
+                const levelEndPoints = levelInfo.points;
+                const levelPoints = levelEndPoints - levelStartPoints;
+                const progressPoints  = Math.min(Math.max(userPointsForQuest - levelStartPoints, 0), levelPoints);
+                const progressValue = progressPoints / levelPoints * 100;
+                const normalized = Math.min(Math.max(Math.floor(progressValue), 0), 100);
+                const progressElement = levelDiv.querySelector('.quest__item-info-progress');
+                progressElement.value = normalized;
+                const statusDiv = levelDiv.querySelector('.status');
+                statusDiv.innerHTML = `${progressPoints}/${levelPoints}`;
+                if (userPointsForQuest < levelStartPoints || !userId) {
+                    const playBtn = levelDiv.querySelector('.took-part');
+                    playBtn.classList.add('hide');
+                }
+            }
+        }
+    }
+
+    function countdownTimer(targetDateString, timerElement, popupTimer) {
+        refreshTimer(targetDateString, timerElement, popupTimer);
+        const intervalId = setInterval(() => {
+            const timeDiff = refreshTimer(targetDateString, timerElement, popupTimer);
+            if (timeDiff < 0) {
+                clearInterval(intervalId);
+                timerElement.innerHTML = formatTime('finishedTimer', 0, 0, 0);
+                popupTimer.innerHTML = formatTime('timer', 0, 0, 0);
+                location.reload();
+            }
+        }, 10000);
+    }
+
+    function formatTime(key, days, hours, minutes) {
+        return translateKey(key).replace("{day}", days.toString())
+            .replace("{hour}", hours.toString())
+            .replace("{minutes}", minutes.toString());
+    }
+
+    function refreshTimer(targetDateString, timerElement, popupTimer) {
+        const targetDate = new Date(targetDateString);
+        const now = new Date();
+        const timeDiff = targetDate.getTime() - now.getTime();
+
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+
+
+        timerElement.innerHTML = formatTime('finishedTimer', days, hours, minutes);
+        popupTimer.innerHTML = formatTime('timer', days, hours, minutes);
+        return timeDiff;
+    }
+
+    function getQuestLevel(questDefinition, points) {
+        if (!questDefinition) {
+            return 0;
+        }
+        const level = questDefinition.levels.findIndex(level => points <= level.points);
+        return level === -1 ? questDefinition.levels.length - 1 : level;
+    }
+
+    function getQuestType(quest) {
+        const startDate = new Date(quest.dateStart);
+        const endDate = new Date(quest.dateEnd);
+        if (currentDate < startDate) {
+            return FUTURE_QUEST_TYPE;
+        } else if (currentDate > endDate) {
+            return OLD_QUEST_TYPE;
+        } else {
+            return ACTIVE_QUEST_TYPE;
+        }
     }
 
     function init() {
@@ -154,9 +340,6 @@
         }
 
         const params = {userid: userId};
-        if (fastReg) {
-            params['fast'] = true;
-        }
 
         request('/user', {
             method: 'POST',
@@ -165,6 +348,23 @@
             participateBtns.forEach(item => item.classList.add('hide'));
             redirectBtns.forEach(item => item.classList.remove('hide'));
             InitPage();
+        });
+    }
+
+    function registerInQuest() {
+        if (!userId) {
+            return;
+        }
+
+        const params = {userid: userId};
+
+        request('/questreg', {
+            method: 'POST',
+            body: JSON.stringify(params)
+        }).then(res => {
+            playBtn.classList.remove('hide');
+            popupPlayBtn.classList.remove('hide');
+            questStartBtns.forEach(questStartBtn => questStartBtn.classList.add('hide'));
         });
     }
 
@@ -222,9 +422,9 @@
     }
 
     function getPrizeTranslationKey(place) {
-        if (place <= 20) {
-            return `prize_test`
-        } else if (place <= 30) {
+        if (place <= 5) {
+            return `prize_${place}`
+        } else if (place <= 10) {
             return `prize_6-10`
         } else if (place <= 50) {
             return `prize_11-50`
@@ -261,9 +461,11 @@
             }
             request(`/favuser/${userId}?nocache=1`)
                 .then(res => {
-                    if (res._id) {
+                    if (res && res.userid) {
                         participateBtns.forEach(item => item.classList.add('hide'));
                         redirectBtns.forEach(item => item.classList.remove('hide'));
+                        userInfo = res;
+                        refreshQuests(quests, userInfo);
                     } else {
                         participateBtns.forEach(item => item.classList.remove('hide'));
                     }
@@ -283,6 +485,7 @@
 
     let mainPage = document.querySelector('.fav__page');
     setTimeout(() => mainPage.classList.add('overflow'), 1000);
+
 
     //progress
     const progressBars = document.querySelectorAll('.quest__item-info-progress')
@@ -347,7 +550,7 @@
 
 
 
-    //show rules- details
+    //show rules-details
     const rulesItems = document.querySelectorAll('.rules__item')
     rulesItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -359,9 +562,9 @@
     const questItems = document.querySelectorAll('.quest__item')
     questItems.forEach(item => {
         item.addEventListener('click', () => {
-            console.log('click')
             item.classList.toggle('_open')
         })
     })
 
 })();
+

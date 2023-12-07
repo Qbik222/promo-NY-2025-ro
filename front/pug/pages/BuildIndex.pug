@@ -1,4 +1,4 @@
-.fav__page#newYear2024
+.fav__page.en#newYear2024
   .popup._hidden
     .prize-fund
       .prize-fund__container
@@ -57,7 +57,7 @@
                 .prize-fund__table-body-col 651-700
                 .prize-fund__table-body-col(data-translate='prize_651-700') 20 фріспінів
     //POP-UP QUESTS
-    .quest.sport.quest-popup1
+    .quest
       .quest__container
         .quest__wrap
           .quest__top
@@ -72,7 +72,7 @@
                 .quest__title(data-translate="nameQuest-1") Початок квест пригод
                 .quest__time
                   .quest__time-text(data-translate="endQuest") Завершиться через:
-                  .quest__time-num.timer 1 д. 2 г. 34 хв.
+                  .quest__time-num.timer(data-translate="timer") dsad
             .quest__des
               .quest__des-title(data-translate="quest-1") Квест № 1
               .quest__des-text(data-translate="descrQuest-1") Роби виграшні ставки від 200 грн на спортивні події у розділах Спорт, LIVE та Киберспорт та отримай на рахунок до 300 грн та до 20 балів в основну турнірну таблицю
@@ -90,8 +90,8 @@
 
                 .quest__item-info
                   .quest__item-info-text(data-translate="stepQuest-1_1") Зроби 100 обертів від мінімальної ставки та отримай 50 фріспінів та 10 балів в основну турнірну таблицю.
-                  .quest__item-info-progress(data-progress='20%')
-                    span 0/100
+                  .quest__item-info-progress.progress-1(data-progress='0%')
+                    span.status 0/100
                     .progress
                   a(href="/login/" target="_blank" role="button" data-translate="loginBtn").quest__item-btn.custom-btn.unauth-msg Авторизуйся
                   .quest__item-btn.custom-btn.questBtn.hide(role="button" data-translate="questBtn") Пройти квест
@@ -107,8 +107,8 @@
                   .quest__item-subtitle(data-translate="prizeQuest-1_2") Приз: #[span 70 фріспінів + 20 балів]
                 .quest__item-info
                   .quest__item-info-text(data-translate="stepQuest-1_2") Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
-                  .quest__item-info-progress(data-progress='40%')
-                    span 100/250
+                  .quest__item-info-progress.progress-2(data-progress='0%')
+                    span.status 0/250
                     .progress
                   a(href='#').quest__item-btn.custom-btn.secondBlockBtn._disabled
                     img(src='img/route/block.svg' alt='block')
@@ -125,8 +125,8 @@
 
                 .quest__item-info
                   .quest__item-info-text(data-translate="stepQuest-1_3") Зроби 150 обертів від мінімальної ставки та отримай 70 фріспінів та 20 балів в основну турнірну таблицю
-                  .quest__item-info-progress(data-progress='70%')
-                    span 250/400
+                  .quest__item-info-progress.progress-3(data-progress='0%')
+                    span.status 0/400
                     .progress
                   a(href='#').quest__item-btn.custom-btn.thirdBlockBtn._disabled
                     img(src='img/route/block.svg' alt='block')
@@ -284,36 +284,36 @@
         .route__title-bottom(data-translate="questTitle") Різдвяний квест
       .route__list
 
-        .route__item.inactive
+        .route__item.soon
           .route__item-img
             picture
-              source(media="(min-width: 1025px) " srcset="img/route/quest1-img-desc.png")
-              source(media="(max-width: 1024px)" srcset="img/route/quest1-img-mob.png")
-              img(src="img/route/quest1-img-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="img/route/quest1-img-desc.png").src__desc
+              source(media="(max-width: 1024px)" srcset="img/route/quest1-img-mob.png").src__mob
+              img(src="img/route/quest1-img-desc.png" alt="Favbet").src__default
           .route__item-wrap
             .route__item-title(data-translate="nameQuest-1") Початок квест пригод
             .route__item-subtitle(data-translate="quest-1") Квест № 1
             .route__item-text.timerTxt(data-translate="finishedTimer")  Завершиться через: <span class="timer">1 д. 2 г. 34 хв.</span>
             .route__item-text.blockTxt(data-translate="blocked") Заблоковано
             .route__item-text.finishedTxt(data-translate="finished") Завершився
-            .route__item-star
-              .star._done
-              .star._done
+            .route__item-star(data-starQuest="1")
+              .star
+              .star
               .star
 
         .route__item.soon
           .route__item-img
             picture
-              source(media="(min-width: 1025px) " srcset="img/route/quest2-img-desc.png")
-              source(media="(max-width: 1024px)" srcset="img/route/quest2-img-mob.png")
-              img(src="img/route/quest1-img-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="img/route/quest2-img-desc.png").src__desc
+              source(media="(max-width: 1024px)" srcset="img/route/quest2-img-mob.png").src__mob
+              img(src="img/route/quest1-img-desc.png" alt="Favbet").src__default
           .route__item-wrap
             .route__item-title(data-translate="nameQuest-2") Святкова метушня
             .route__item-subtitle(data-translate="quest-2") Квест № 2
             .route__item-text.timerTxt(data-translate="finishedTimer") Завершиться через: <span class="timer">1 д. 2 г. 34 хв.</span>
             .route__item-text.blockTxt(data-translate="blocked") Заблоковано
             .route__item-text.finishedTxt(data-translate="finished") Завершився
-            .route__item-star
+            .route__item-star(data-starQuest="2")
               .star
               .star
               .star
@@ -321,16 +321,16 @@
         .route__item.soon
           .route__item-img
             picture
-              source(media="(min-width: 1025px) " srcset="img/route/quest3-img-desc.png")
-              source(media="(max-width: 1024px)" srcset="img/route/quest3-img-mob.png")
-              img(src="img/route/quest3-img-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="img/route/quest3-img-desc.png").src__desc
+              source(media="(max-width: 1024px)" srcset="img/route/quest3-img-mob.png").src__mob
+              img(src="img/route/quest3-img-desc.png" alt="Favbet").src__default
           .route__item-wrap
             .route__item-title(data-translate="nameQuest-3") Різдвяний множник
             .route__item-subtitle(data-translate="quest-3") Квест № 3
             .route__item-text.timerTxt(data-translate="finishedTimer") Завершиться через: <span class="timer">1 д. 2 г. 34 хв.</span>
             .route__item-text.blockTxt(data-translate="blocked") Заблоковано
             .route__item-text.finishedTxt(data-translate="finished") Завершився
-            .route__item-star
+            .route__item-star(data-starQuest="3")
               .star
               .star
               .star
@@ -338,22 +338,22 @@
         .route__item.soon
           .route__item-img
             picture
-              source(media="(min-width: 1025px) " srcset="img/route/quest4-img-desc.png")
-              source(media="(max-width: 1024px)" srcset="img/route/quest4-img-mob.png")
-              img(src="img/route/quest1-img-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="img/route/quest4-img-desc.png").src__desc
+              source(media="(max-width: 1024px)" srcset="img/route/quest4-img-mob.png").src__mob
+              img(src="img/route/quest1-img-desc.png" alt="Favbet").src__default
           .route__item-wrap
             .route__item-title(data-translate="nameQuest-4") Святкове розмаїття
             .route__item-subtitle(data-translate="quest-4") Квест № 4
             .route__item-text.timerTxt(data-translate="finishedTimer") Завершиться через: <span class="timer">1 д. 2 г. 34 хв.</span>
             .route__item-text.blockTxt(data-translate="blocked") Заблоковано
             .route__item-text.finishedTxt(data-translate="finished") Завершився
-            .route__item-star
+            .route__item-star(data-starQuest="4")
               .star
               .star
               .star
       a(href="/login/" target="_blank" role="button" data-translate="loginBtn").route__btn.custom-btn.unauth-msg Авторизуйся
-      .route__btn.custom-btn.questBtn.hide(role="button" data-translate="questBtn") Пройти квест
-      a(href="/casino/" role="button" data-translate="playBtn").route__btn.custom-btn.took-part.hide Грати
+      .route__btn.custom-btn.questBtn.quest-start.hide(role="button" data-translate="questBtn") Пройти квест
+      a(href="/casino/" role="button" data-translate="playBtn").route__btn.custom-btn.took-part.hide.quest-play Грати
   .result
     .result__container
       .result__title(data-translate='resultTitle') Турнірна таблиця
