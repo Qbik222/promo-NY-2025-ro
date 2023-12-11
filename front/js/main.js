@@ -38,7 +38,7 @@
 
     let i18nData = {};
     let userId;
-    // let userId = 666666;
+    // let userId = 100467062;
 
     function loadTranslations() {
         return fetch(`${apiURL}/translates/${locale}`).then(res => res.json())
@@ -120,7 +120,7 @@
         getData().then(res => {
             users = res[0];
             quests = (res[1] || []);
-            console.log(quests);
+            // console.log(quests);
             renderUsers(users);
             refreshQuests(quests, userInfo)
             translate();
@@ -196,6 +196,7 @@
         if (questType == ACTIVE_QUEST_TYPE && userId && !questPoints) {
             playBtn.classList.add('hide');
             popupPlayBtn.classList.add('hide');
+            // console.log('removing quest hide ' + currentUser)
             questStartBtns.forEach(questStartBtn => questStartBtn.classList.remove('hide'));
         }
     }
@@ -226,8 +227,8 @@
                 // progress bar
                 const levelStartPoints = i === 0 ? 0 : quest.levels[i - 1].points;
                 const levelEndPoints = levelInfo.points;
-                const levelPoints = levelEndPoints - levelStartPoints;
-                const progressPoints  = Math.min(Math.max(userPointsForQuest - levelStartPoints, 0), levelPoints);
+                const levelPoints = levelEndPoints;
+                const progressPoints  = Math.min(Math.max(userPointsForQuest, 0), levelPoints);
                 const progressValue = progressPoints / levelPoints * 100;
                 const normalized = Math.min(Math.max(Math.floor(progressValue), 0), 100);
                 const progressElement = levelDiv.querySelector('.quest__item-info-progress');
@@ -279,12 +280,14 @@
     }
 
     function getQuestLevel(questDefinition, points) {
-        if (!questDefinition) {
+        if (!questDefinition || !questDefinition.levels || questDefinition.levels.length === 0) {
             return 0;
         }
-        const level = questDefinition.levels.findIndex(level => points <= level.points);
-        return level === -1 ? questDefinition.levels.length - 1 : level;
+
+        const levelIndex = questDefinition.levels.findIndex(level => points < level.points);
+        return levelIndex === -1 ? questDefinition.levels.length : levelIndex;
     }
+
 
     function getQuestType(quest) {
         const startDate = new Date(quest.dateStart);
@@ -416,7 +419,7 @@
                 const prizeKey = getPrizeTranslationKey(place)
                 additionalUserRow.innerHTML = `
                         <div class="tableResults__body-col" ${checkCurrentUser}>${place}</div>
-                        <div class="tableResults__body-col">${user.userid}</div>
+                        <div class="tableResults__body-col">${checkCurrentUser ? user.userid : maskUserId(user.userid)}</div>
                         <div class="tableResults__body-col">${user.points}</div>
                         <div class="tableResults__body-col">${prizeKey ? translateKey(prizeKey) : ' - '}</div>
                     `;
@@ -458,6 +461,10 @@
         return i18nData[key] || '*----NEED TO BE TRANSLATED----*   key:  ' + key;
     }
 
+    function maskUserId(userId) {
+        return "****" + userId.toString().slice(4);
+    }
+
     let checkUserAuth = () => {
         if (userId) {
             for (const unauthMes of unauthMsgs) {
@@ -468,6 +475,7 @@
                     if (res && res.userid) {
                         participateBtns.forEach(item => item.classList.add('hide'));
                         redirectBtns.forEach(item => item.classList.remove('hide'));
+                        questStartBtns.forEach(item => item.classList.add('hide'));
                         userInfo = res;
                         refreshQuests(quests, userInfo);
                     } else {
@@ -573,4 +581,3 @@
     })
 
 })();
-
