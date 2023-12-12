@@ -21,7 +21,7 @@
         questLevelDivs = document.querySelectorAll('.quest__item'),
         popupPlayBtn = document.querySelector('.firstPlay');
 
-    const currentDate = new Date(); //new Date("2023-12-14T21:00:00.000Z");
+    const currentDate = new Date("2023-12-18T21:00:00.000Z"); //new Date("2023-12-14T21:00:00.000Z");
     let users;
     let quests;
     let userInfo;
