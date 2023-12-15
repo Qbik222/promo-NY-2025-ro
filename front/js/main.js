@@ -21,7 +21,7 @@
         questLevelDivs = document.querySelectorAll('.quest__item'),
         popupPlayBtn = document.querySelector('.firstPlay');
 
-    const currentDate = new Date("2023-12-18T21:00:00.000Z"); //new Date("2023-12-14T21:00:00.000Z");
+    const currentDate = new Date(); //new Date("2023-12-14T21:00:00.000Z");
     let users;
     let quests;
     let userInfo;
@@ -38,7 +38,7 @@
 
     let i18nData = {};
     let userId;
-    // let userId = 100467062;
+    // let userId = 100340020;
 
     function loadTranslations() {
         return fetch(`${apiURL}/translates/${locale}`).then(res => res.json())
@@ -91,7 +91,7 @@
 
     function getData() {
         return Promise.all([
-            request('/users?nocache=1'),
+            request('/users'),
             request('/quests')
         ]);
     }
@@ -420,7 +420,7 @@
                 additionalUserRow.innerHTML = `
                         <div class="tableResults__body-col" ${checkCurrentUser}>${place}</div>
                         <div class="tableResults__body-col">${checkCurrentUser ? user.userid : maskUserId(user.userid)}</div>
-                        <div class="tableResults__body-col">${user.points}</div>
+                        <div class="tableResults__body-col">${Math.floor(user.points)}</div>
                         <div class="tableResults__body-col">${prizeKey ? translateKey(prizeKey) : ' - '}</div>
                     `;
                 table.append(additionalUserRow);
@@ -470,7 +470,7 @@
             for (const unauthMes of unauthMsgs) {
                 unauthMes.classList.add('hide');
             }
-            request(`/favuser/${userId}?nocache=1`)
+            request(`/favuser/${userId}`)
                 .then(res => {
                     if (res && res.userid) {
                         participateBtns.forEach(item => item.classList.add('hide'));
