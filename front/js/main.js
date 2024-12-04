@@ -60,11 +60,12 @@
     function translate() {
         const elems = document.querySelectorAll('[data-translate]')
         if (elems && elems.length) {
-            elems.forEach(elem => {
-                const key = elem.getAttribute('data-translate');
-                elem.innerHTML = i18nData[key] || '*----NEED TO BE TRANSLATED----*   key:  ' + key;
-                elem.removeAttribute('data-translate');
-            })
+            // elems.forEach(elem => {
+            //     const key = elem.getAttribute('data-translate');
+            //     elem.innerHTML = i18nData[key] || '*----NEED TO BE TRANSLATED----*   key:  ' + key;
+            //     elem.removeAttribute('data-translate');
+            // })
+            console.log("translate is working")
         }
         refreshLocalizedClass();
     }
@@ -121,8 +122,8 @@
             users = res[0];
             quests = (res[1] || []);
             // console.log(quests);
-            renderUsers(users);
-            refreshQuests(quests, userInfo)
+            // renderUsers(users);
+            // refreshQuests(quests, userInfo)
             translate();
         })
     }

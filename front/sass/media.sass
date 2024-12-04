@@ -9,16 +9,23 @@
 @media screen and (max-width: 960px)
   .welcome
     &__wrap
-      transform: scale(.7)
-      margin: -310px 0 -80px
+      transform: scale(.8)
+      margin: -270px 0 -50px
+    &__title
+      &-bottom
+        max-width: 600px
 
-@media screen and (max-width: 550px)
+@media screen and (max-width: 600px)
   .welcome
     transform: scale(1)
     padding: 30px 0
     &__wrap
       transform: scale(1)
       margin: -63vw 0 0 0
+    &__title
+      &-bottom
+        left: 0
+        bottom: 20px
     &__ball
       min-width: 121vw
       height: 30vw
@@ -48,11 +55,11 @@
       max-width: 90vw
       margin: 16vw 0 0 -45vw
       &-text
-        top: 34vw
-        right: 25vw
-        padding: 12vw 2vw 10vw 12.5vw
-        width: 44vw
-        height: 35vw
+        top: 31vw
+        right: 26vw
+        padding: 11vw 2vw 10vw 10.5vw
+        width: 38vw
+        height: 31vw
         &-wrap
           font-size: 3.5vw
           line-height: 2.8vw
@@ -262,7 +269,7 @@
       left: 0
     &__row
       &-one
-        margin: 0 0 230px
+        margin: 0 0 160px
         flex-direction: column
         .info__image
           min-width: auto
@@ -342,17 +349,25 @@
 
 //RESULT
 @media screen and (max-width: 960px)
+  .game
+    &__title
+      font-size: 56px
+      line-height: 56px
   .result
-    padding: 10px 0 70px
+    padding: 70px 0 70px
     &::after
       top: -50px
     &__title
       font-size: 56px
       line-height: 56px
 
-@media screen and (max-width: 550px)
+@media screen and (max-width: 700px)
+  .tableResults
+    transform: scale(.85)
+
+@media screen and (max-width: 600px)
   .result
-    padding: 10px 0 12vw
+    padding: 70px 0 12vw
     &::after
       top: -50px
     &__title
@@ -363,36 +378,51 @@
       font-size: 14px
       line-height: 22px
     &__btn
-      margin: -219px 4px 0px 0
+      margin: -290px 4px 50px 0
   .tableResults
-    margin: -150px -40px 0 0
+    margin: -150px -20px 0 0
     &__wrap
-      width: 899px
-      height: 952px
-      padding: 277px 294px 40px 272px
+      width: 960px
+      height: 1100px
+      padding: 297px 280px 40px 282px
     &__head
+      padding: 0
       &-col
         margin: 0 15px 0 0
         font-size: 21px
         line-height: 21px
     &__body
-      max-height: 293px
+      max-height: none
+      padding: 0 15px 0 0
       &-other
         position: relative
         left: -8px
+        padding: 0 0 0 5px
       &-col
         padding: 8px 0
         margin: 0 15px 0 0
         font-size: 10px
         line-height: 12px
+        &:nth-child(4)
+          font-size: 10px
+          line-height: 12px
+  .game
+    &__title
+      font-size: 36px
+      line-height: 36px
+      bottom: 30px
 
 @media screen and (max-width: 360px)
   .result
     &__btn
       margin: -249px 4px 0px 0
   .tableResults
-    margin: -170px -40px 0 0
-    transform: scale(.85)
+    margin: -170px -20px 0 0
+    transform: scale(.8)
+
+@media screen and (max-width: 325px)
+  .tableResults
+    transform: scale(.75)
 
 //GAME
 @media screen and (max-width: 1200px)

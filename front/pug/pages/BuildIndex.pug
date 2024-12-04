@@ -4,12 +4,12 @@
       .prize-fund__container
         .prize-fund__wrap
           .prize-fund-close
-          .prize-fund__title(data-translate='prizeTitle')
+          .prize-fund__title(data-translate='prizeTitle') Nagradni fond
           .prize-fund__table
             .prize-fund__table-head
               .prize-fund__table-head-list
-                .prize-fund__table-head-col(data-translate='tableHeadPlace')
-                .prize-fund__table-head-col(data-translate='tableHeadPrize')
+                .prize-fund__table-head-col(data-translate='tableHeadPlace') Mjesto
+                .prize-fund__table-head-col(data-translate='tableHeadPrize') Nagrada
             .prize-fund__table-body
               .prize-fund__table-row
                 .prize-fund__table-body-col 1
@@ -56,100 +56,24 @@
               .prize-fund__table-row
                 .prize-fund__table-body-col 651-700
                 .prize-fund__table-body-col(data-translate='prize_651-700')
-    //POP-UP QUESTS
-    .quest
-      .quest__container
-        .quest__wrap
-          .quest__top
-            .quest-close
-            .quest__top-wrap
-              .quest__image
-                picture
-                  source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/route/quest1-img-desc.png")
-                  source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/route/quest1-img-mob.png")
-                  img(src="https://fav-prom.com/html/ny-ua/img/route/quest1-img-desc.png" alt="Favbet")
-              .quest__info
-                .quest__title(data-translate="nameQuest-1")
-                .quest__time
-                  .quest__time-text(data-translate="endQuest")
-                  .quest__time-num.timer(data-translate="timer")
-            .quest__des
-              .quest__des-title(data-translate="quest-1")
-              .quest__des-text(data-translate="descrQuest-1")
-          .quest__bottom
-            .quest__list
-              .quest__item
-                .quest__item-wrap
-                  .quest__item-title(data-translate="firstStep")
-                  .quest__item-img
-                    picture
-                      source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/route/free-spin-desc.png")
-                      source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/route/free-spin-mob.png")
-                      img(src="https://fav-prom.com/html/ny-ua/img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle(data-translate="prizeQuest-1_1") Приз: #[span 50 фріспінів + 10 балів]
-
-                .quest__item-info
-                  .quest__item-info-text(data-translate="stepQuest-1_1")
-                  .quest__item-info-progress.progress-1(data-progress='0%')
-                    span.status 0/100
-                    .progress
-                  a(href="/login/" target="_blank" role="button" data-translate="loginBtn").quest__item-btn.custom-btn.unauth-msg
-                  .quest__item-btn.custom-btn.questBtn.hide(role="button" data-translate="questBtn")
-                  a(href="/casino/nypromosem/" role="button" data-translate="playBtn" target="_blank").quest__item-btn.custom-btn.took-part.firstPlay.hide
-              .quest__item
-                .quest__item-wrap
-                  .quest__item-title(data-translate="secondStep")
-                  .quest__item-img
-                    picture
-                      source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/route/free-spin-desc.png")
-                      source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/route/free-spin-mob.png")
-                      img(src="https://fav-prom.com/html/ny-ua/img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle(data-translate="prizeQuest-1_2")
-                .quest__item-info
-                  .quest__item-info-text(data-translate="stepQuest-1_2")
-                  .quest__item-info-progress.progress-2(data-progress='0%')
-                    span.status 0/250
-                    .progress
-                  a(href='#').quest__item-btn.custom-btn.secondBlockBtn._disabled
-                    img(src='https://fav-prom.com/html/ny-ua/img/route/block.svg' alt='block')
-                  a(href="/casino/nypromosem/" role="button" data-translate="playBtn" target="_blank").quest__item-btn.custom-btn.took-part.secondPlay.hide
-              .quest__item
-                .quest__item-wrap
-                  .quest__item-title(data-translate="thirdStep")
-                  .quest__item-img
-                    picture
-                      source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/route/free-spin-desc.png")
-                      source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/route/free-spin-mob.png")
-                      img(src="https://fav-prom.com/html/ny-ua/img/route/free-spin-desc.png" alt="Favbet")
-                  .quest__item-subtitle(data-translate="prizeQuest-1_3")
-
-                .quest__item-info
-                  .quest__item-info-text(data-translate="stepQuest-1_3")
-                  .quest__item-info-progress.progress-3(data-progress='0%')
-                    span.status 0/400
-                    .progress
-                  a(href='#').quest__item-btn.custom-btn.thirdBlockBtn._disabled
-                    img(src='https://fav-prom.com/html/ny-ua/img/route/block.svg' alt='block')
-                  a(href="/casino/nypromosem/" role="button" data-translate="playBtn" target="_blank").quest__item-btn.custom-btn.took-part.thirdPlay.hide
-
   .welcome
     .welcome__container
       .welcome__title
-        .welcome__title-top(data-translate='welcomeTitle')
+        //.welcome__title-top(data-translate='welcomeTitle')
         .welcome__title-bottom
           picture
-            source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/welcome/welcome-title-desc.png")
-            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/ny-ua/img/welcome/welcome-title-tab.png")
-            source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/ny-ua/img/welcome/welcome-title-mob.png")
-            img(src="https://fav-prom.com/html/ny-ua/img/welcome/welcome-title-desc.png" alt="Favbet")
+            source(media="(min-width: 1025px) " srcset="../img/welcome/welcome-title-desc.png")
+            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/welcome/welcome-title-tab.png")
+            source(media="(max-width: 550px)" srcset="../img/welcome/welcome-title-mob.png")
+            img(src="../img/welcome/welcome-title-desc.png" alt="Favbet")
       .welcome__wrap
         .welcome__ball
           .welcome__ball-img
             picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/welcome/ball-desc.png")
-              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/ny-ua/img/welcome/ball-tab.png")
-              source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/ny-ua/img/welcome/ball-mob.png")
-              img(src="https://fav-prom.com/html/ny-ua/img/welcome/ball-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="../img/welcome/ball-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/welcome/ball-tab.png")
+              source(media="(max-width: 550px)" srcset="../img/welcome/ball-mob.png")
+              img(src="../img/welcome/ball-desc.png" alt="Favbet")
           .salut.salut-one
           .salut.salut-two
           .salut.salut-three
@@ -157,76 +81,67 @@
         .welcome__sam
           .welcome__sam-img
             picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/welcome/sam-welcome-desc.png")
-              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/ny-ua/img/welcome/sam-welcome-tab.png")
-              source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/ny-ua/img/welcome/sam-welcome-mob.png")
-              img(src="https://fav-prom.com/html/ny-ua/img/welcome/sam-welcome-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="../img/welcome/sam-welcome-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/welcome/sam-welcome-tab.png")
+              source(media="(max-width: 550px)" srcset="../img/welcome/sam-welcome-mob.png")
+              img(src="../img/welcome/sam-welcome-desc.png" alt="Favbet")
           .welcome__sam-text
-            .welcome__sam-text-wrap(data-translate='welcomeSamTxt')
+            .welcome__sam-text-wrap(data-translate='welcomeSamTxt') Uronimo u blagdansko veselje!
       .welcome__info
-        a(href="/login/" target="_blank" role="button" data-translate="loginBtn").welcome__btn.custom-btn.unauth-msg
-        .welcome__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn")
+        a(href="/login/" target="_blank" role="button" data-translate="loginBtn").welcome__btn.custom-btn.unauth-msg Prijavi se
+        .welcome__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Prijavi se
         a(href="/casino/nypromosem/" role="button" data-translate="playBtn").welcome__btn.custom-btn.took-part.hide
-        .welcome__date(data-translate='promoDate')
-        .welcome__text(data-translate='welcomeTxt')
+        .welcome__date(data-translate='promoDate') od 16.12.2024. do 12.01.2025.
+        .welcome__text(data-translate='welcomeTxt') Sam te poziva da zajedno probudite duh Božića: kladi se na sport, vrti slotove, osvajaj nagrade i osjeti blagdansku čaroliju uz Favbet. 
 
   .rules
     .rules__container
-      .rules__title
-        .rules__title-top(data-translate='rulesTitle')
-        .rules__title-bottom
-          picture
-            source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/rules/rules-title-desc.png")
-            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/ny-ua/img/rules/rules-title-tab.png")
-            source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/ny-ua/img/rules/rules-title-mob.png")
-            img(src="https://fav-prom.com/html/ny-ua/img/rules/rules-title-desc.png" alt="Favbet" class='rules-img')
-          span.valut(data-translate='prizeValut')
-          span.bonus + <img src='https://fav-prom.com/html/ny-ua/img/rules/sum.svg' alt='sum'> #[span(data-translate='freeSpins')]
+      //.rules__title
+      //  .rules__title-top(data-translate='rulesTitle')
+      //  .rules__title-bottom
+      //    picture
+      //      source(media="(min-width: 1025px) " srcset="../img/rules/rules-title-desc.png")
+      //      source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/rules/rules-title-tab.png")
+      //      source(media="(max-width: 550px)" srcset="../img/rules/rules-title-mob.png")
+      //      img(src="../img/rules/rules-title-desc.png" alt="Favbet" class='rules-img')
+      //    span.valut(data-translate='prizeValut')
+      //    span.bonus + <img src='../img/rules/sum.svg' alt='sum'> #[span(data-translate='freeSpins')]
 
-      .rules__subtitle(data-translate='rulesSub')
-      .rules__text(data-translate='rulesTxt')
+      .rules__subtitle(data-translate='rulesSub') Kako sudjelovati?
+      .rules__text(data-translate='rulesTxt') Kreni sa Samom u potragu za božićnim veseljem. Usput te čekaju sportski događaji i uzbudljivi slotovi koji ti neće donijeti samo blagdansku atmosferu, već i nagrade.
       .rules__list
         .rules__item
           .rules__item-wrap
             .rules__item-img
               picture
-                source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/rules/rules-ball1-desc.png")
-                source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/rules/rules-ball1-mob.png")
-                img(src="https://fav-prom.com/html/ny-ua/img/rules/rules-ball1-desc.png" alt="Favbet")
-            .rules__item-title(data-translate='rulesTitle-1')
-          .rules__item-text(data-translate='rulesTxt-1')
+                source(media="(min-width: 1025px) " srcset="../img/rules/rules-ball1-desc.png")
+                source(media="(max-width: 1024px)" srcset="../img/rules/rules-ball1-mob.png")
+                img(src="../img/rules/rules-ball1-desc.png" alt="Favbet")
+            .rules__item-title(data-translate='rulesTitle-1') Sudjeluj
+          .rules__item-text(data-translate='rulesTxt-1') Klikni gumb “Sudjeluj”
         .rules__item
           .rules__item-wrap
             .rules__item-img
               picture
-                source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/rules/rules-ball2-desc.png")
-                source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/rules/rules-ball2-mob.png")
-                img(src="https://fav-prom.com/html/ny-ua/img/rules/rules-ball2-desc.png" alt="Favbet")
-            .rules__item-title(data-translate='rulesTitle-2')
-          .rules__item-text(data-translate='rulesTxt-2')
+                source(media="(min-width: 1025px) " srcset="../img/rules/rules-ball2-desc.png")
+                source(media="(max-width: 1024px)" srcset="../img/rules/rules-ball2-mob.png")
+                img(src="../img/rules/rules-ball2-desc.png" alt="Favbet")
+            .rules__item-title(data-translate='rulesTitle-2') Kladi se i igraj
+          .rules__item-text(data-translate='rulesTxt-2') Igraj promotivne igre u odjeljku “Casino” te se kladi na sportske događaje u odjeljcima “Sport”,  “Uživo” i “eSport”
         .rules__item
           .rules__item-wrap
             .rules__item-img
               picture
-                source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/rules/rules-ball3-desc.png")
-                source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/rules/rules-ball3-mob.png")
-                img(src="https://fav-prom.com/html/ny-ua/img/rules/rules-ball3-desc.png" alt="Favbet")
-            .rules__item-title(data-translate='rulesTitle-3')
-          .rules__item-text(data-translate='rulesTxt-3')
-        .rules__item
-          .rules__item-wrap
-            .rules__item-img
-              picture
-                source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/rules/rules-ball4-desc.png")
-                source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/rules/rules-ball4-mob.png")
-                img(src="https://fav-prom.com/html/ny-ua/img/rules/rules-ball4-desc.png" alt="Favbet")
-            .rules__item-title(data-translate='rulesTitle-4')
-          .rules__item-text(data-translate='rulesTxt-4')
-      a(href="/login/" target="_blank" role="button" data-translate="loginBtn").rules__btn.custom-btn.unauth-msg
-      .rules__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn")
+                source(media="(min-width: 1025px) " srcset="../img/rules/rules-ball3-desc.png")
+                source(media="(max-width: 1024px)" srcset="../img/rules/rules-ball3-mob.png")
+                img(src="../img/rules/rules-ball3-desc.png" alt="Favbet")
+            .rules__item-title(data-translate='rulesTitle-3') Skupljaj bodove
+          .rules__item-text(data-translate='rulesTxt-3') Skupljaj bodove i penji se po tablici promocije
+      a(href="/login/" target="_blank" role="button" data-translate="loginBtn").rules__btn.custom-btn.unauth-msg Prijavi se
+      .rules__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Prijavi se
       a(href="/casino/nypromosem/" role="button" data-translate="playBtn").rules__btn.custom-btn.took-part.hide
       details.custom-drop.rules__drop
-        summary.custom-drop-title #[span(data-translate="rulesDropTitle")] <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
+        summary.custom-drop-title #[span(data-translate="rulesDropTitle") Detalji] <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
         .custom-drop-txt
           .custom-drop-txt-wrap(data-translate="rulesDropTxt")
   .info
@@ -234,192 +149,410 @@
       .info__row.info__row-one
         .info__image
           picture
-            source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/info/sam-one-info-desc.png")
-            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/ny-ua/img/info/sam-one-info-tab.png")
-            source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/ny-ua/img/info/sam-one-info-mob.png")
-            img(src="https://fav-prom.com/html/ny-ua/img/info/sam-one-info-desc.png" alt="Favbet")
+            source(media="(min-width: 1025px) " srcset="../img/info/sam-one-info-desc.png")
+            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/info/sam-one-info-tab.png")
+            source(media="(max-width: 550px)" srcset="../img/info/sam-one-info-mob.png")
+            img(src="../img/info/sam-one-info-desc.png" alt="Favbet")
         .info__wrap
-          .info__title(data-translate="casinoTitle")
-          .info__text(data-translate="casinoTxt-1")
+          .info__title(data-translate="casinoTitle") Igraj u casinu
+          .info__text(data-translate="casinoTxt-1") Pojačaj blagdansko raspoloženje - igraj promotivne igre u odjeljku Casino, skupljaj bodove i natječi se za bonuse.
           .info__list
-            .info__item(data-translate="casinoTxt-2")
-            .info__item(data-translate="casinoTxt-3")
-            .info__item(data-translate="casinoTxt-4")
-          .info__subtext(data-translate="casinoTxt-5")
-          a(href="/login/" target="_blank" role="button" data-translate="loginBtn").info__btn.custom-btn.unauth-msg
-          .info__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn")
+            .info__item(data-translate="casinoTxt-2") Minimalni ulog – 0.20 EUR.
+            .info__item(data-translate="casinoTxt-3") Bodovi u tablici promocije: računaju se ulozi u promotivnim igrama gdje za svakih 0.20 EUR korisnik osvaja 1 bod.
+            .info__item(data-translate="casinoTxt-4") Više bodova donosi bolje bonuse.
+          a(href="/login/" target="_blank" role="button" data-translate="loginBtn").info__btn.custom-btn.unauth-msg Prijavi se
+          .info__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Prijavi se
           a(href="/casino/nypromosem/" role="button" data-translate="playBtn").info__btn.custom-btn.took-part.hide
       .info__row.info__row-two
         .info__wrap
-          .info__title(data-translate="sportTitle")
-          .info__text(data-translate="sportTxt-1")
+          .info__title(data-translate="sportTitle") Kladi se na sport
           .info__list
-            .info__item(data-translate="sportTxt-2")
-            .info__item(data-translate="sportTxt-3")
-            .info__item(data-translate="sportTxt-4")
-          a(href="/login/" target="_blank" role="button" data-translate="loginBtn").info__btn.custom-btn.unauth-msg
-          .info__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn")
+            .info__item(data-translate="sportTxt-1") Kreni sa Samom u sportske izazove.Kladi se na aktualne sportske događaje u odjeljcima “Sport”, “Uživo” i “eSport”.
+            .info__item(data-translate="sportTxt-2") Minimalni iznos oklade - 5 EUR
+            .info__item(data-translate="sportTxt-3") Primjer: za okladu od 20 EUR igrač osvaja 4 boda, za okladu od 30 EUR - 6 bodova. Više bodova donosi veće šanse za pobjedu.
+          a(href="/login/" target="_blank" role="button" data-translate="loginBtn").info__btn.custom-btn.unauth-msg Prijavi se
+          .info__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Prijavi se
           a(href="/sports/sport/soccer/" role="button" data-translate="playBtn").info__btn.custom-btn.took-part.hide
         .info__image
           picture
-            source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/info/sam-two-info-desc.png")
-            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/ny-ua/img/info/sam-two-info-tab.png")
-            source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/ny-ua/img/info/sam-two-info-mob.png")
-            img(src="https://fav-prom.com/html/ny-ua/img/info/sam-two-info-desc.png" alt="Favbet")
+            source(media="(min-width: 1025px) " srcset="../img/info/sam-two-info-desc.png")
+            source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/info/sam-two-info-tab.png")
+            source(media="(max-width: 550px)" srcset="../img/info/sam-two-info-mob.png")
+            img(src="../img/info/sam-two-info-desc.png" alt="Favbet")
 
   //QUESTS
-  .route
-    .route__container
-      .route__title
-        //.route__title-top
-        .route__title-bottom(data-translate="questTitle")
-      .route__list
-
-        .route__item.soon
-          .route__item-img
-            picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/route/quest1-img-desc.png").src__desc
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/route/quest1-img-mob.png").src__mob
-              img(src="https://fav-prom.com/html/ny-ua/img/route/quest1-img-desc.png" alt="Favbet").src__default
-          .route__item-wrap
-            .route__item-title(data-translate="nameQuest-1")
-            .route__item-subtitle(data-translate="quest-1") Квест № 1
-            .route__item-text.timerTxt(data-translate="finishedTimer")
-            .route__item-text.blockTxt(data-translate="blocked")
-            .route__item-text.finishedTxt(data-translate="finished")
-            .route__item-star(data-starQuest="1")
-              .star
-              .star
-              .star
-
-        .route__item.soon
-          .route__item-img
-            picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/route/quest2-img-desc.png").src__desc
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/route/quest2-img-mob.png").src__mob
-              img(src="https://fav-prom.com/html/ny-ua/img/route/quest1-img-desc.png" alt="Favbet").src__default
-          .route__item-wrap
-            .route__item-title(data-translate="nameQuest-2")
-            .route__item-subtitle(data-translate="quest-2")
-            .route__item-text.timerTxt(data-translate="finishedTimer")
-            .route__item-text.blockTxt(data-translate="blocked")
-            .route__item-text.finishedTxt(data-translate="finished")
-            .route__item-star(data-starQuest="2")
-              .star
-              .star
-              .star
-
-        .route__item.soon
-          .route__item-img
-            picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/route/quest3-img-desc.png").src__desc
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/route/quest3-img-mob.png").src__mob
-              img(src="https://fav-prom.com/html/ny-ua/img/route/quest3-img-desc.png" alt="Favbet").src__default
-          .route__item-wrap
-            .route__item-title(data-translate="nameQuest-3")
-            .route__item-subtitle(data-translate="quest-3")
-            .route__item-text.timerTxt(data-translate="finishedTimer")
-            .route__item-text.blockTxt(data-translate="blocked")
-            .route__item-text.finishedTxt(data-translate="finished")
-            .route__item-star(data-starQuest="3")
-              .star
-              .star
-              .star
-
-        .route__item.soon
-          .route__item-img
-            picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/route/quest4-img-desc.png").src__desc
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/route/quest4-img-mob.png").src__mob
-              img(src="https://fav-prom.com/html/ny-ua/img/route/quest1-img-desc.png" alt="Favbet").src__default
-          .route__item-wrap
-            .route__item-title(data-translate="nameQuest-4")
-            .route__item-subtitle(data-translate="quest-4")
-            .route__item-text.timerTxt(data-translate="finishedTimer")
-            .route__item-text.blockTxt(data-translate="blocked")
-            .route__item-text.finishedTxt(data-translate="finished")
-            .route__item-star(data-starQuest="4")
-              .star
-              .star
-              .star
-      a(href="/login/" target="_blank" role="button" data-translate="loginBtn").route__btn.custom-btn.unauth-msg
-      .route__btn.custom-btn.questBtn.quest-start.hide(role="button" data-translate="questBtn")
-      a(href="/casino/nypromosem/" role="button" data-translate="playBtn").route__btn.custom-btn.took-part.hide.quest-play
+  //.route
+  //  .route__container
+  //    .route__title
+  //      //.route__title-top
+  //      .route__title-bottom(data-translate="questTitle")
+  //    .route__list
+  //
+  //      .route__item.soon
+  //        .route__item-img
+  //          picture
+  //            source(media="(min-width: 1025px) " srcset="../img/route/quest1-img-desc.png").src__desc
+  //            source(media="(max-width: 1024px)" srcset="../img/route/quest1-img-mob.png").src__mob
+  //            img(src="../img/route/quest1-img-desc.png" alt="Favbet").src__default
+  //        .route__item-wrap
+  //          .route__item-title(data-translate="nameQuest-1")
+  //          .route__item-subtitle(data-translate="quest-1") Квест № 1
+  //          .route__item-text.timerTxt(data-translate="finishedTimer")
+  //          .route__item-text.blockTxt(data-translate="blocked")
+  //          .route__item-text.finishedTxt(data-translate="finished")
+  //          .route__item-star(data-starQuest="1")
+  //            .star
+  //            .star
+  //            .star
+  //
+  //      .route__item.soon
+  //        .route__item-img
+  //          picture
+  //            source(media="(min-width: 1025px) " srcset="../img/route/quest2-img-desc.png").src__desc
+  //            source(media="(max-width: 1024px)" srcset="../img/route/quest2-img-mob.png").src__mob
+  //            img(src="../img/route/quest1-img-desc.png" alt="Favbet").src__default
+  //        .route__item-wrap
+  //          .route__item-title(data-translate="nameQuest-2")
+  //          .route__item-subtitle(data-translate="quest-2")
+  //          .route__item-text.timerTxt(data-translate="finishedTimer")
+  //          .route__item-text.blockTxt(data-translate="blocked")
+  //          .route__item-text.finishedTxt(data-translate="finished")
+  //          .route__item-star(data-starQuest="2")
+  //            .star
+  //            .star
+  //            .star
+  //
+  //      .route__item.soon
+  //        .route__item-img
+  //          picture
+  //            source(media="(min-width: 1025px) " srcset="../img/route/quest3-img-desc.png").src__desc
+  //            source(media="(max-width: 1024px)" srcset="../img/route/quest3-img-mob.png").src__mob
+  //            img(src="../img/route/quest3-img-desc.png" alt="Favbet").src__default
+  //        .route__item-wrap
+  //          .route__item-title(data-translate="nameQuest-3")
+  //          .route__item-subtitle(data-translate="quest-3")
+  //          .route__item-text.timerTxt(data-translate="finishedTimer")
+  //          .route__item-text.blockTxt(data-translate="blocked")
+  //          .route__item-text.finishedTxt(data-translate="finished")
+  //          .route__item-star(data-starQuest="3")
+  //            .star
+  //            .star
+  //            .star
+  //
+  //      .route__item.soon
+  //        .route__item-img
+  //          picture
+  //            source(media="(min-width: 1025px) " srcset="../img/route/quest4-img-desc.png").src__desc
+  //            source(media="(max-width: 1024px)" srcset="../img/route/quest4-img-mob.png").src__mob
+  //            img(src="../img/route/quest1-img-desc.png" alt="Favbet").src__default
+  //        .route__item-wrap
+  //          .route__item-title(data-translate="nameQuest-4")
+  //          .route__item-subtitle(data-translate="quest-4")
+  //          .route__item-text.timerTxt(data-translate="finishedTimer")
+  //          .route__item-text.blockTxt(data-translate="blocked")
+  //          .route__item-text.finishedTxt(data-translate="finished")
+  //          .route__item-star(data-starQuest="4")
+  //            .star
+  //            .star
+  //            .star
+  //    a(href="/login/" target="_blank" role="button" data-translate="loginBtn").route__btn.custom-btn.unauth-msg
+  //    .route__btn.custom-btn.questBtn.quest-start.hide(role="button" data-translate="questBtn")
+  //    a(href="/casino/nypromosem/" role="button" data-translate="playBtn").route__btn.custom-btn.took-part.hide.quest-play
   .result
     .result__container
-      .result__title(data-translate='resultTitle')
-      .result__text(data-translate='resultTxt')
-      .result__subtext(data-translate='prizeTitle')
+      .result__title(data-translate='resultTitle') Tablica promocije
+      .result__text(data-translate='resultTxt') Penji se na vrh tablice promocije i osvoji najbolje bonuse.
+      .result__subtext(data-translate='prizeTitle') Nagradni fond
       .tableResults
         .tableResults__container
           .tableResults__wrap#results-table
             .tableResults__head
               .tableResults__head-list
-                .tableResults__head-col(data-translate='tableHeadPlace')
-                .tableResults__head-col(data-translate='tableHeadID')
-                .tableResults__head-col(data-translate='tableHeadPoints')
-                .tableResults__head-col(data-translate='tableHeadPrize')
+                .tableResults__head-col(data-translate='tableHeadPlace') Mjesto
+                .tableResults__head-col(data-translate='tableHeadID') ID
+                .tableResults__head-col(data-translate='tableHeadPoints') Nagrada
+                .tableResults__head-col(data-translate='tableHeadPrize') Bonus odobren
             .tableResults__body#top-users
+              .tableResults__row.place1
+                .tableResults__body-col 1
+                .tableResults__body-col 233434
+                .tableResults__body-col rom 10 000 points
+                .tableResults__body-col 150eur RFB, 350FS, 150% on dep (wager x1) up to 1000eur, 5 days duration
+              .tableResults__row.place2
+                .tableResults__body-col 2
+                .tableResults__body-col 233434
+                .tableResults__body-col 5 000 - 9 999 points
+                .tableResults__body-col 100eur RFB, 250FS, 150% on dep (wager x1) up to 500eur, 5 days duration
+              .tableResults__row.place3
+                .tableResults__body-col 3
+                .tableResults__body-col 233434
+                .tableResults__body-col 1 500 - 4 999 points
+                .tableResults__body-col 75eur RFB, 200FS, 150% on dep (wager x1) up to 200eur, 5 days duration
+              .tableResults__row
+                .tableResults__body-col 4
+                .tableResults__body-col 233434
+                .tableResults__body-col 500 - 1 499 points
+                .tableResults__body-col 50eur RFB, 150FS, 150% on dep (wager x1) up to 100eur, 5 days duration
+              .tableResults__row
+                .tableResults__body-col 5
+                .tableResults__body-col 233434
+                .tableResults__body-col 150 - 499 points
+                .tableResults__body-col 20eur RFB, 100FS
+              .tableResults__row
+                .tableResults__body-col 6
+                .tableResults__body-col 233434
+                .tableResults__body-col 50 - 149 points
+                .tableResults__body-col 10eur RFB, 50FS
+              .tableResults__row
+                .tableResults__body-col 7
+                .tableResults__body-col 233434
+                .tableResults__body-col 50 - 149 points
+                .tableResults__body-col 10eur RFB, 50FS
+              .tableResults__row
+                .tableResults__body-col 8
+                .tableResults__body-col 233434
+                .tableResults__body-col 50 - 149 points
+                .tableResults__body-col 10eur RFB, 50FS
+              .tableResults__row
+                .tableResults__body-col 9
+                .tableResults__body-col 233434
+                .tableResults__body-col 50 - 149 points
+                .tableResults__body-col 10eur RFB, 50FS
+              .tableResults__row
+                .tableResults__body-col 10
+                .tableResults__body-col 233434
+                .tableResults__body-col 50 - 149 points
+                .tableResults__body-col 10eur RFB, 50FS
             .tableResults__body-other
-      a(href="/login/" target="_blank" role="button" data-translate="loginBtn").result__btn.custom-btn.unauth-msg
-      .result__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn")
+              .tableResults__row
+                .tableResults__body-col 23
+                .tableResults__body-col 233434
+                .tableResults__body-col ********
+                .tableResults__body-col -
+              .tableResults__row._yourPlace
+                .tableResults__body-col 24
+                .tableResults__body-col 233434
+                .tableResults__body-col ********
+                .tableResults__body-col -
+              .tableResults__row
+                .tableResults__body-col 25
+                .tableResults__body-col 233434
+                .tableResults__body-col ********
+                .tableResults__body-col -
+      a(href="/login/" target="_blank" role="button" data-translate="loginBtn").result__btn.custom-btn.unauth-msg Prijavi se
+      .result__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Prijavi se
       a(href="/casino/nypromosem/" role="button" data-translate="playBtn").result__btn.custom-btn.took-part.hide
   .game
     .game__container
-      .game__title
-        picture
-          source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/games/games-title-desc.png")
-          source(media="(min-width: 551px) and (max-width: 1024px) " srcset="https://fav-prom.com/html/ny-ua/img/games/games-title-tab.png")
-          source(media="(max-width: 550px)" srcset="https://fav-prom.com/html/ny-ua/img/games/games-title-mob.png")
-          img(src="https://fav-prom.com/html/ny-ua/img/games/games-title-desc.png" alt="Favbet")
-      .game__house
-        .game__list
+      .game__title Promotivne igre
+        //picture
+        //  source(media="(min-width: 1025px) " srcset="../img/games/week1/games-title-desc.png")
+        //  source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/games/week1/games-title-tab.png")
+        //  source(media="(max-width: 550px)" srcset="../img/games/week1/games-title-mob.png")
+        //  img(src="../img/games/week1/games-title-desc.png" alt="Favbet")
+      .game__house.week1
+        .game__list.week1
+          .game__list-title
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/firstWeek-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/games/firstWeek-tab.png")
+              source(media="(max-width: 550px)" srcset="../img/games/firstWeek-mob.png")
+              img(src="../img/games/firstWeek-desc.png" alt="Favbet")
           a(href='/casino/show-game/pateplay/regal-spins-10/?playMode=real').game__link
             picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/games/game9-desc.png")
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/games/game9-mob.png")
-              img(src="https://fav-prom.com/html/ny-ua/img/games/game9-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="../img/games/week1/game1-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week1/game1-mob.png")
+              img(src="../img/games/week1/game1-desc.png" alt="Favbet")
           a(href='/casino/show-game/pragmatic-play/sweet-bonanza-xmas/?playMode=real').game__link
             picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/games/game10-desc.png")
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/games/game10-mob.png")
-              img(src="https://fav-prom.com/html/ny-ua/img/games/game10-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="../img/games/week1/game2-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week1/game2-mob.png")
+              img(src="../img/games/week1/game2-desc.png" alt="Favbet")
           a(href='/casino/show-game/wazdan/16-coins-xmas/?playMode=real').game__link
             picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/games/game11-desc.png")
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/games/game11-mob.png")
-              img(src="https://fav-prom.com/html/ny-ua/img/games/game11-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="../img/games/week1/game3-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week1/game3-mob.png")
+              img(src="../img/games/week1/game3-desc.png" alt="Favbet")
           a(href='/casino/show-game/yggdrasil/winterberries-2/?playMode=real').game__link
             picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/games/game12-desc.png")
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/games/game12-mob.png")
-              img(src="https://fav-prom.com/html/ny-ua/img/games/game12-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="../img/games/week1/game4-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week1/game4-mob.png")
+              img(src="../img/games/week1/game4-desc.png" alt="Favbet")
           a(href='/casino/show-game/endorphina/favbet-joker/?playMode=real').game__link
             picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/games/game13-desc.png")
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/games/game13-mob.png")
-              img(src="https://fav-prom.com/html/ny-ua/img/games/game13-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="../img/games/week1/game5-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week1/game5-mob.png")
+              img(src="../img/games/week1/game5-desc.png" alt="Favbet")
           a(href='/casino/show-game/red-tiger/jingle-ways-megaways/?playMode=real').game__link
             picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/games/game14-desc.png")
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/games/game14-mob.png")
-              img(src="https://fav-prom.com/html/ny-ua/img/games/game14-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="../img/games/week1/game6-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week1/game6-mob.png")
+              img(src="../img/games/week1/game6-desc.png" alt="Favbet")
           a(href='/casino/show-game/softswiss_amatic/lucky-joker-xmas/?playMode=real').game__link
             picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/games/game15-desc.png")
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/games/game15-mob.png")
-              img(src="https://fav-prom.com/html/ny-ua/img/games/game15-desc.png" alt="Favbet")
+              source(media="(min-width: 1025px) " srcset="../img/games/week1/game7-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week1/game7-mob.png")
+              img(src="../img/games/week1/game7-desc.png" alt="Favbet")
           a(href='/casino/show-game/champion/aztec-century/?playMode=real').game__link
             picture
-              source(media="(min-width: 1025px) " srcset="https://fav-prom.com/html/ny-ua/img/games/game16-desc.png")
-              source(media="(max-width: 1024px)" srcset="https://fav-prom.com/html/ny-ua/img/games/game16-mob.png")
-              img(src="https://fav-prom.com/html/ny-ua/img/games/game16-desc.png" alt="Favbet")
-      a(href="/login/" target="_blank" role="button" data-translate="loginBtn").game__btn.custom-btn.unauth-msg
+              source(media="(min-width: 1025px) " srcset="../img/games/week1/game8-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week1/game8-mob.png")
+              img(src="../img/games/week1/game8-desc.png" alt="Favbet")
+        .game__list.week2
+          .game__list-title
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/secondWeek-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/games/secondWeek-tab.png")
+              source(media="(max-width: 550px)" srcset="../img/games/secondWeek-mob.png")
+              img(src="../img/games/secondWeek-desc.png" alt="Favbet")
+          a(href='/casino/show-game/pateplay/regal-spins-10/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week2/game1-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week2/game1-mob.png")
+              img(src="../img/games/week2/game1-desc.png" alt="Favbet")
+          a(href='/casino/show-game/pragmatic-play/sweet-bonanza-xmas/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week2/game2-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week2/game2-mob.png")
+              img(src="../img/games/week2/game2-desc.png" alt="Favbet")
+          a(href='/casino/show-game/wazdan/16-coins-xmas/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week2/game3-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week2/game3-mob.png")
+              img(src="../img/games/week2/game3-desc.png" alt="Favbet")
+          a(href='/casino/show-game/yggdrasil/winterberries-2/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week2/game4-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week2/game4-mob.png")
+              img(src="../img/games/week2/game4-desc.png" alt="Favbet")
+          a(href='/casino/show-game/endorphina/favbet-joker/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week2/game5-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week2/game5-mob.png")
+              img(src="../img/games/week2/game5-desc.png" alt="Favbet")
+          a(href='/casino/show-game/red-tiger/jingle-ways-megaways/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week2/game6-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week2/game6-mob.png")
+              img(src="../img/games/week2/game6-desc.png" alt="Favbet")
+          a(href='/casino/show-game/softswiss_amatic/lucky-joker-xmas/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week2/game7-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week2/game7-mob.png")
+              img(src="../img/games/week2/game7-desc.png" alt="Favbet")
+          a(href='/casino/show-game/champion/aztec-century/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week2/game8-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week2/game8-mob.png")
+              img(src="../img/games/week2/game8-desc.png" alt="Favbet")
+        .game__list.week3
+          .game__list-title
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/thirdWeek-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/games/thirdWeek-tab.png")
+              source(media="(max-width: 550px)" srcset="../img/games/thirdWeek-mob.png")
+              img(src="../img/games/thirdWeek-desc.png" alt="Favbet")
+          a(href='/casino/show-game/pateplay/regal-spins-10/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week3/game1-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week3/game1-mob.png")
+              img(src="../img/games/week3/game1-desc.png" alt="Favbet")
+          a(href='/casino/show-game/pragmatic-play/sweet-bonanza-xmas/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week3/game2-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week3/game2-mob.png")
+              img(src="../img/games/week3/game2-desc.png" alt="Favbet")
+          a(href='/casino/show-game/wazdan/16-coins-xmas/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week3/game3-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week3/game3-mob.png")
+              img(src="../img/games/week3/game3-desc.png" alt="Favbet")
+          a(href='/casino/show-game/yggdrasil/winterberries-2/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week3/game4-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week3/game4-mob.png")
+              img(src="../img/games/week3/game4-desc.png" alt="Favbet")
+          a(href='/casino/show-game/endorphina/favbet-joker/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week3/game5-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week3/game5-mob.png")
+              img(src="../img/games/week3/game5-desc.png" alt="Favbet")
+          a(href='/casino/show-game/red-tiger/jingle-ways-megaways/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week3/game6-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week3/game6-mob.png")
+              img(src="../img/games/week3/game6-desc.png" alt="Favbet")
+          a(href='/casino/show-game/softswiss_amatic/lucky-joker-xmas/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week3/game7-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week3/game7-mob.png")
+              img(src="../img/games/week3/game7-desc.png" alt="Favbet")
+          a(href='/casino/show-game/champion/aztec-century/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week3/game8-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week3/game8-mob.png")
+              img(src="../img/games/week3/game8-desc.png" alt="Favbet")
+        .game__list.week4
+          .game__list-title
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/fourthWeek-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="../img/games/fourthWeek-tab.png")
+              source(media="(max-width: 550px)" srcset="../img/games/fourthWeek-mob.png")
+              img(src="../img/games/fourthWeek-desc.png" alt="Favbet")
+          a(href='/casino/show-game/pateplay/regal-spins-10/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week4/game1-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week4/game1-mob.png")
+              img(src="../img/games/week4/game1-desc.png" alt="Favbet")
+          a(href='/casino/show-game/pragmatic-play/sweet-bonanza-xmas/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week4/game2-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week4/game2-mob.png")
+              img(src="../img/games/week4/game2-desc.png" alt="Favbet")
+          a(href='/casino/show-game/wazdan/16-coins-xmas/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week4/game3-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week4/game3-mob.png")
+              img(src="../img/games/week4/game3-desc.png" alt="Favbet")
+          a(href='/casino/show-game/yggdrasil/winterberries-2/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week4/game4-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week4/game4-mob.png")
+              img(src="../img/games/week4/game4-desc.png" alt="Favbet")
+          a(href='/casino/show-game/endorphina/favbet-joker/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week4/game5-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week4/game5-mob.png")
+              img(src="../img/games/week4/game5-desc.png" alt="Favbet")
+          a(href='/casino/show-game/red-tiger/jingle-ways-megaways/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week4/game6-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week4/game6-mob.png")
+              img(src="../img/games/week4/game6-desc.png" alt="Favbet")
+          a(href='/casino/show-game/softswiss_amatic/lucky-joker-xmas/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week4/game7-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week4/game7-mob.png")
+              img(src="../img/games/week4/game7-desc.png" alt="Favbet")
+          a(href='/casino/show-game/champion/aztec-century/?playMode=real').game__link
+            picture
+              source(media="(min-width: 1025px) " srcset="../img/games/week4/game8-desc.png")
+              source(media="(max-width: 1024px)" srcset="../img/games/week4/game8-mob.png")
+              img(src="../img/games/week4/game8-desc.png" alt="Favbet")
+      a(href="/login/" target="_blank" role="button" data-translate="loginBtn").game__btn.custom-btn.unauth-msg Prijavi se
       .game__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn")
       a(href="/casino/nypromosem/" role="button" data-translate="playBtn").game__btn.custom-btn.took-part.hide
       details.custom-drop.rules__drop
         summary.custom-drop-title #[span(data-translate="resultDropTitle")] <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
         .custom-drop-txt
-          .custom-drop-txt-wrap(data-translate="resultDropTxt")
-
-
+          .custom-drop-txt-wrap(data-translate="resultDropTxt") Pravila i uvjeti
+            p ОФІЦІЙНІ ПРАВИЛА УЧАСТІ В АКЦІЇ
+            p «Сем рятує дух Різдва»
+            p 1. Організатором та Виконавцем Акції є ТОВ «БУКМЕКЕРСЬКА КОМПАНІЯ «ФАВБЕТ» (далі – Організатор), що має діючі ліцензії: Ліцензія на провадження діяльності з організації та проведення азартних ігор казино у мережі інтернет (Рішення про видачу ліцензії №137 від 05.04.2021) видана 20.04.2021 року, та Ліцензія на провадження діяльності з організації та проведення букмекерської діяльності (Рішення про видачу ліцензії № 433 від 13.12.2022), видана від 28.12.2022 року, ЄДРПОУ 43457382, що знаходиться за адресою: Україна, 04076, місто Київ, пр. Бандери Степана, будинок 8, корпус 39, 39а.
+            p 1. Організатором та Виконавцем Акції є ТОВ «БУКМЕКЕРСЬКА КОМПАНІЯ «ФАВБЕТ» (далі – Організатор), що має діючі ліцензії: Ліцензія на провадження діяльності з організації та проведення азартних ігор казино у мережі інтернет (Рішення про видачу ліцензії №137 від 05.04.2021) видана 20.04.2021 року, та Ліцензія на провадження діяльності з організації та проведення букмекерської діяльності (Рішення про видачу ліцензії № 433 від 13.12.2022), видана від 28.12.2022 року, ЄДРПОУ 43457382, що знаходиться за адресою: Україна, 04076, місто Київ, пр. Бандери Степана, будинок 8, корпус 39, 39а.
+            p 1. Організатором та Виконавцем Акції є ТОВ «БУКМЕКЕРСЬКА КОМПАНІЯ «ФАВБЕТ» (далі – Організатор), що має діючі ліцензії: Ліцензія на провадження діяльності з організації та проведення азартних ігор казино у мережі інтернет (Рішення про видачу ліцензії №137 від 05.04.2021) видана 20.04.2021 року, та Ліцензія на провадження діяльності з організації та проведення букмекерської діяльності (Рішення про видачу ліцензії № 433 від 13.12.2022), видана від 28.12.2022 року, ЄДРПОУ 43457382, що знаходиться за адресою: Україна, 04076, місто Київ, пр. Бандери Степана, будинок 8, корпус 39, 39а.
+            p 2. Організація і проведення Акції регламентовані цими правилами (далі – Правила), офіційний текст яких опубліковано на сайті www.favbet.ua у розділі «Акції».
+            p 3. Мета проведення Акції – популяризація торговельної марки Організатора азартних ігор.
+            p 3. Мета проведення Акції – популяризація торговельної марки Організатора азартних ігор.
+            p 3. Мета проведення Акції – популяризація торговельної марки Організатора азартних ігор.
+            p 3. Мета проведення Акції – популяризація торговельної марки Організатора азартних ігор.
