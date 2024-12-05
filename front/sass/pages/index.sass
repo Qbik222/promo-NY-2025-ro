@@ -18,15 +18,18 @@
   --promo-shadow-route: 0px 2px 0px 0px #5226A2
   --promo-bg-color: #00012B
 
-
+//for test
+.dark-btn
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 20
 
 //fonts
-
 
 $font-suisse-reg: SuisseIntl-Regular, sans-serif
 $font-suisse-semb: SuisseIntl-SemiBold, sans-serif
 $font-adley-reg: AdleryPro, sans-serif
-$font-adley-swash: AdleryPro-Swash, sans-serif
 $font-adley-block: AdleryPro-Blockletter, sans-serif
 $font-gawaa: Gawaa-Italic, sans-serif
 
@@ -42,14 +45,8 @@ body
         background: url("../img/info/bg-info-img-desc-dark.png") no-repeat 0 0/contain
         @media screen and (max-width: 1024px)
           background: url("../img/info/bg-info-img-tab-dark.png") no-repeat 0 0/contain
-        @media screen and (max-width: 550px)
+        @media screen and (max-width: 600px)
           background: url("../img/info/bg-info-img-mob-dark.png") no-repeat 0 0/contain
-    .route
-      &__container
-        &::before
-          background: url("../img/route/bg-rays-dark.svg") no-repeat 0 0/contain
-
-
 .overflow
   overflow-x: hidden !important
 
@@ -61,58 +58,6 @@ body
   img
     max-width: 100%
     height: auto
-
-.active
-  animation: 4s prizeItem ease infinite
-  .route__item-text
-    display: flex
-    flex-direction: column
-    align-items: center
-    gap: 4px
-    span
-      &::before
-        content: ''
-        display: inline-block
-        margin: 0 5px -4px 0
-        width: 19px
-        height: 18px
-        background: url("../img/route/time.svg") no-repeat 0 0/contain
-  .timerTxt
-    display: flex
-  .blockTxt,.finishedTxt
-    display: none
-
-.inactive
-  pointer-events: none
-  .route__item-text
-    &::before
-      content: ''
-      display: inline-block
-      margin: 0 5px 0 0
-      width: 19px
-      height: 20px
-      background: url("../img/route/arrow-done.svg") no-repeat 0 0/contain
-  .finishedTxt
-    display: flex
-  .timerTxt,.blockTxt
-    display: none
-
-.soon
-  pointer-events: none
-  .route__item-text
-    color: var(--promo-color-orange)
-    &::before
-      content: ''
-      display: inline-block
-      margin: 0 5px 0 0
-      width: 13px
-      height: 18px
-      background: url("../img/route/block.svg") no-repeat 0 0/contain
-  .timerTxt,.finishedTxt
-    display: none
-  .blockTxt
-    display: flex
-
 .fav__page
   background: var(--promo-bg-color)
   -webkit-tap-highlight-color: transparent
@@ -139,30 +84,35 @@ body
             content: url("../img/welcome/welcome-title-desc-en.png")
             @media screen and (max-width: 1024px)
               content: url("../img/welcome/welcome-title-tab-en.png")
-            @media screen and (max-width: 550px)
+            @media screen and (max-width: 600px)
               content: url("../img/welcome/welcome-title-mob-en.png")
+      &__wrap
+        @media screen and (max-width: 600px)
+          margin: -60vw 0 0 0
       &__sam
         &-text
-          padding: 99px 20px 20px 74px
-          @media screen and (max-width: 550px)
-            padding: 13vw 2vw 10vw 12.5vw
+          padding: 99px 20px 20px 84px
+          @media screen and (max-width: 600px)
+            padding: 11.5vw 2vw 10vw 10.5vw
           &-wrap
-            @media screen and (min-width: 551px)
-              max-width: 175px
-              font-size: 29px
-              line-height: 23px
+            @media screen and (min-width: 601px)
+              max-width: 180px
+              font-size: 35px
+              line-height: 29px
+            @media screen and (max-width: 600px)
+              font-size: 3.5vw
+              line-height: 2.8vw
+              max-width: 17vw
     .tableResults__row._yourPlace .tableResults__body-col:first-child::after
-        background: url("../img/result/you-en.svg") no-repeat 0 0/contain
+      background: url("../img/result/you-en.svg") no-repeat 0 0/contain
     .questBtn
       font-size: 38px
       line-height: 42px
-      @media screen and (max-width: 550px)
+      @media screen and (max-width: 600px)
         font-size: 31px
     .quest__item-btn
       font-size: 24px
       line-height: 34px
-
-
 
 .custom-btn
   position: relative
@@ -180,7 +130,7 @@ body
   font-size: 45px
   line-height: 45px
   cursor: pointer
-  @media screen and (max-width: 550px)
+  @media screen and (max-width: 600px)
     width: 270px
     height: 105px
     font-size: 35px
@@ -244,7 +194,7 @@ body
     border-radius: 20px
     margin-top: 10px
     padding: 30px
-    @media screen and (max-width: 550px)
+    @media screen and (max-width: 600px)
       padding: 20px 20px
     &-wrap
       height: 400px
@@ -255,7 +205,7 @@ body
       color: var(--promo-color-gray)
       letter-spacing: .02em
       padding: 0 20px 0 0
-      @media screen and (max-width: 550px)
+      @media screen and (max-width: 600px)
         padding: 0 15px 0 0
       &::-webkit-scrollbar
         width: 4px
@@ -310,7 +260,7 @@ body
     background: url("../img/welcome/confetti-desc.png") repeat-y 0 0/contain
     @media screen and (max-width: 1024px)
       background: url("../img/welcome/confetti-tab.png") repeat-y 0 0/contain
-    @media screen and (max-width: 550px)
+    @media screen and (max-width: 600px)
       background: url("../img/welcome/confetti-mob.png") repeat-y 0 0/contain
   &::after
     content: ''
@@ -334,12 +284,6 @@ body
     align-items: center
     position: relative
     z-index: 10
-    &-top
-      font-family: $font-adley-reg
-      font-size: 40px
-      line-height: 40px
-      color: var(--promo-color-white)
-      text-shadow: var(--promo-shadow-text-blue)
     &-bottom
       position: relative
       left: -20px
@@ -360,7 +304,6 @@ body
       height: 100%
     .salut
       opacity: 0
-
       position: absolute
       background: url("../img/welcome/salut.svg") no-repeat 0 0/contain
       &-one
@@ -443,48 +386,6 @@ body
     margin: 0 auto
     display: flex
     flex-direction: column
-  &__title
-    display: flex
-    flex-direction: column
-    align-items: center
-    position: relative
-    z-index: 10
-    margin: 0 auto 20px
-    &-top
-      font-family: $font-adley-reg
-      font-size: 46px
-      line-height: 46px
-      color: var(--promo-color-white)
-      text-shadow: var(--promo-shadow-text-blue)
-    &-bottom
-      position: relative
-      max-width: 1070px
-      padding: 0 50px 0 0
-      .rules-img
-        animation: 2s shadowMagenta ease infinite
-      .valut
-        position: absolute
-        right: -10px
-        bottom: 90px
-        font-family: $font-suisse-reg
-        font-size: 32px
-        line-height: 40px
-        color: var(--promo-color-white)
-      .bonus
-        transform: rotate(-6.677deg)
-        position: absolute
-        right: 90px
-        bottom: 60px
-        font-family: $font-adley-reg
-        font-size: 38px
-        line-height: 38px
-        color: var(--promo-color-white)
-        text-shadow: var(--promo-shadow-text-blue)
-        img
-          display: inline-block
-          margin: 0 -60px -67px
-        span
-          font-family: $font-adley-reg
   &__subtitle
     transform: rotate(-3deg)
     font-family: $font-adley-reg
@@ -554,7 +455,7 @@ body
 
 .info
   position: relative
-  z-index: 10
+  z-index: 11
   &::before
     content: ''
     position: absolute
@@ -566,7 +467,7 @@ body
     background: url("../img/info/bg-info-img-desc.png") no-repeat 0 0/contain
     @media screen and (max-width: 1024px)
       background: url("../img/info/bg-info-img-tab.png") no-repeat 0 0/contain
-    @media screen and (max-width: 550px)
+    @media screen and (max-width: 600px)
       background: url("../img/info/bg-info-img-mob.png") no-repeat 0 0/contain
   &::after
     content: ''
@@ -580,7 +481,7 @@ body
     background: url("../img/info/bg-info-img-desc.png") no-repeat 0 0/contain
     @media screen and (max-width: 1024px)
       background: url("../img/info/bg-info-img-tab.png") no-repeat 0 0/contain
-    @media screen and (max-width: 550px)
+    @media screen and (max-width: 600px)
       background: url("../img/info/bg-info-img-mob.png") no-repeat 0 0/contain
   &__container
     max-width: 1630px
@@ -599,9 +500,9 @@ body
           animation: 2s shadowMagenta2 ease infinite
           position: relative
           z-index: 5
-      .info__wrap
-        z-index: 10
-        margin: 0 0 -160px 0
+        .info__wrap
+          z-index: 10
+          margin: 0 0 -160px 0
     &-two
       justify-content: flex-end
       .info__image
@@ -619,6 +520,7 @@ body
     max-width: 575px
     font-size: 17px
     line-height: 32px
+    margin-top: 115px
     color: var(--promo-color-gray)
   &__title
     transform-origin: left center
@@ -647,176 +549,8 @@ body
   &__btn
     left: -40px
 
-.route
-  padding: 60px 0 50px
-  &__container
-    max-width: 1200px
-    padding: 0 15px
-    margin: 0 auto
-    display: flex
-    flex-direction: column
-    position: relative
-    &::before
-      content: ''
-      position: absolute
-      top: 70px
-      left: 51%
-      transform: translateX(-50%)
-      width: 1420px
-      height: 800px
-      background: url("../img/route/bg-rays.svg") no-repeat 0 0/contain
-  &__title
-    display: flex
-    flex-direction: column
-    align-items: center
-    position: relative
-    z-index: 10
-    margin: 0 0 210px
-    &-top
-      display: none
-      animation: 2s decThree ease infinite
-      transform: rotate(-3deg)
-      font-family: $font-adley-reg
-      font-size: 76px
-      line-height: 76px
-      color: var(--promo-color-white)
-      text-shadow: var(--promo-shadow-text-blue)
-
-    &-bottom
-      margin-top: -15px
-      width: 460px
-      height: 120px
-      display: flex
-      align-items: center
-      justify-content: center
-      font-family: $font-adley-block
-      font-size: 60px
-      line-height: 60px
-      color: var(--promo-color-white)
-      text-shadow: var(--promo-shadow-text-blue)
-      background: url("../img/route/route-title-bg-desc.png") no-repeat 0 0/contain
-      @media screen and (max-width: 550px)
-        background: url("../img/route/route-title-bg-mob.png") no-repeat 0 0/contain
-
-  &__list
-    display: flex
-    justify-content: space-between
-    margin: 0 0 40px
-  &__item
-    cursor: pointer
-    display: flex
-    flex-direction: column
-    align-items: center
-    max-width: 270px
-    position: relative
-
-    &:nth-child(odd)
-      margin: -105px 0 0 0
-      &::before
-        content: ''
-        pointer-events: none
-        position: absolute
-        width: 270px
-        height: 280px
-        background: url("../img/route/line-one.svg") no-repeat 0 0/contain
-        bottom: 76px
-        right: -180px
-    &:nth-child(even)
-      &::before
-        pointer-events: none
-        content: ''
-        transform: rotate(120deg)
-        position: absolute
-        width: 290px
-        height: 300px
-        background: url("../img/route/line-one.svg") no-repeat 0 0/contain
-        bottom: 146px
-        right: -130px
-    &:nth-child(3)
-      margin: -130px 0 0 30px
-      .route__item-img
-        margin-bottom: -25px
-    &:last-child
-      &::before
-        content: none
-    &-img
-      position: relative
-      img
-        position: relative
-        z-index: 5
-      &::before
-        pointer-events: none
-        content: ''
-        position: absolute
-        top: -160px
-        left: 10px
-        width: 280px
-        height: 435px
-        background: url("../img/route/back-item.png") no-repeat 0 0/contain
-    &-wrap
-      cursor: pointer
-      width: 200px
-      margin: - 20px 0 0 0
-      position: relative
-      z-index: 8
-      border-radius: 10px
-      background: var(--promo-gradient-route)
-      box-shadow: var(--promo-shadow-route)
-    &-title
-      max-width: 215px
-      text-align: center
-      font-family: $font-adley-reg
-      font-size: 28px
-      line-height: 28px
-      color: var(--promo-color-white)
-      text-shadow: var(--promo-shadow-text-blue)
-      margin: -13px 0 10px
-    &-subtitle
-      font-family: $font-suisse-reg
-      font-size: 12px
-      line-height: 14px
-      text-transform: uppercase
-      text-align: center
-      color: var(--promo-color-white)
-      text-shadow: var(--promo-shadow-text-blue)
-      margin: 0 0 10px
-    &-text
-      display: flex
-      align-items: center
-      justify-content: center
-      font-family: $font-suisse-reg
-      font-size: 15px
-      line-height: 17px
-      color: var(--promo-color-white)
-      span
-        font-family: $font-suisse-reg
-    &-star
-      bottom: -10px
-      position: relative
-      width: 85px
-      height: 25px
-      margin: 0 auto
-      display: flex
-      align-items: center
-      justify-content: center
-      gap: 4px
-      border-radius: 50px
-      background: var(--promo-gradient-route)
-      box-shadow: var(--promo-shadow-route)
-      .star
-        width: 20px
-        height: 20px
-        background: url("../img/route/star-none.svg") no-repeat 0 0/contain
-        &._done
-          background: url("../img/route/star-done.svg") no-repeat 0 0/contain
-
-
-  &__btn
-    align-self: center
-    z-index: 11
-
 .result
-  padding: 10px 0 100px
+  padding: 90px 0 100px
   position: relative
   z-index: 10
   &::after
@@ -912,7 +646,6 @@ body
   &__head
     max-width: 670px
     margin-right: 10px
-    //margin-bottom: 5px
     position: relative
     padding: 0 0 0 15px
     &-list
@@ -938,7 +671,6 @@ body
         margin: 0
   &__body
     max-width: 670px
-    //padding-right: 15px
     z-index: 11
     max-height: 520px
     font-size: 18px
@@ -1005,7 +737,7 @@ body
           height: 16px
           display: inline-block
           margin: 0 -21px 0 7px
-          @media screen and (max-width: 550px)
+          @media screen and (max-width: 600px)
             width: 10px
             height: 10px
     &.place1
@@ -1032,12 +764,11 @@ body
           height: 24px
           display: inline-block
           background: url("../img/result/you.svg") no-repeat 0 0/contain
-          @media screen and (max-width: 550px)
+          @media screen and (max-width: 600px)
             width: 20px
             height: 17px
             bottom: 15px
             left: -10px
-
     &::before
       content: ''
       position: absolute
@@ -1100,7 +831,7 @@ body
     background: url("../img/games/house-desc.png") no-repeat 0 0/contain
     @media screen and (max-width: 1024px)
       background: url("../img/games/house-tab.png") no-repeat 0 0/contain
-    @media screen and (max-width: 550px)
+    @media screen and (max-width: 600px)
       background: url("../img/games/house-mob.png") no-repeat 0 0/contain
     &.week1
       .game__list.week1
@@ -1123,14 +854,11 @@ body
       position: absolute
       top: 20%
       left: 34%
-      //transform: translate(-50%, 0)
       max-width: 365px
       width: 23.8%
   &__btn
     align-self: center
     margin: -325px 0 50px 0
-
-
 
 .popup
   position: fixed
@@ -1217,7 +945,6 @@ body
           left: 4px
           top: 4px
           content: url("../img/route/cash-mob.png")
-
   &__container
     margin: auto
     max-width: 790px
@@ -1234,7 +961,6 @@ body
     transition: .3s ease
     &:hover
       transform: scale(1.05)
-
   &__top
     position: relative
     margin: 0 0 18px
@@ -1362,7 +1088,6 @@ body
         max-width: 130px
         text-align: center
     &-wrap
-
       margin: 0 0 15px
     &-info
       &-text
@@ -1425,7 +1150,7 @@ body
     margin: 20px auto 0
     max-width: 350px
     padding: 0 25px
-    @media screen and (max-width: 550px)
+    @media screen and (max-width: 600px)
       margin: 0 auto
     @media screen and (max-width: 360px)
       padding: 0 5px
@@ -1438,7 +1163,7 @@ body
     background: url("../img/route/close.svg") no-repeat 0 0/contain
     cursor: pointer
     transition: .3s ease
-    @media screen and (max-width: 550px)
+    @media screen and (max-width: 600px)
       top: -67px
       right: -20px
       width: 37px
@@ -1501,9 +1226,6 @@ body
           font-size: 15px
           line-height: 15px
 
-
-
-
 @keyframes shadowMagenta
   0%
     filter: drop-shadow(0px 0px 0px var(--promo-color-pink))
@@ -1528,8 +1250,6 @@ body
   100%
     filter: drop-shadow(0px 0px 0px var(--promo-color-pink))
 
-
-
 @keyframes salutAnim
   0%
     opacity: 0
@@ -1546,7 +1266,6 @@ body
     background-position: 0 0
   100%
     background-position: 100% 0
-
 
 @keyframes confettiAnim
   0%
@@ -1586,8 +1305,6 @@ body
   100%
     transform: rotate(-3deg) scale(1)
 
-
-
 @keyframes shadowWhite
   0%
     filter: drop-shadow(0px 0px 3px var(--promo-color-white))
@@ -1604,10 +1321,6 @@ body
   100%
     transform: rotate(0deg) scale(1)
 
-
-
-
-
 @keyframes decFourth
   0%
     transform: rotate(30deg) scale(1)
@@ -1615,7 +1328,3 @@ body
     transform: rotate(32deg) scale(1.05)
   100%
     transform: rotate(30deg) scale(1)
-
-
-
-

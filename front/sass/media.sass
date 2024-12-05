@@ -81,20 +81,6 @@
   .rules
     &__btn
       margin: 0 0 20px
-    &__title
-      margin: 0 auto 50px
-      &-top
-        font-size: 36px
-        line-height: 42px
-        margin: 0 0 -10px
-      &-bottom
-        padding: 0 40px 0 0
-        .valut
-          right: 10px
-          font-size: 18px
-          line-height: 20px
-        .bonus
-          bottom: 30px
     &__subtitle
       font-size: 56px
       line-height: 58px
@@ -103,8 +89,8 @@
       margin: 0 0 20px
       flex-wrap: wrap
     &__item
-      max-width: 172px
-      min-width: 172px
+      max-width: 202px
+      min-width: 202px
       &:first-child
         margin: 0
       &:nth-child(2)
@@ -114,54 +100,15 @@
       &-title
         font-size: 22px
         line-height: 22px
+        margin-top: 10px
       &-text
         font-size: 14px
         line-height: 20px
-
-@media screen and (max-width: 760px)
-  .rules
-    &__title
-      &-top
-        text-align: center
-        max-width: 470px
-      &-bottom
-        .bonus
-          bottom: 2vw
-          right: 8vw
-        .valut
-          right: 1vw
-          bottom: 9vw
-
-@media screen and (max-width: 650px)
-  .rules
-    &__title
-      &-bottom
-        .bonus
-          transform: rotate(-6.677deg) scale(.8)
-          right: 5vw
+      &-img
+        max-width: 135px
 
 @media screen and (max-width: 550px)
   .rules
-
-    &__title
-      margin: 0 auto 50px
-      &-top
-        font-size: 26px
-        line-height: 30px
-        max-width: 340px
-      &-bottom
-        padding: 0 20px 0 0
-        max-width: 370px
-        .valut
-          right: 0
-          bottom: 37px
-          font-size: 12px
-          line-height: 12px
-        .bonus
-          bottom: -30px
-          right: 20px
-          white-space: nowrap
-          transform: rotate(-6.677deg) scale(.6)
     &__subtitle
       font-size: 36px
       line-height: 40px
@@ -199,8 +146,6 @@
         padding: 10px 0 0 63px
         text-align: start
         max-width: 100%
-        //&._open
-        //  display: block
       &-wrap
         margin: 0
         flex-direction: row
@@ -217,28 +162,14 @@
         font-size: 14px
         line-height: 22px
 
-@media screen and (max-width: 370px)
-  .rules
-    &__title
-      &-top
-        margin: 0 0 0
-      &-bottom
-        max-width: 280px
-        .valut
-          bottom: 27px
-          font-size: 10px
-          line-height: 11px
-        .bonus
-          bottom: -40px
-          right: 20px
-          white-space: nowrap
-          transform: rotate(-6.677deg) scale(.5)
-
 //INFO
 @media screen and (max-width: 1400px)
   .info
     &__container
-      max-width: 1060px
+      max-width: 1160px
+      padding: 0 35px
+    &__wrap
+      margin-top: 245px
     &__row
       &-one
         margin: 0 0 80px
@@ -261,15 +192,17 @@
       top: 190px
     &::after
       bottom: 470px
-
     &__container
       max-width: 1060px
+      padding: 0 15px
+    &__wrap
+      margin-top: 0
     &__btn
       margin: 0 auto
       left: 0
     &__row
       &-one
-        margin: 0 0 160px
+        margin: 0 0 20px 0
         flex-direction: column
         .info__image
           min-width: auto
@@ -300,53 +233,6 @@
       font-size: 14px
       line-height: 22px
 
-//ROUTE
-@media screen and (max-width: 1024px)
-  .route
-    padding: 130px 0 50px
-    &__title
-      margin: 0px 0 10px
-    &__list
-      width: calc(100% + 30px)
-      position: relative
-      left: -15px
-      padding: 230px 0 30px 0
-      overflow-x: scroll
-      overflow-y: hidden
-      &::-webkit-scrollbar
-        display: none
-    &__item
-      min-width: 270px
-
-@media screen and (max-width: 960px)
-  .route
-    padding: 100px 0 50px
-    &__title
-      margin: 0px 0 -10px
-      &-top
-        font-size: 56px
-        line-height: 56px
-
-@media screen and (max-width: 550px)
-  .route
-    padding: 100px 0 50px
-    &__container
-      &::before
-        top: 20px
-    &__list
-      margin: 0
-    &__title
-      margin: 0px 0 -10px
-      &-top
-        font-size: 36px
-        line-height: 36px
-      &-bottom
-        margin-top: -5px
-        width: 240px
-        height: 60px
-        font-size: 26px
-        line-height: 26px
-
 //RESULT
 @media screen and (max-width: 960px)
   .game
@@ -354,7 +240,7 @@
       font-size: 56px
       line-height: 56px
   .result
-    padding: 70px 0 70px
+    padding: 100px 0 70px
     &::after
       top: -50px
     &__title
@@ -581,7 +467,6 @@
       &-subtitle
         font-size: 8px
         line-height: 8px
-
         span
           font-size: 8px
           line-height: 8px

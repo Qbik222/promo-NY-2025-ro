@@ -500,56 +500,13 @@
     setTimeout(() => mainPage.classList.add('overflow'), 1000);
 
 
-    //progress
-    function refreshProgress() {
-        const progressBars = document.querySelectorAll('.quest__item-info-progress')
-        progressBars.forEach(item => {
-            let progress = item.querySelector('.progress')
-            let widthValue = item.getAttribute('data-progress')
-            progress.style.width = `calc(${widthValue} - 6px)`
-        })
-    }
-
     //show popupchik
     const body = document.querySelector('body');
-    const itemsSlider = document.querySelectorAll('.route__item');
     const popupWrap = document.querySelector('.popup');
     const btnTableShow = document.querySelector('.result__subtext');
     const tablePopup = document.querySelector('.prize-fund');
     const tablePopupBtnClose = document.querySelector('.prize-fund-close');
 
-
-    function showPopup() {
-        popupWrap.classList.remove('_hidden');
-        body.style.overflow = 'hidden'
-        const popup = document.querySelector(`.quest`);
-        if (popup) {
-            popup.style.display = 'block';
-        }
-    }
-
-    function hiddenPopup() {
-        popupWrap.classList.add('_hidden');
-        body.style.overflow = 'auto'
-        const popup = document.querySelector(`.quest`);
-        if (popup) {
-            popup.style.display = 'none';
-        }
-    }
-
-    popupWrap.addEventListener('click', (event) => {
-        const closeBtn = event.target.closest('.quest-close');
-        if (closeBtn) {
-            hiddenPopup();
-        }
-    });
-
-
-    itemsSlider.forEach((item) => {
-        item.addEventListener('click', () => {
-            showPopup();
-        });
-    });
 
     btnTableShow.addEventListener('click', () =>{
         popupWrap.classList.remove('_hidden');
@@ -564,7 +521,6 @@
     })
 
 
-
     //show rules- details
     const rulesItems = document.querySelectorAll('.rules__item')
     rulesItems.forEach(item => {
@@ -573,12 +529,9 @@
         })
     })
 
-    //show popup- details
-    const questItems = document.querySelectorAll('.quest__item')
-    questItems.forEach(item => {
-        item.addEventListener('click', () => {
-            item.classList.toggle('_open')
-        })
+    // for test
+    document.querySelector(".dark-btn").addEventListener("click", () =>{
+        document.body.classList.toggle("dark")
     })
 
 })();
