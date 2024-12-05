@@ -534,4 +534,22 @@
         document.body.classList.toggle("dark")
     })
 
+    let week = 1
+
+    const gameWrap = document.querySelector(".game__house"),
+          weekBtn = document.querySelector(".week-btn");
+
+    weekBtn.addEventListener("click", () =>{
+        if(week >= 4) {
+            gameWrap.classList.remove(`week${week}`)
+            week = 1
+            gameWrap.classList.add(`week${week}`)
+            return
+        }
+        gameWrap.classList.remove(`week${week}`)
+        week++
+        gameWrap.classList.add(`week${week}`)
+    })
+
+
 })();
