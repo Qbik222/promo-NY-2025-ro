@@ -37,8 +37,8 @@
     const PRIZES_CSS = ['place1', 'place2', 'place3'];
 
     let i18nData = {};
-    let userId;
-    // let userId = 100340020;
+    // let userId;
+    let userId = 100340020;
 
     function loadTranslations() {
         return fetch(`${apiURL}/translates/${locale}`).then(res => res.json())
@@ -500,25 +500,25 @@
     setTimeout(() => mainPage.classList.add('overflow'), 1000);
 
 
-    //show popupchik
-    const body = document.querySelector('body');
-    const popupWrap = document.querySelector('.popup');
-    const btnTableShow = document.querySelector('.result__subtext');
-    const tablePopup = document.querySelector('.prize-fund');
-    const tablePopupBtnClose = document.querySelector('.prize-fund-close');
+    // //show popupchik
+    // const body = document.querySelector('body');
+    // const popupWrap = document.querySelector('.popup');
+    // const btnTableShow = document.querySelector('.result__subtext');
+    // const tablePopup = document.querySelector('.prize-fund');
+    // const tablePopupBtnClose = document.querySelector('.prize-fund-close');
 
-
-    btnTableShow.addEventListener('click', () =>{
-        popupWrap.classList.remove('_hidden');
-        body.style.overflow = 'hidden'
-        tablePopup.style.display = 'block';
-    })
-
-    tablePopupBtnClose.addEventListener('click', () => {
-        popupWrap.classList.add('_hidden');
-        body.style.overflow = 'auto'
-        tablePopup.style.display = 'none';
-    })
+    //
+    // btnTableShow.addEventListener('click', () =>{
+    //     popupWrap.classList.remove('_hidden');
+    //     body.style.overflow = 'hidden'
+    //     tablePopup.style.display = 'block';
+    // })
+    //
+    // tablePopupBtnClose.addEventListener('click', () => {
+    //     popupWrap.classList.add('_hidden');
+    //     body.style.overflow = 'auto'
+    //     tablePopup.style.display = 'none';
+    // })
 
 
     //show rules- details

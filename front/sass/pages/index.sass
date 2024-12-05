@@ -248,7 +248,7 @@ body
           margin: 0 4px 2px 0
 
 .welcome
-  padding: 0 0 50px 0
+  padding: 0
   position: relative
   z-index: 10
   &::before
@@ -342,7 +342,7 @@ body
     &-text
       transform: rotate(8.856deg)
       position: absolute
-      padding: 95px 20px 20px 74px
+      padding: 110px 20px 20px 74px
       top: 220px
       right: 170px
       width: 360px
@@ -383,6 +383,7 @@ body
 .rules
   position: relative
   z-index: 11
+  padding-top: 40px
   &__container
     max-width: 1430px
     padding: 0 15px
@@ -490,6 +491,34 @@ body
     max-width: 1630px
     padding: 0 15px
     margin: 0 auto
+  &__prize
+    display: inline-flex
+    position: relative
+    margin-bottom: 20px
+    &::before
+      position: absolute
+      content: "LEI"
+      display: block
+      color: var(--promo-color-white)
+      font-family: $font-suisse-reg
+      font-size: 24px
+      line-height: 26px
+      right: -5px
+      bottom: 20px
+      transform: translate(100%, 0)
+    &-title
+      max-width: 300px
+      &-text
+        position: absolute
+        text-align: right
+        right: 0
+        bottom: 0
+        font-family: $font-adley-reg
+        font-size: 24px
+        line-height: 27px
+        color: var(--promo-color-white)
+        text-shadow: var(--promo-shadow-text-blue)
+        transform: rotate(-4deg)
   &__row
     display: flex
     align-items: center
@@ -497,7 +526,7 @@ body
       .info__image
         min-width: 1140px
         max-width: 1140px
-        margin: 0 -130px 0 -180px
+        margin: 0 -60px 0 -200px
         position: relative
         img
           animation: 2s shadowMagenta2 ease infinite
@@ -519,11 +548,26 @@ body
       .info__wrap
         z-index: 10
         margin: 0 0 -50px 0
+    &-third
+      .info__title
+        font-size: 44px
+      .info__image
+        min-width: 1140px
+        max-width: 1140px
+        margin: 0 0 0 -200px
+        position: relative
+        img
+          animation: 2s shadowMagenta2 ease infinite
+          position: relative
+          z-index: 5
+        .info__wrap
+          z-index: 10
+          margin: 0 0 -160px 0
   &__wrap
     max-width: 575px
     font-size: 17px
     line-height: 32px
-    margin-top: 115px
+    margin-top: 50px
     color: var(--promo-color-gray)
   &__title
     transform-origin: left center
