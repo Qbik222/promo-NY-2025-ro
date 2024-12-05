@@ -1,63 +1,6 @@
 button.dark-btn dark
 button.week-btn week
 .fav__page#newYear2024
-  //.popup._hidden
-  //  .prize-fund
-  //    .prize-fund__container
-  //      .prize-fund__wrap
-  //        .prize-fund-close
-  //        .prize-fund__title(data-translate='prizeTitle') Nagradni fond
-  //        .prize-fund__table
-  //          .prize-fund__table-head
-  //            .prize-fund__table-head-list
-  //              .prize-fund__table-head-col(data-translate='tableHeadPlace') Mjesto
-  //              .prize-fund__table-head-col(data-translate='tableHeadPrize') Nagrada
-  //          .prize-fund__table-body
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 1
-  //              .prize-fund__table-body-col(data-translate='prize_1')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 2
-  //              .prize-fund__table-body-col(data-translate='prize_2')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 3
-  //              .prize-fund__table-body-col(data-translate='prize_3')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 4
-  //              .prize-fund__table-body-col(data-translate='prize_4')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 5
-  //              .prize-fund__table-body-col(data-translate='prize_5')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 6-10
-  //              .prize-fund__table-body-col(data-translate='prize_6-10')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 11-50
-  //              .prize-fund__table-body-col(data-translate='prize_11-50')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 51-100
-  //              .prize-fund__table-body-col(data-translate='prize_51-100')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 101-200
-  //              .prize-fund__table-body-col(data-translate='prize_101-200')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 201-300
-  //              .prize-fund__table-body-col(data-translate='prize_201-300')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 301-400
-  //              .prize-fund__table-body-col(data-translate='prize_301-400')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 401-500
-  //              .prize-fund__table-body-col(data-translate='prize_401-500')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 501-600
-  //              .prize-fund__table-body-col(data-translate='prize_501-600')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 601-650
-  //              .prize-fund__table-body-col(data-translate='prize_601-650')
-  //            .prize-fund__table-row
-  //              .prize-fund__table-body-col 651-700
-  //              .prize-fund__table-body-col(data-translate='prize_651-700')
   .welcome
     .welcome__container
       .welcome__title
@@ -93,8 +36,6 @@ button.week-btn week
         .welcome__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") PARTICIPĂ
         a(href="/casino/nypromosem/" role="button" data-translate="playBtn").welcome__btn.custom-btn.took-part.hide PARTICIPĂ
         .welcome__date(data-translate='promoDate') În perioada 18.12.2024 - 15.01.2025
-        //.welcome__text(data-translate='welcomeTxt') Sam te poziva da zajedno probudite duh Božića: kladi se na sport, vrti slotove, osvajaj nagrade i osjeti blagdansku čaroliju uz Favbet. 
-
   .info
     .info__container
       .info__row.info__row-third
@@ -108,21 +49,23 @@ button.week-btn week
           .info__title(data-translate="infoTitle") Pregătește-te pentru o aventură magică alături de Sam
           .info__prize
             .info__prize-title
-              picture
+              picture.uk
                 source(media="(min-width: 1025px) " srcset="./img/info/prize-title-desc.png")
                 source(media="(min-width: 551px) and (max-width: 1024px) " srcset="./img/info/prize-title-desc.png")
                 source(media="(max-width: 550px)" srcset="./img/info/prize-title-mob.png")
                 img(src="./img/info/prize-title-desc.png" alt="Favbet")
+              picture.en
+                source(media="(min-width: 1025px) " srcset="./img/info/prize-title-desc-en.png")
+                source(media="(min-width: 551px) and (max-width: 1024px) " srcset="./img/info/prize-title-desc-en.png")
+                source(media="(max-width: 550px)" srcset="./img/info/prize-title-mob-en.png")
+                img(src="./img/info/prize-title-desc-en.png" alt="Favbet")
               .info__prize-title-text(data-translate="infoPrizeTitle") cu premii totale de
-              //.info__text(data-translate="casinoTxt-1") Pojačaj blagdansko raspoloženje - igraj promotivne igre u odjeljku Casino, skupljaj bodove i natječi se za bonuse.
           .info__list
             .info__item(data-translate="infoTxt-1") În perioada 18 decembrie 2024 - 15 ianuarie 2025, fii parte din Aventura de Crăciun a lui Sam și câștigă o super motocicletă și mega bonusuri!
             .info__item(data-translate="infoTxt-2") Joacă-te la sloturile din Casino, cu bet minim 5 lei, sau pariază minimum 50 lei în secțiunile Sport & Live, strânge puncte și urcă în top. Pentru fiecare săptămână a campaniei, Sam a pregătit bonusuri generoase, iar la final, cel care a adunat cele mai multe puncte va primi o super motocicletă. Intră și tu în joc și fă-ți sărbătorile magice!
-            //.info__item(data-translate="casinoTxt-4") Više bodova donosi bolje bonuse.
   .rules
     .rules__container
-      .rules__subtitle(data-translate='rulesTitle') How to take part?
-      //.rules__text(data-translate='rulesTxt') Kreni sa Samom u potragu za božićnim veseljem. Usput te čekaju sportski događaji i uzbudljivi slotovi koji ti neće donijeti samo blagdansku atmosferu, već i nagrade.
+      .rules__subtitle(data-translate='rulesTitle') Cum participi?
       .rules__list
         .rules__item
           .rules__item-wrap
@@ -131,8 +74,8 @@ button.week-btn week
                 source(media="(min-width: 1025px) " srcset="./img/rules/rules-ball1-desc.png")
                 source(media="(max-width: 1024px)" srcset="./img/rules/rules-ball1-mob.png")
                 img(src="./img/rules/rules-ball1-desc.png" alt="Favbet")
-            .rules__item-title(data-translate='rulesTitle-1') Sudjeluj
-          .rules__item-text(data-translate='rulesTxt-1') Klikni gumb “Sudjeluj”
+            .rules__item-title(data-translate='rulesTitle-1') Înscrie-te în promoție
+          .rules__item-text(data-translate='rulesTxt-1') Apasă butonul ”Participă”.
         .rules__item
           .rules__item-wrap
             .rules__item-img
@@ -140,8 +83,8 @@ button.week-btn week
                 source(media="(min-width: 1025px) " srcset="./img/rules/rules-ball2-desc.png")
                 source(media="(max-width: 1024px)" srcset="./img/rules/rules-ball2-mob.png")
                 img(src="./img/rules/rules-ball2-desc.png" alt="Favbet")
-            .rules__item-title(data-translate='rulesTitle-2') Kladi se i igraj
-          .rules__item-text(data-translate='rulesTxt-2') Igraj promotivne igre u odjeljku “Casino” te se kladi na sportske događaje u odjeljcima “Sport”,  “Uživo” i “eSport”
+            .rules__item-title(data-translate='rulesTitle-2') Fii activ!
+          .rules__item-text(data-translate='rulesTxt-2') Plasează pariuri în secțiunile Sport, Live sau Casino.
         .rules__item
           .rules__item-wrap
             .rules__item-img
@@ -149,8 +92,8 @@ button.week-btn week
                 source(media="(min-width: 1025px) " srcset="./img/rules/rules-ball3-desc.png")
                 source(media="(max-width: 1024px)" srcset="./img/rules/rules-ball3-mob.png")
                 img(src="./img/rules/rules-ball3-desc.png" alt="Favbet")
-            .rules__item-title(data-translate='rulesTitle-3') Skupljaj bodove
-          .rules__item-text(data-translate='rulesTxt-3') Skupljaj bodove i penji se po tablici promocije
+            .rules__item-title(data-translate='rulesTitle-3') Adună puncte
+          .rules__item-text(data-translate='rulesTxt-3') Fiecare 50 lei îți vor aduce câte un punct. Cu cât mai multe puncte - cu atât mai multe șanse de câștig!
         .rules__item
           .rules__item-wrap
             .rules__item-img
@@ -158,8 +101,8 @@ button.week-btn week
                 source(media="(min-width: 1025px) " srcset="./img/rules/rules-ball4-desc.png")
                 source(media="(max-width: 1024px)" srcset="./img/rules/rules-ball4-mob.png")
                 img(src="./img/rules/rules-ball4-desc.png" alt="Favbet")
-            .rules__item-title(data-translate='rulesTitle-4') Skupljaj bodove
-          .rules__item-text(data-translate='rulesTxt-4') Skupljaj bodove i penji se po tablici promocije
+            .rules__item-title(data-translate='rulesTitle-4') Câștigă!
+          .rules__item-text(data-translate='rulesTxt-4') Top 20 jucători vor primi bonusuri! 
       a(href="/login/" target="_blank" role="button" data-translate="loginBtn").rules__btn.custom-btn.unauth-msg PARTICIPĂ
       .rules__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") PARTICIPĂ
       a(href="/casino/nypromosem/" role="button" data-translate="playBtn").rules__btn.custom-btn.took-part.hide PARTICIPĂ
@@ -187,25 +130,23 @@ button.week-btn week
             source(media="(max-width: 550px)" srcset="./img/info/sam-one-info-mob.png")
             img(src="./img/info/sam-one-info-desc.png" alt="Favbet")
         .info__wrap
-          .info__title(data-translate="casinoTitle") Play in casino
-          //.info__text(data-translate="casinoTxt-4") Have fun at the *participating games in the Casino section, collect as many points as possible and fight for first place!
+          .info__title(data-translate="casinoTitle") Joacă în Casino
           .info__list
-            .info__item(data-translate="casinoTxt-1") Have fun at the *participating games in the Casino section, collect as many points as possible and fight for first place!
-            .info__item(data-translate="casinoTxt-2") Collect points - spin and for each total bet of 50 lei on a minimum bet of 1 lei you will accumulate 1 point.
-            .info__item(data-translate="casinoTxt-3") *See participating games below in the T&C.
+            .info__item(data-translate="casinoTxt-1") Distrează-te la *jocurile participante din secțiunea Casino, adună cât mai multe puncte și luptă pentru primul loc.
+            .info__item(data-translate="casinoTxt-2") Adună puncte - se iau în calcul pariurile efectuate în secțiunea Casino, unde pentru fiecare pariu total de 50 lei pe bet minim de 1 leu vei acumula 1 punct.
+            .info__item(data-translate="casinoTxt-3") *Vezi jocurile participante mai jos în T&C.
           a(href="/login/" target="_blank" role="button" data-translate="loginBtn").info__btn.custom-btn.unauth-msg PARTICIPĂ
-          .info__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Play Casino
-          a(href="/casino/nypromosem/" role="button" data-translate="playBtn").info__btn.custom-btn.took-part.hide Play Casino
+          .info__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Joacă la Casino
+          a(href="/casino/nypromosem/" role="button" data-translate="playBtn").info__btn.custom-btn.took-part.hide Joacă la Casino
       .info__row.info__row-two
         .info__wrap
-          .info__title(data-translate="sportTitle") Bet on sports
+          .info__title(data-translate="sportTitle") Pariuri sportive
           .info__list
-            .info__item(data-translate="sportTxt-1") Place bets on events in the Sport & Live sections, collect points and enter the fight for first place.
-            .info__item(data-translate="sportTxt-2") The minimum bet is 50 lei. For every 50 lei you win, you will accumulate 1 point.
-            //.info__item(data-translate="sportTxt-3") Primjer: za okladu od 20 EUR igrač osvaja 4 boda, za okladu od 30 EUR - 6 bodova. Više bodova donosi veće šanse za pobjedu.
+            .info__item(data-translate="sportTxt-1") Pariază pe evenimente din secțiunile Sport & Live, adună puncte și intră în lupta pentru primul loc.
+            .info__item(data-translate="sportTxt-2") Pariul minim este de 50 de lei. Pentru fiecare 50 de lei câștigați vei acumula 1 punct.
           a(href="/login/" target="_blank" role="button" data-translate="loginBtn").info__btn.custom-btn.unauth-msg PARTICIPĂ
-          .info__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Place a bet
-          a(href="/sports/sport/soccer/" role="button" data-translate="playBtn").info__btn.custom-btn.took-part.hide Place a bet
+          .info__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") Plasează un Pariu
+          a(href="/sports/sport/soccer/" role="button" data-translate="playBtn").info__btn.custom-btn.took-part.hide Plasează un Pariu
         .info__image
           picture
             source(media="(min-width: 1025px) " srcset="./img/info/sam-two-info-desc.png")
@@ -215,8 +156,6 @@ button.week-btn week
   .result
     .result__container
       .result__title(data-translate='resultTitle') Tabel rezultate
-      //.result__text(data-translate='resultTxt') Penji se na vrh tablice promocije i osvoji najbolje bonuse.
-      //.result__subtext(data-translate='prizeTitle') Nagradni fond
       .tableResults
         .tableResults__container
           .tableResults__wrap#results-table
@@ -235,7 +174,7 @@ button.week-btn week
               .tableResults__row.place2
                 .tableResults__body-col 2
                 .tableResults__body-col 233434
-                .tableResults__body-col 5 000 - 9 999 points
+                .tableResults__body-col 34
                 .tableResults__body-col 4000 de lei AWB Bonus cu condiție de rulaj x1
               .tableResults__row.place3
                 .tableResults__body-col 3
@@ -282,7 +221,7 @@ button.week-btn week
                 .tableResults__body-col 23
                 .tableResults__body-col 233434
                 .tableResults__body-col 34
-                .tableResults__body-col -
+                .tableResults__body-col 4000 de lei AWB Bonus cu condiție de rulaj x1
               .tableResults__row._yourPlace
                 .tableResults__body-col 24
                 .tableResults__body-col 233434
@@ -302,11 +241,16 @@ button.week-btn week
       .game__house.week1
         .game__list.week1
           .game__list-title
-            picture
+            picture.uk
               source(media="(min-width: 1025px) " srcset="./img/games/firstWeek-desc.png")
               source(media="(min-width: 551px) and (max-width: 1024px) " srcset="./img/games/firstWeek-tab.png")
               source(media="(max-width: 550px)" srcset="./img/games/firstWeek-mob.png")
               img(src="./img/games/firstWeek-desc.png" alt="Favbet")
+            picture.en
+              source(media="(min-width: 1025px) " srcset="./img/games/en/firstWeek-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="./img/games/en/firstWeek-tab.png")
+              source(media="(max-width: 550px)" srcset="./img/games/en/firstWeek-mob.png")
+              img(src="./img/games/en/firstWeek-desc.png" alt="Favbet")
           a(href='/casino/show-game/pateplay/regal-spins-10/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="./img/games/week1/game1-desc.png")
@@ -349,11 +293,16 @@ button.week-btn week
               img(src="./img/games/week1/game8-desc.png" alt="Favbet")
         .game__list.week2
           .game__list-title
-            picture
+            picture.uk
               source(media="(min-width: 1025px) " srcset="./img/games/secondWeek-desc.png")
               source(media="(min-width: 551px) and (max-width: 1024px) " srcset="./img/games/secondWeek-tab.png")
               source(media="(max-width: 550px)" srcset="./img/games/secondWeek-mob.png")
               img(src="./img/games/secondWeek-desc.png" alt="Favbet")
+            picture.en
+              source(media="(min-width: 1025px) " srcset="./img/games/en/secondWeek-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="./img/games/en/secondWeek-tab.png")
+              source(media="(max-width: 550px)" srcset="./img/games/en/secondWeek-mob.png")
+              img(src="./img/games/en/secondWeek-desc.png" alt="Favbet")
           a(href='/casino/show-game/pateplay/regal-spins-10/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="./img/games/week2/game1-desc.png")
@@ -396,11 +345,16 @@ button.week-btn week
               img(src="./img/games/week2/game8-desc.png" alt="Favbet")
         .game__list.week3
           .game__list-title
-            picture
+            picture.uk
               source(media="(min-width: 1025px) " srcset="./img/games/thirdWeek-desc.png")
               source(media="(min-width: 551px) and (max-width: 1024px) " srcset="./img/games/thirdWeek-tab.png")
               source(media="(max-width: 550px)" srcset="./img/games/thirdWeek-mob.png")
               img(src="./img/games/thirdWeek-desc.png" alt="Favbet")
+            picture.en
+              source(media="(min-width: 1025px) " srcset="./img/games/en/thirdWeek-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="./img/games/en/thirdWeek-tab.png")
+              source(media="(max-width: 550px)" srcset="./img/games/en/thirdWeek-mob.png")
+              img(src="./img/games/en/thirdWeek-desc.png" alt="Favbet")
           a(href='/casino/show-game/pateplay/regal-spins-10/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="./img/games/week3/game1-desc.png")
@@ -443,11 +397,16 @@ button.week-btn week
               img(src="./img/games/week3/game8-desc.png" alt="Favbet")
         .game__list.week4
           .game__list-title
-            picture
+            picture.uk
               source(media="(min-width: 1025px) " srcset="./img/games/fourthWeek-desc.png")
               source(media="(min-width: 551px) and (max-width: 1024px) " srcset="./img/games/fourthWeek-tab.png")
               source(media="(max-width: 550px)" srcset="./img/games/fourthWeek-mob.png")
               img(src="./img/games/fourthWeek-desc.png" alt="Favbet")
+            picture.en
+              source(media="(min-width: 1025px) " srcset="./img/games/en/fourthWeek-desc.png")
+              source(media="(min-width: 551px) and (max-width: 1024px) " srcset="./img/games/en/fourthWeek-tab.png")
+              source(media="(max-width: 550px)" srcset="./img/games/en/fourthWeek-mob.png")
+              img(src="./img/games/en/fourthWeek-desc.png" alt="Favbet")
           a(href='/casino/show-game/pateplay/regal-spins-10/?playMode=real').game__link
             picture
               source(media="(min-width: 1025px) " srcset="./img/games/week4/game1-desc.png")
@@ -492,7 +451,7 @@ button.week-btn week
       .game__btn.custom-btn.btn-join.hide(role="button" data-translate="partBtn") PARTICIPĂ
       a(href="/casino/nypromosem/" role="button" data-translate="playBtn").game__btn.custom-btn.took-part.hide PARTICIPĂ
       details.custom-drop.rules__drop
-        summary.custom-drop-title #[span(data-translate="resultDropTitle") Pravila i uvjeti] <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
+        summary.custom-drop-title #[span(data-translate="resultDropTitle") Termeni și condiții  “Aventura de Crăciun a lui Sam”] <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8.5321L12 16.6172L22 8.53211" stroke="white" stroke-width="3"/></svg>
         .custom-drop-txt
           .custom-drop-txt-wrap(data-translate="resultDropTxt")
             p ОФІЦІЙНІ ПРАВИЛА УЧАСТІ В АКЦІЇ
