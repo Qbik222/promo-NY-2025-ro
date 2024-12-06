@@ -128,8 +128,6 @@ body
       line-height: 34px
     .info
       &__prize
-        &::before
-          content: "EURO"
         &-title
           picture.uk
             display: none
@@ -522,17 +520,17 @@ body
     display: inline-flex
     position: relative
     margin-bottom: 20px
-    &::before
-      position: absolute
-      content: "LEI"
-      display: block
-      color: var(--promo-color-white)
-      font-family: $font-suisse-reg
-      font-size: 24px
-      line-height: 26px
-      right: -5px
-      bottom: 20px
-      transform: translate(100%, 0)
+    //&::before
+    //  position: absolute
+    //  content: "LEI"
+    //  display: block
+    //  color: var(--promo-color-white)
+    //  font-family: $font-suisse-reg
+    //  font-size: 24px
+    //  line-height: 26px
+    //  right: -5px
+    //  bottom: 20px
+    //  transform: translate(100%, 0)
     &-title
       max-width: 300px
       picture.uk
@@ -709,6 +707,46 @@ body
   position: relative
   z-index: 3
   margin: -230px -40px 0 0
+  &__tabs
+    display: flex
+    align-items: center
+    gap: 15px
+    position: absolute
+    z-index: 12
+    top: 480px
+    left: 47%
+    transform: translate(-50%, 0)
+    @media screen and (max-width: 600px)
+      top: 220px
+      left: 48%
+    &-item
+      font-family: $font-suisse-reg
+      color: var(--promo-color-white)
+      font-size: 22px
+      line-height: 25px
+      text-align: center
+      transition: color .3s ease-in-out
+      padding: 5px
+      &.active
+        position: relative
+        color: var(--promo-color-magenta)
+        &::before
+          content: ""
+          width: 100%
+          height: 2px
+          position: absolute
+          bottom: 0
+          left: 50%
+          transform: translate(-50%, 0)
+          background: var(--promo-color-magenta)
+        &:hover
+          cursor: default
+          color: var(--promo-color-magenta)
+      &:hover
+        color: var(--promo-color-magenta)
+        cursor: pointer
+      span:nth-child(2)
+        font-family: $font-suisse-reg
   &__wrap
     margin: 0 auto
     width: 1550px
