@@ -1,5 +1,5 @@
 (function () {
-    const apiURL = 'https://fav-prom.com/api_ny_ua';
+    const apiURL = 'https://fav-prom.com/api_ny_hr';
     const urlParams = new URLSearchParams(window.location.search);
     const participateParam = 'reg';
 
@@ -19,19 +19,22 @@
         questStartBtns = document.querySelectorAll('.questBtn'),
         questPopup = document.querySelector('.quest'),
         questLevelDivs = document.querySelectorAll('.quest__item'),
-        popupPlayBtn = document.querySelector('.firstPlay');
+        popupPlayBtn = document.querySelector('.firstPlay'),
+        weeksSelector = document.querySelectorAll('.tableResults__tabs-item'),
+        weeksContainer = document.querySelector('.tableResults__tabs');
 
     const currentDate = new Date(); //new Date("2023-12-14T21:00:00.000Z");
     let users;
     let quests;
     let userInfo;
+    let selectedWeekTabId = 0;
 
-    const ukLeng = document.querySelector('#ukLeng');
+    const hrLeng = document.querySelector('#ukLeng');
     const enLeng = document.querySelector('#enLeng');
 
-    let locale = 'uk';
+    let locale = 'hr';
 
-    if (ukLeng) locale = 'uk';
+    if (hrLeng) locale = 'hr';
     if (enLeng) locale = 'en';
 
     const PRIZES_CSS = ['place1', 'place2', 'place3'];
@@ -60,11 +63,11 @@
     function translate() {
         const elems = document.querySelectorAll('[data-translate]')
         if (elems && elems.length) {
-            // elems.forEach(elem => {
-            //     const key = elem.getAttribute('data-translate');
-            //     elem.innerHTML = i18nData[key] || '*----NEED TO BE TRANSLATED----*   key:  ' + key;
-            //     elem.removeAttribute('data-translate');
-            // })
+            elems.forEach(elem => {
+                const key = elem.getAttribute('data-translate');
+                elem.innerHTML = i18nData[key] || '*----NEED TO BE TRANSLATED----*   key:  ' + key;
+                elem.removeAttribute('data-translate');
+            })
             console.log("translate is working")
         }
         refreshLocalizedClass();
@@ -93,7 +96,7 @@
     function getData() {
         return Promise.all([
             request('/users'),
-            request('/quests')
+            // request('/quests')
         ]);
     }
 
@@ -117,7 +120,16 @@
     const InitPage = () => {
         initDrop();
         questStartBtns.forEach(questStartBtn => questStartBtn.addEventListener('click', (e) => { registerInQuest(); }));
-
+        weeksSelector.forEach((w, i) => w.addEventListener('click', e => {
+            if (i === selectedWeekTabId) {
+                return;
+            }
+            weeksSelector.forEach(s => s.classList.remove('active'));
+            w.classList.add('active');
+            selectedWeekTabId = i;
+            refreshUsers(selectedWeekTabId + 1);
+        }));
+        refreshUsers(selectedWeekTabId + 1);
         getData().then(res => {
             users = res[0];
             quests = (res[1] || []);
@@ -128,179 +140,233 @@
         })
     }
 
-    function refreshQuests(quests, currentUser) {
-        if (!quests) {
+    function calculateRecentPromoWeeks() {
+        const date = Date.now();
+        if (date < new Date("2024-10-07T21:00:00Z")) {
+            return 1;
+        } else if (date < new Date("2024-10-21T21:00:00Z")) {
+            return 2;
+        } else if (date < new Date("2024-10-28T21:00:00Z")) {
+            return 3;
+        } else {
+            return 4;
+        }
+    }
+
+    function refreshWeekTabs() {
+        selectedWeekTabId = calculateRecentPromoWeeks() - 1;
+        if (!selectedWeekTabId || selectedWeekTabId === 0) { // promo not started yet
+            weeksContainer.classList.add('hide');
             return;
         }
 
-        const shift = isSecondWeek(quests) ? 4 : 0;
-        for (let i = 0; i < questDivs.length; i++) {
-            renderQuest(quests[i + shift], questDivs[i], currentUser);
-        }
-    }
-
-    function isSecondWeek(quests) {
-        const fourthQuest = quests[3];
-        return fourthQuest && currentDate > new Date(fourthQuest.dateEnd);
-    }
-
-    function renderQuest(quest, container, currentUser) {
-        if (!quest || !container) {
-            return;
-        }
-
-        const questNum = quest.qNumber;
-        //const questPoints = {points: 300};
-        const questPoints = currentUser && currentUser.quests && currentUser.quests.find(q => q.questNum === questNum);
-
-        // update translations
-        const questTitleDiv = container.querySelector('.route__item-title');
-        questTitleDiv.innerHTML = translateKey(`nameQuest-${questNum}`);
-        const questSubTitleDiv = container.querySelector('.route__item-subtitle');
-        questSubTitleDiv.innerHTML = translateKey(`quest-${questNum}`);
-
-        // update type of quest
-        const questType = getQuestType(quest);
-        container.classList.remove('soon');
-
-        if (questType === OLD_QUEST_TYPE) {
-            container.classList.add('inactive');
-        } else if (questType === FUTURE_QUEST_TYPE) {
-            container.classList.add('soon');
-        } else {
-            const timerElement = container.querySelector('.timerTxt');
-            const popupTimer = document.querySelector('.quest__time-num');
-            countdownTimer(quest.dateEnd, timerElement, popupTimer);
-            container.classList.add(`active`)
-            updatePopup(quest, questPoints);
-        }
-
-        // update stars
-        if (questPoints) {
-            const starDivs = container.querySelectorAll('.star');
-            const questLevel = getQuestLevel(quest, questPoints.points || 0);
-            for (let i = 0; i < questLevel; i++) {
-                const star = starDivs[i];
-                star.classList.add('_done');
+        for (let i = 0; i < 4; i++) {
+            const weekSelector = weeksSelector[i];
+            if (selectedWeekTabId < i) {
+                weekSelector.classList.add('hide');
             }
         }
 
-        // updates images
-        const srcDesc = container.querySelector('.src__desc');
-        const srcMob = container.querySelector('.src__mob');
-        const srcDefault = container.querySelector('.src__default');
-        srcDesc.srcset = `https://fav-prom.com/html/ny-ua/img/route/quest${questNum}-img-desc.png`;
-        srcMob.srcset = `https://fav-prom.com/html/ny-ua/img/route/quest${questNum}-img-mob.png`;
-        srcDefault.src = `https://fav-prom.com/html/ny-ua/img/route/quest${questNum}-img-desc.png`;
-
-        // update buttons
-        if (questType == ACTIVE_QUEST_TYPE && userId && !questPoints) {
-            playBtn.classList.add('hide');
-            popupPlayBtn.classList.add('hide');
-            // console.log('removing quest hide ' + currentUser)
-            questStartBtns.forEach(questStartBtn => questStartBtn.classList.remove('hide'));
-        }
-    }
-
-    function updatePopup(quest, questPoints) {
-        const questNum = quest.qNumber;
-        const title = document.querySelector('.quest__des-title');
-        title.innerHTML = translateKey(`quest-${questNum}`);
-        const description = document.querySelector('.quest__des-text');
-        description.innerHTML = translateKey(`descrQuest-${questNum}`);
-        const questName = document.querySelector('.quest__title');
-        questName.innerHTML = translateKey(`nameQuest-${questNum}`);
-
-        const cssClass = questNum % 2 == 0 ? 'sport' : 'casino';
-        questPopup.classList.add(cssClass);
-        questPopup.classList.add(`quest-popup${questNum}`);
-
-        const userPointsForQuest = questPoints ? questPoints.points : 0;
-        for (let i = 0; i < questLevelDivs.length; i++) {
-            const levelDiv = questLevelDivs[i];
-            const levelInfo = quest.levels[i];
-            if (levelDiv && levelInfo) {
-                const subtitle = levelDiv.querySelector('.quest__item-subtitle');
-                subtitle.innerHTML = translateKey(`prizeQuest-${questNum}_${i + 1}`);
-                const infoText = levelDiv.querySelector('.quest__item-info-text');
-                infoText.innerHTML = translateKey(`stepQuest-${questNum}_${i + 1}`);
-
-                // progress bar
-                const levelStartPoints = i === 0 ? 0 : quest.levels[i - 1].points;
-                const levelEndPoints = levelInfo.points;
-                const levelPoints = levelEndPoints;
-                const progressPoints  = Math.min(Math.max(userPointsForQuest, 0), levelPoints);
-                const progressValue = progressPoints / levelPoints * 100;
-                const normalized = Math.min(Math.max(Math.floor(progressValue), 0), 100);
-                const progressElement = levelDiv.querySelector('.quest__item-info-progress');
-                progressElement.value = normalized;
-                progressElement.dataset.progress = `${normalized}%`;
-                const statusDiv = levelDiv.querySelector('.status');
-                statusDiv.innerHTML = `${progressPoints}/${levelPoints}`;
-                if (userPointsForQuest < levelStartPoints || !userId) {
-                    const playBtn = levelDiv.querySelector('.took-part');
-                    playBtn.classList.add('hide');
-                }
+        weeksSelector.forEach((w, i) => {
+            w.classList.remove('active');
+            if (i === selectedWeekTabId) {
+                w.classList.add('active');
             }
-        }
-        refreshProgress();
+        });
     }
 
-    function countdownTimer(targetDateString, timerElement, popupTimer) {
-        refreshTimer(targetDateString, timerElement, popupTimer);
-        const intervalId = setInterval(() => {
-            const timeDiff = refreshTimer(targetDateString, timerElement, popupTimer);
-            if (timeDiff < 0) {
-                clearInterval(intervalId);
-                timerElement.innerHTML = formatTime('finishedTimer', 0, 0, 0);
-                popupTimer.innerHTML = formatTime('timer', 0, 0, 0);
-                location.reload();
-            }
-        }, 10000);
+    function refreshUsers(week) {
+        getUsers(week).then(users => {
+            renderUsers(users);
+            translate();
+        });
     }
 
-    function formatTime(key, days, hours, minutes) {
-        return translateKey(key).replace("{day}", days.toString())
-            .replace("{hour}", hours.toString())
-            .replace("{minutes}", minutes.toString());
+    function getUsers(week) {
+        const url = resolveUsersUrl(week);
+        return request(url)
+            .then(users => users.map(userOrId => typeof userOrId === 'number' ? {userid: userOrId} : userOrId));
     }
-
-    function refreshTimer(targetDateString, timerElement, popupTimer) {
-        const targetDate = new Date(targetDateString);
-        const now = new Date();
-        const timeDiff = targetDate.getTime() - now.getTime();
-
-        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-
-
-        timerElement.innerHTML = formatTime('finishedTimer', days, hours, minutes);
-        popupTimer.innerHTML = formatTime('timer', days, hours, minutes);
-        return timeDiff;
-    }
-
-    function getQuestLevel(questDefinition, points) {
-        if (!questDefinition || !questDefinition.levels || questDefinition.levels.length === 0) {
-            return 0;
-        }
-
-        const levelIndex = questDefinition.levels.findIndex(level => points < level.points);
-        return levelIndex === -1 ? questDefinition.levels.length : levelIndex;
+    function resolveUsersUrl(week) {
+        return week ? `/users/${week}` : '/users';
     }
 
 
-    function getQuestType(quest) {
-        const startDate = new Date(quest.dateStart);
-        const endDate = new Date(quest.dateEnd);
-        if (currentDate < startDate) {
-            return FUTURE_QUEST_TYPE;
-        } else if (currentDate > endDate) {
-            return OLD_QUEST_TYPE;
-        } else {
-            return ACTIVE_QUEST_TYPE;
-        }
-    }
+
+    //
+    // function refreshQuests(quests, currentUser) {
+    //     if (!quests) {
+    //         return;
+    //     }
+    //
+    //     const shift = isSecondWeek(quests) ? 4 : 0;
+    //     for (let i = 0; i < questDivs.length; i++) {
+    //         renderQuest(quests[i + shift], questDivs[i], currentUser);
+    //     }
+    // }
+    //
+    // function isSecondWeek(quests) {
+    //     const fourthQuest = quests[3];
+    //     return fourthQuest && currentDate > new Date(fourthQuest.dateEnd);
+    // }
+
+    // function renderQuest(quest, container, currentUser) {
+    //     if (!quest || !container) {
+    //         return;
+    //     }
+    //
+    //     const questNum = quest.qNumber;
+    //     //const questPoints = {points: 300};
+    //     const questPoints = currentUser && currentUser.quests && currentUser.quests.find(q => q.questNum === questNum);
+    //
+    //     // update translations
+    //     const questTitleDiv = container.querySelector('.route__item-title');
+    //     questTitleDiv.innerHTML = translateKey(`nameQuest-${questNum}`);
+    //     const questSubTitleDiv = container.querySelector('.route__item-subtitle');
+    //     questSubTitleDiv.innerHTML = translateKey(`quest-${questNum}`);
+    //
+    //     // update type of quest
+    //     const questType = getQuestType(quest);
+    //     container.classList.remove('soon');
+    //
+    //     if (questType === OLD_QUEST_TYPE) {
+    //         container.classList.add('inactive');
+    //     } else if (questType === FUTURE_QUEST_TYPE) {
+    //         container.classList.add('soon');
+    //     } else {
+    //         const timerElement = container.querySelector('.timerTxt');
+    //         const popupTimer = document.querySelector('.quest__time-num');
+    //         countdownTimer(quest.dateEnd, timerElement, popupTimer);
+    //         container.classList.add(`active`)
+    //         updatePopup(quest, questPoints);
+    //     }
+    //
+    //     // update stars
+    //     if (questPoints) {
+    //         const starDivs = container.querySelectorAll('.star');
+    //         const questLevel = getQuestLevel(quest, questPoints.points || 0);
+    //         for (let i = 0; i < questLevel; i++) {
+    //             const star = starDivs[i];
+    //             star.classList.add('_done');
+    //         }
+    //     }
+    //
+    //     // updates images
+    //     const srcDesc = container.querySelector('.src__desc');
+    //     const srcMob = container.querySelector('.src__mob');
+    //     const srcDefault = container.querySelector('.src__default');
+    //     srcDesc.srcset = `https://fav-prom.com/html/ny-ua/img/route/quest${questNum}-img-desc.png`;
+    //     srcMob.srcset = `https://fav-prom.com/html/ny-ua/img/route/quest${questNum}-img-mob.png`;
+    //     srcDefault.src = `https://fav-prom.com/html/ny-ua/img/route/quest${questNum}-img-desc.png`;
+    //
+    //     // update buttons
+    //     if (questType == ACTIVE_QUEST_TYPE && userId && !questPoints) {
+    //         playBtn.classList.add('hide');
+    //         popupPlayBtn.classList.add('hide');
+    //         // console.log('removing quest hide ' + currentUser)
+    //         questStartBtns.forEach(questStartBtn => questStartBtn.classList.remove('hide'));
+    //     }
+    // }
+
+    // function updatePopup(quest, questPoints) {
+    //     const questNum = quest.qNumber;
+    //     const title = document.querySelector('.quest__des-title');
+    //     title.innerHTML = translateKey(`quest-${questNum}`);
+    //     const description = document.querySelector('.quest__des-text');
+    //     description.innerHTML = translateKey(`descrQuest-${questNum}`);
+    //     const questName = document.querySelector('.quest__title');
+    //     questName.innerHTML = translateKey(`nameQuest-${questNum}`);
+    //
+    //     const cssClass = questNum % 2 == 0 ? 'sport' : 'casino';
+    //     questPopup.classList.add(cssClass);
+    //     questPopup.classList.add(`quest-popup${questNum}`);
+    //
+    //     const userPointsForQuest = questPoints ? questPoints.points : 0;
+    //     for (let i = 0; i < questLevelDivs.length; i++) {
+    //         const levelDiv = questLevelDivs[i];
+    //         const levelInfo = quest.levels[i];
+    //         if (levelDiv && levelInfo) {
+    //             const subtitle = levelDiv.querySelector('.quest__item-subtitle');
+    //             subtitle.innerHTML = translateKey(`prizeQuest-${questNum}_${i + 1}`);
+    //             const infoText = levelDiv.querySelector('.quest__item-info-text');
+    //             infoText.innerHTML = translateKey(`stepQuest-${questNum}_${i + 1}`);
+    //
+    //             // progress bar
+    //             const levelStartPoints = i === 0 ? 0 : quest.levels[i - 1].points;
+    //             const levelEndPoints = levelInfo.points;
+    //             const levelPoints = levelEndPoints;
+    //             const progressPoints  = Math.min(Math.max(userPointsForQuest, 0), levelPoints);
+    //             const progressValue = progressPoints / levelPoints * 100;
+    //             const normalized = Math.min(Math.max(Math.floor(progressValue), 0), 100);
+    //             const progressElement = levelDiv.querySelector('.quest__item-info-progress');
+    //             progressElement.value = normalized;
+    //             progressElement.dataset.progress = `${normalized}%`;
+    //             const statusDiv = levelDiv.querySelector('.status');
+    //             statusDiv.innerHTML = `${progressPoints}/${levelPoints}`;
+    //             if (userPointsForQuest < levelStartPoints || !userId) {
+    //                 const playBtn = levelDiv.querySelector('.took-part');
+    //                 playBtn.classList.add('hide');
+    //             }
+    //         }
+    //     }
+    //     refreshProgress();
+    // }
+    //
+    // function countdownTimer(targetDateString, timerElement, popupTimer) {
+    //     refreshTimer(targetDateString, timerElement, popupTimer);
+    //     const intervalId = setInterval(() => {
+    //         const timeDiff = refreshTimer(targetDateString, timerElement, popupTimer);
+    //         if (timeDiff < 0) {
+    //             clearInterval(intervalId);
+    //             timerElement.innerHTML = formatTime('finishedTimer', 0, 0, 0);
+    //             popupTimer.innerHTML = formatTime('timer', 0, 0, 0);
+    //             location.reload();
+    //         }
+    //     }, 10000);
+    // }
+    //
+    // function formatTime(key, days, hours, minutes) {
+    //     return translateKey(key).replace("{day}", days.toString())
+    //         .replace("{hour}", hours.toString())
+    //         .replace("{minutes}", minutes.toString());
+    // }
+    //
+    // function refreshTimer(targetDateString, timerElement, popupTimer) {
+    //     const targetDate = new Date(targetDateString);
+    //     const now = new Date();
+    //     const timeDiff = targetDate.getTime() - now.getTime();
+    //
+    //     const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    //     const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    //
+    //
+    //     timerElement.innerHTML = formatTime('finishedTimer', days, hours, minutes);
+    //     popupTimer.innerHTML = formatTime('timer', days, hours, minutes);
+    //     return timeDiff;
+    // }
+    //
+    // function getQuestLevel(questDefinition, points) {
+    //     if (!questDefinition || !questDefinition.levels || questDefinition.levels.length === 0) {
+    //         return 0;
+    //     }
+    //
+    //     const levelIndex = questDefinition.levels.findIndex(level => points < level.points);
+    //     return levelIndex === -1 ? questDefinition.levels.length : levelIndex;
+    // }
+
+
+    // function getQuestType(quest) {
+    //     const startDate = new Date(quest.dateStart);
+    //     const endDate = new Date(quest.dateEnd);
+    //     if (currentDate < startDate) {
+    //         return FUTURE_QUEST_TYPE;
+    //     } else if (currentDate > endDate) {
+    //         return OLD_QUEST_TYPE;
+    //     } else {
+    //         return ACTIVE_QUEST_TYPE;
+    //     }
+    // }
 
     function init() {
         if (window.store) {
