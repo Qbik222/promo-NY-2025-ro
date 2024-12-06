@@ -44,8 +44,10 @@
     }
     document.querySelector('.en-btn').addEventListener('click', () => {
         toggleState();
+
     });
 
+    document.querySelector(".fav__page").classList.add(`${locale}`)
     // if (roLeng) locale = 'ro';
     // if (enLeng) locale = 'en';
 
