@@ -1,5 +1,5 @@
 (function () {
-    const apiURL = 'https://fav-prom.com/api_ny_ua';
+    const apiURL = 'https://fav-prom.com/api_ny_sam_ro';
     const urlParams = new URLSearchParams(window.location.search);
     const participateParam = 'reg';
 
@@ -29,9 +29,9 @@
     const ukLeng = document.querySelector('#ukLeng');
     const enLeng = document.querySelector('#enLeng');
 
-    let locale = 'uk';
+    let locale = 'ro';
 
-    if (ukLeng) locale = 'uk';
+    if (ukLeng) locale = 'ro';
     if (enLeng) locale = 'en';
 
     const PRIZES_CSS = ['place1', 'place2', 'place3'];
@@ -60,11 +60,11 @@
     function translate() {
         const elems = document.querySelectorAll('[data-translate]')
         if (elems && elems.length) {
-            // elems.forEach(elem => {
-            //     const key = elem.getAttribute('data-translate');
-            //     elem.innerHTML = i18nData[key] || '*----NEED TO BE TRANSLATED----*   key:  ' + key;
-            //     elem.removeAttribute('data-translate');
-            // })
+            elems.forEach(elem => {
+                const key = elem.getAttribute('data-translate');
+                elem.innerHTML = i18nData[key] || '*----NEED TO BE TRANSLATED----*   key:  ' + key;
+                elem.removeAttribute('data-translate');
+            })
             console.log("translate is working")
         }
         refreshLocalizedClass();
@@ -93,7 +93,7 @@
     function getData() {
         return Promise.all([
             request('/users'),
-            request('/quests')
+            // request('/quests')
         ]);
     }
 
