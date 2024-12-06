@@ -26,13 +26,28 @@
     let quests;
     let userInfo;
 
-    const ukLeng = document.querySelector('#ukLeng');
+    const roLeng = document.querySelector('#roLeng');
     const enLeng = document.querySelector('#enLeng');
 
-    let locale = 'ro';
+    // let locale = 'ro';
 
-    if (ukLeng) locale = 'ro';
-    if (enLeng) locale = 'en';
+    let locale = localStorage.getItem('locale') || 'en';
+
+    function setState(newLocale) {
+        locale = newLocale;
+        localStorage.setItem('locale', locale);
+    }
+    function toggleState() {
+        const newLocale = locale === 'en' ? 'ro' : 'en';
+        setState(newLocale);
+        window.location.reload()
+    }
+    document.querySelector('.en-btn').addEventListener('click', () => {
+        toggleState();
+    });
+
+    // if (roLeng) locale = 'ro';
+    // if (enLeng) locale = 'en';
 
     const PRIZES_CSS = ['place1', 'place2', 'place3'];
 
