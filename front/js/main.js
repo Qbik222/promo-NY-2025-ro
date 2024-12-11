@@ -27,7 +27,7 @@
     let users;
     let quests;
     let userInfo;
-    let selectedWeekTabId = 0;
+    let selectedWeekTabId;
 
     const roLeng = document.querySelector('#roLeng');
     const enLeng = document.querySelector('#enLeng');
@@ -561,7 +561,6 @@
                         redirectBtns.forEach(item => item.classList.remove('hide'));
                         questStartBtns.forEach(item => item.classList.add('hide'));
                         userInfo = res;
-                        refreshQuests(quests, userInfo);
                     } else {
                         participateBtns.forEach(item => item.classList.remove('hide'));
                     }
