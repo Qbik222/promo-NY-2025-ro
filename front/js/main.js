@@ -57,8 +57,9 @@
     const PRIZES_CSS = ['place1', 'place2', 'place3'];
 
     let i18nData = {};
-    // let userId;
-    let userId = 100340020;
+    let userId;
+    userId = 204806
+    // let userId = 100340020;
 
     function loadTranslations() {
         return fetch(`${apiURL}/translates/${locale}`).then(res => res.json())
@@ -85,7 +86,6 @@
                 elem.innerHTML = i18nData[key] || '*----NEED TO BE TRANSLATED----*   key:  ' + key;
                 elem.removeAttribute('data-translate');
             })
-            console.log("translate is working")
         }
         refreshLocalizedClass();
     }
@@ -136,7 +136,6 @@
 
     const InitPage = () => {
         initDrop();
-        questStartBtns.forEach(questStartBtn => questStartBtn.addEventListener('click', (e) => { registerInQuest(); }));
         weeksSelector.forEach((w, i) => w.addEventListener('click', e => {
             if (i === selectedWeekTabId) {
                 return;
@@ -284,106 +283,106 @@
     //         questStartBtns.forEach(questStartBtn => questStartBtn.classList.remove('hide'));
     //     }
     // }
-
-    function updatePopup(quest, questPoints) {
-        const questNum = quest.qNumber;
-        const title = document.querySelector('.quest__des-title');
-        title.innerHTML = translateKey(`quest-${questNum}`);
-        const description = document.querySelector('.quest__des-text');
-        description.innerHTML = translateKey(`descrQuest-${questNum}`);
-        const questName = document.querySelector('.quest__title');
-        questName.innerHTML = translateKey(`nameQuest-${questNum}`);
-
-        const cssClass = questNum % 2 == 0 ? 'sport' : 'casino';
-        questPopup.classList.add(cssClass);
-        questPopup.classList.add(`quest-popup${questNum}`);
-
-        const userPointsForQuest = questPoints ? questPoints.points : 0;
-        for (let i = 0; i < questLevelDivs.length; i++) {
-            const levelDiv = questLevelDivs[i];
-            const levelInfo = quest.levels[i];
-            if (levelDiv && levelInfo) {
-                const subtitle = levelDiv.querySelector('.quest__item-subtitle');
-                subtitle.innerHTML = translateKey(`prizeQuest-${questNum}_${i + 1}`);
-                const infoText = levelDiv.querySelector('.quest__item-info-text');
-                infoText.innerHTML = translateKey(`stepQuest-${questNum}_${i + 1}`);
-
-                // progress bar
-                const levelStartPoints = i === 0 ? 0 : quest.levels[i - 1].points;
-                const levelEndPoints = levelInfo.points;
-                const levelPoints = levelEndPoints;
-                const progressPoints  = Math.min(Math.max(userPointsForQuest, 0), levelPoints);
-                const progressValue = progressPoints / levelPoints * 100;
-                const normalized = Math.min(Math.max(Math.floor(progressValue), 0), 100);
-                const progressElement = levelDiv.querySelector('.quest__item-info-progress');
-                progressElement.value = normalized;
-                progressElement.dataset.progress = `${normalized}%`;
-                const statusDiv = levelDiv.querySelector('.status');
-                statusDiv.innerHTML = `${progressPoints}/${levelPoints}`;
-                if (userPointsForQuest < levelStartPoints || !userId) {
-                    const playBtn = levelDiv.querySelector('.took-part');
-                    playBtn.classList.add('hide');
-                }
-            }
-        }
-        refreshProgress();
-    }
-
-    function countdownTimer(targetDateString, timerElement, popupTimer) {
-        refreshTimer(targetDateString, timerElement, popupTimer);
-        const intervalId = setInterval(() => {
-            const timeDiff = refreshTimer(targetDateString, timerElement, popupTimer);
-            if (timeDiff < 0) {
-                clearInterval(intervalId);
-                timerElement.innerHTML = formatTime('finishedTimer', 0, 0, 0);
-                popupTimer.innerHTML = formatTime('timer', 0, 0, 0);
-                location.reload();
-            }
-        }, 10000);
-    }
+    //
+    // function updatePopup(quest, questPoints) {
+    //     const questNum = quest.qNumber;
+    //     const title = document.querySelector('.quest__des-title');
+    //     title.innerHTML = translateKey(`quest-${questNum}`);
+    //     const description = document.querySelector('.quest__des-text');
+    //     description.innerHTML = translateKey(`descrQuest-${questNum}`);
+    //     const questName = document.querySelector('.quest__title');
+    //     questName.innerHTML = translateKey(`nameQuest-${questNum}`);
+    //
+    //     const cssClass = questNum % 2 == 0 ? 'sport' : 'casino';
+    //     questPopup.classList.add(cssClass);
+    //     questPopup.classList.add(`quest-popup${questNum}`);
+    //
+    //     const userPointsForQuest = questPoints ? questPoints.points : 0;
+    //     for (let i = 0; i < questLevelDivs.length; i++) {
+    //         const levelDiv = questLevelDivs[i];
+    //         const levelInfo = quest.levels[i];
+    //         if (levelDiv && levelInfo) {
+    //             const subtitle = levelDiv.querySelector('.quest__item-subtitle');
+    //             subtitle.innerHTML = translateKey(`prizeQuest-${questNum}_${i + 1}`);
+    //             const infoText = levelDiv.querySelector('.quest__item-info-text');
+    //             infoText.innerHTML = translateKey(`stepQuest-${questNum}_${i + 1}`);
+    //
+    //             // progress bar
+    //             const levelStartPoints = i === 0 ? 0 : quest.levels[i - 1].points;
+    //             const levelEndPoints = levelInfo.points;
+    //             const levelPoints = levelEndPoints;
+    //             const progressPoints  = Math.min(Math.max(userPointsForQuest, 0), levelPoints);
+    //             const progressValue = progressPoints / levelPoints * 100;
+    //             const normalized = Math.min(Math.max(Math.floor(progressValue), 0), 100);
+    //             const progressElement = levelDiv.querySelector('.quest__item-info-progress');
+    //             progressElement.value = normalized;
+    //             progressElement.dataset.progress = `${normalized}%`;
+    //             const statusDiv = levelDiv.querySelector('.status');
+    //             statusDiv.innerHTML = `${progressPoints}/${levelPoints}`;
+    //             if (userPointsForQuest < levelStartPoints || !userId) {
+    //                 const playBtn = levelDiv.querySelector('.took-part');
+    //                 playBtn.classList.add('hide');
+    //             }
+    //         }
+    //     }
+    //     refreshProgress();
+    // }
+    //
+    // function countdownTimer(targetDateString, timerElement, popupTimer) {
+    //     refreshTimer(targetDateString, timerElement, popupTimer);
+    //     const intervalId = setInterval(() => {
+    //         const timeDiff = refreshTimer(targetDateString, timerElement, popupTimer);
+    //         if (timeDiff < 0) {
+    //             clearInterval(intervalId);
+    //             timerElement.innerHTML = formatTime('finishedTimer', 0, 0, 0);
+    //             popupTimer.innerHTML = formatTime('timer', 0, 0, 0);
+    //             location.reload();
+    //         }
+    //     }, 10000);
+    // }
 
     function formatTime(key, days, hours, minutes) {
         return translateKey(key).replace("{day}", days.toString())
             .replace("{hour}", hours.toString())
             .replace("{minutes}", minutes.toString());
     }
-
-    function refreshTimer(targetDateString, timerElement, popupTimer) {
-        const targetDate = new Date(targetDateString);
-        const now = new Date();
-        const timeDiff = targetDate.getTime() - now.getTime();
-
-        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-
-
-        timerElement.innerHTML = formatTime('finishedTimer', days, hours, minutes);
-        popupTimer.innerHTML = formatTime('timer', days, hours, minutes);
-        return timeDiff;
-    }
-
-    function getQuestLevel(questDefinition, points) {
-        if (!questDefinition || !questDefinition.levels || questDefinition.levels.length === 0) {
-            return 0;
-        }
-
-        const levelIndex = questDefinition.levels.findIndex(level => points < level.points);
-        return levelIndex === -1 ? questDefinition.levels.length : levelIndex;
-    }
-
-
-    function getQuestType(quest) {
-        const startDate = new Date(quest.dateStart);
-        const endDate = new Date(quest.dateEnd);
-        if (currentDate < startDate) {
-            return FUTURE_QUEST_TYPE;
-        } else if (currentDate > endDate) {
-            return OLD_QUEST_TYPE;
-        } else {
-            return ACTIVE_QUEST_TYPE;
-        }
-    }
+    //
+    // function refreshTimer(targetDateString, timerElement, popupTimer) {
+    //     const targetDate = new Date(targetDateString);
+    //     const now = new Date();
+    //     const timeDiff = targetDate.getTime() - now.getTime();
+    //
+    //     const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    //     const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    //
+    //
+    //     timerElement.innerHTML = formatTime('finishedTimer', days, hours, minutes);
+    //     popupTimer.innerHTML = formatTime('timer', days, hours, minutes);
+    //     return timeDiff;
+    // }
+    //
+    // function getQuestLevel(questDefinition, points) {
+    //     if (!questDefinition || !questDefinition.levels || questDefinition.levels.length === 0) {
+    //         return 0;
+    //     }
+    //
+    //     const levelIndex = questDefinition.levels.findIndex(level => points < level.points);
+    //     return levelIndex === -1 ? questDefinition.levels.length : levelIndex;
+    // }
+    //
+    //
+    // function getQuestType(quest) {
+    //     const startDate = new Date(quest.dateStart);
+    //     const endDate = new Date(quest.dateEnd);
+    //     if (currentDate < startDate) {
+    //         return FUTURE_QUEST_TYPE;
+    //     } else if (currentDate > endDate) {
+    //         return OLD_QUEST_TYPE;
+    //     } else {
+    //         return ACTIVE_QUEST_TYPE;
+    //     }
+    // }
 
     function init() {
         if (window.store) {
@@ -442,27 +441,26 @@
         });
     }
 
-    function registerInQuest() {
-        if (!userId) {
-            return;
-        }
-
-        const params = {userid: userId};
-
-        request('/questreg', {
-            method: 'POST',
-            body: JSON.stringify(params)
-        }).then(res => {
-            playBtn.classList.remove('hide');
-            popupPlayBtn.classList.remove('hide');
-            questStartBtns.forEach(questStartBtn => questStartBtn.classList.add('hide'));
-        });
-    }
+    // function registerInQuest() {
+    //     if (!userId) {
+    //         return;
+    //     }
+    //
+    //     const params = {userid: userId};
+    //
+    //     request('/questreg', {
+    //         method: 'POST',
+    //         body: JSON.stringify(params)
+    //     }).then(res => {
+    //         playBtn.classList.remove('hide');
+    //         popupPlayBtn.classList.remove('hide');
+    //         questStartBtns.forEach(questStartBtn => questStartBtn.classList.add('hide'));
+    //     });
+    // }
 
     const renderUsers = (users) => {
         resultsTableWrapper.classList.remove('hide');
         resultsTableOther.classList.remove('hide');
-
         if (users && users.length) {
             let topUsers = users.slice(0, 10);
             populateUsersTable(topUsers, userId, topResultsTable, users);
@@ -513,28 +511,12 @@
     }
 
     function getPrizeTranslationKey(place) {
-        if (place <= 5) {
+        if (place <= 10) {
             return `prize_${place}`
-        } else if (place <= 10) {
-            return `prize_6-10`
-        } else if (place <= 50) {
-            return `prize_11-50`
-        } else if (place <= 100) {
-            return `prize_51-100`
-        } else if (place <= 200) {
-            return `prize_101-200`
-        } else if (place <= 201) {
-            return `prize_201-300`
-        } else if (place <= 400) {
-            return `prize_301-400`
-        } else if (place <= 500) {
-            return `prize_401-500`
-        } else if (place <= 600) {
-            return `prize_501-600`
-        } else if (place <= 650) {
-            return `prize_601-650`
-        } else if (place <= 700) {
-            return `prize_651-700`
+        } else if (place >= 11 && place <= 15){
+            return  `prize_11-15`
+        }else if (place >= 16 && place <= 20){
+            return  `prize_16-20`
         }
     }
 
