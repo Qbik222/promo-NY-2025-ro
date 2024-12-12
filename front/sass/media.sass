@@ -64,7 +64,7 @@
       &-text
         top: 28vw
         right: 25vw
-        padding: 13.5vw 2vw 10vw 10.5vw
+        padding: 14.5% 2% 10% 11.5%
         width: 38vw
         height: 31vw
         &-wrap
@@ -141,6 +141,8 @@
     &__subtitle
       font-size: 36px
       line-height: 40px
+      padding: 15px 10px
+      margin: -15px auto 5px
     &__text
       font-size: 14px
       line-height: 22px
@@ -157,6 +159,9 @@
       flex-direction: column
       background: var(--promo-gradient-detail)
       position: relative
+      &:nth-child(3)
+        .rules__item-img
+          left: 0
       &._open
         &::before
           transform: rotate(0deg)
@@ -192,6 +197,13 @@
       &-text
         font-size: 14px
         line-height: 22px
+
+@media screen and (max-width: 360px)
+  .rules
+    &__item
+      &-title
+        font-size: 17px
+        line-height: 20px
 
 //INFO
 @media screen and (max-width: 1400px)
@@ -283,7 +295,8 @@
     &__title
       font-size: 36px
       line-height: 38px
-      margin: 0 0 15px
+      margin: 0 0 0 -10px
+      padding: 15px 10px
     &__wrap
       font-size: 14px
       line-height: 22px
@@ -349,7 +362,8 @@
     &__title
       font-size: 36px
       line-height: 36px
-      margin-bottom: 20px
+      padding: 15px 10px
+      margin: -15px 0 5px
     &__text
       max-width: 399px
       font-size: 14px
@@ -389,11 +403,7 @@
     padding: 17px 55px 15px 20px
     svg
       right: 20px
-  .game
-    &__title
-      font-size: 36px
-      line-height: 36px
-      bottom: 30px
+
 
 @media screen and (max-width: 360px)
   .result
@@ -435,8 +445,13 @@
     &__btn
       margin: -26vw 0 20px 0
     &__title
-      margin: 0 auto -1vw
+      font-size: 33px
+      line-height: 33px
+      margin: 0 0 2.5vw 0
       max-width: 100%
+      bottom: 0
+      padding: 15px 10px
+      white-space: nowrap
     &__house
       margin: 0
       transform: scale(1.1)

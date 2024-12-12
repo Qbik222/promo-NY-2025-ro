@@ -146,6 +146,7 @@ body
       &__list
         &-title
           max-width: 365px
+          left: 34%
           picture.uk
             display: none
           picture.en
@@ -167,6 +168,7 @@ body
   font-size: 45px
   line-height: 45px
   cursor: pointer
+  clip-path: polygon(8% 0, 92% 0, 92% 100%, 8% 100%)
   @media screen and (max-width: 600px)
     width: 270px
     height: 105px
@@ -234,14 +236,16 @@ body
     @media screen and (max-width: 600px)
       padding: 20px 20px
     &-wrap
-      height: 400px
-      overflow-y: scroll
+      max-height: 400px
+      height: fit-content
+      overflow-y: auto
       font-family: $font-suisse-reg
       font-size: 14px
       line-height: 28px
       color: var(--promo-color-gray)
       letter-spacing: .02em
       padding: 0 20px 0 0
+      scrollbar-width: auto
       @media screen and (max-width: 600px)
         padding: 0 15px 0 0
       &::-webkit-scrollbar
@@ -608,6 +612,7 @@ body
     line-height: 32px
     margin-top: 50px
     color: var(--promo-color-gray)
+    z-index: 5
   &__title
     transform-origin: left center
     animation: 2s prizeItem ease infinite
